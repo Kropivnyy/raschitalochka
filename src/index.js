@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'modern-normalize/modern-normalize.css';
+import './variables.css';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
