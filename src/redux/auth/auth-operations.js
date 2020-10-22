@@ -17,7 +17,6 @@ const registration = credentials => async dispatch => {
 
   try {
     const response = await axios.post('/register', credentials);
-    console.log('registration', response.data);
 
     dispatch(authActions.registrationSuccess(response.data));
   } catch ({ message }) {
@@ -37,7 +36,13 @@ const logIn = credentials => async dispatch => {
   }
 };
 
+const registrationLogin = credentials => async dispatch => {
+  await registration(credentials)(dispatch);
+  await logIn(credentials)(dispatch);
+};
+
 export default {
   registration,
   logIn,
+  registrationLogin,
 };
