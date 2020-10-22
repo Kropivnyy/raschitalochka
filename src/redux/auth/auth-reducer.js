@@ -26,7 +26,6 @@ const error = createReducer(null, {
 });
 
 const isAuthenticated = createReducer(false, {
-  [authActions.registrationSuccess]: () => true,
   [authActions.loginSuccess]: () => true,
   [authActions.registrationError]: () => false,
   [authActions.loginError]: () => false,

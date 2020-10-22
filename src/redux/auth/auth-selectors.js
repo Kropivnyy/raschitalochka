@@ -1,3 +1,3 @@
 const getAuthenticated = state => state.auth.isAuthenticated;
-
-export default { getAuthenticated };
+const getIsRegistration = state => state.auth.isRegistration;
+export default { getAuthenticated, getIsRegistration };

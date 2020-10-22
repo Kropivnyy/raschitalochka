@@ -6,11 +6,13 @@ export default function RegisterView() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  // const [passwordConf, setPasswordConf] = useState('');
 
   const dispatch = useDispatch();
+
   const onRegister = useCallback(
     (name, email, password) =>
-      dispatch(authOperations.registration(name, email, password)),
+      dispatch(authOperations.registrationLogin(name, email, password)),
     [dispatch],
   );
 
@@ -29,6 +31,10 @@ export default function RegisterView() {
         setPassword(value);
         break;
 
+      // case 'passwordConf':
+      //   setPasswordConf(value);
+      //   break;
+
       default:
         console.warn(`Тип поля ${name} не обрабатывается`);
     }
@@ -36,6 +42,12 @@ export default function RegisterView() {
 
   const handleSubmit = event => {
     event.preventDefault();
+    // if ( password  !==  passwordConf ) {
+    //   alert("password")
+    //   resetState();
+    //   return;
+    // }
+
     onRegister({ name, email, password });
     resetState();
   };
@@ -44,6 +56,7 @@ export default function RegisterView() {
     setName('');
     setEmail('');
     setPassword('');
+    // setPasswordConf('');
   };
 
   return (
@@ -54,17 +67,6 @@ export default function RegisterView() {
           <input
             autoFocus
             required
-            type="text"
-            name="name"
-            value={name}
-            placeholder="Name"
-            onChange={handleChange}
-            className=""
-          />
-        </label>
-        <label className="">
-          <input
-            required
             type="email"
             name="email"
             value={email}
@@ -73,6 +75,7 @@ export default function RegisterView() {
             className=""
           />
         </label>
+
         <label className="">
           <input
             required
@@ -82,6 +85,32 @@ export default function RegisterView() {
             name="password"
             value={password}
             placeholder="Password"
+            onChange={handleChange}
+            className=""
+          />
+        </label>
+
+        {/* <label className="">
+          <input
+            required
+            minLength="8"
+            pattern="[A-Za-z-0-9]{8,}"
+            type="password"
+            name="passwordConf"
+            value={passwordConf}
+            placeholder="Password Confirmation"
+            onChange={handleChange}
+            className=""
+          />
+        </label> */}
+
+        <label className="">
+          <input
+            required
+            type="text"
+            name="name"
+            value={name}
+            placeholder="Name"
             onChange={handleChange}
             className=""
           />

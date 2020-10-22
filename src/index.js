@@ -10,11 +10,23 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
+import Loader from 'react-loader-spinner';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store.store}>
-      <PersistGate persistor={store.persistor}>
+      <PersistGate
+        loading={
+          <Loader
+            type="Bars"
+            color="#3f51b5"
+            height={50}
+            width={100}
+            visible={true}
+          />
+        }
+        persistor={store.persistor}
+      >
         <BrowserRouter>
           <App />
         </BrowserRouter>

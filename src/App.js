@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Switch } from 'react-router-dom';
 
 import AppBar from './components/AppBar';
@@ -7,13 +7,29 @@ import PublicRoute from './servises/PublicRoute';
 import routes from './routes';
 import RegistrationView from './views/Registration';
 import LoginView from './views/Login';
+import Loader from 'react-loader-spinner';
 
 function App() {
   return (
     <div className="">
       <AppBar />
+      <Suspense
+        fallback={
+          <Loader
+            type="Bars"
+            color="#00BFFF"
+            height={50}
+            width={100}
+            visible={true}
+          />
+        }
+      ></Suspense>
       <Switch>
-        <PublicRoute path={routes.registrationView}>
+        <PublicRoute
+          path={routes.registrationView}
+          restricted
+          redirectTo={routes.statisticsView}
+        >
           <RegistrationView />
         </PublicRoute>
 
