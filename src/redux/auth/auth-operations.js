@@ -1,7 +1,7 @@
 import axios from 'axios';
 import authActions from './auth-actions';
 
-axios.defaults.baseURL = 'https://localhost:3000/';
+axios.defaults.baseURL = 'https://raschitalochka.goit.co.ua/api/';
 
 const token = {
   set(token) {

@@ -12,6 +12,10 @@ const statisticsRequest = createAction('auth/statisticsRequest');
 const statisticsSuccess = createAction('auth/statisticsSuccess');
 const statisticsError = createAction('auth/statisticsError');
 
+const fetchStatisticsRequest = createAction('auth/fetchStatisticsRequest');
+const fetchStatisticsSuccess = createAction('auth/fetchStatisticsSuccess');
+const fetchStatisticsError = createAction('auth/fetchStatisticsError');
+
 const currencyRequest = createAction('auth/currencyRequest');
 const currencySuccess = createAction('auth/currencySuccess');
 const currencyError = createAction('auth/currencyError');
@@ -26,6 +30,9 @@ export default {
   statisticsRequest,
   statisticsSuccess,
   statisticsError,
+  fetchStatisticsRequest,
+  fetchStatisticsSuccess,
+  fetchStatisticsError,
   currencyRequest,
   currencySuccess,
   currencyError,
