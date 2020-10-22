@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import routes from '../../routes';
 
 export default function Navigation() {
-  //   const isLoggedIn = useSelector(authSelectors.getAuthenticated);
   return (
     <nav className="">
       <NavLink to={routes.homePageView} exact className="" activeClassName="">
@@ -27,7 +26,7 @@ export default function Navigation() {
       >
         Registration
       </NavLink>
-      {/* {isLoggedIn && ( */}
+
       <NavLink
         to={routes.statisticsView}
         exact
@@ -44,7 +43,6 @@ export default function Navigation() {
       >
         Currency
       </NavLink>
-      {/* )} */}
     </nav>
   );
 }
