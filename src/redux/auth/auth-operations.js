@@ -16,15 +16,28 @@ const registration = credentials => async dispatch => {
   dispatch(authActions.registrationRequest());
 
   try {
-    const response = await axios.post('/users/signup', credentials);
+    const response = await axios.post('/register', credentials);
+    console.log('registration', response.data);
 
-    token.set(response.data.token);
     dispatch(authActions.registrationSuccess(response.data));
   } catch ({ message }) {
     dispatch(authActions.registrationError(message));
   }
 };
 
+const logIn = credentials => async dispatch => {
+  dispatch(authActions.loginRequest());
+  try {
+    const response = await axios.post('/login', credentials);
+
+    token.set(response.data.token);
+    dispatch(authActions.loginSuccess(response.data));
+  } catch ({ message }) {
+    dispatch(authActions.loginError(message));
+  }
+};
+
 export default {
   registration,
+  logIn,
 };
