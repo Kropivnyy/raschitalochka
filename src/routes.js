@@ -5,4 +5,5 @@ export default {
   statisticsView: '/statistics',
   errrView: '/error',
   currencyView: '/currency',
+  dashboardView: '/dashboard',
 };

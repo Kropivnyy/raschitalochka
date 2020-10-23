@@ -1,8 +1,8 @@
-.tableLine {
+.balanceHeadItem {
   padding: 16px 0 16px 16px;
 }
 
-.tableLine:nth-child(odd) {
+.balanceHeadItem:nth-child(odd) {
   background-color: #f3f6f6;
 }
 
@@ -39,7 +39,7 @@
     padding-right: calc(0.2vw + 3vw);
   }
 
-  .tableLine {
+  .balanceHeadItem {
     padding: 16px 0;
   }
 

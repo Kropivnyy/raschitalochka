@@ -29,7 +29,6 @@ export default function Navigation() {
       >
         Registration
       </NavLink>
-
       {isLoggedIn && (
         <>
           <NavLink
@@ -47,6 +46,15 @@ export default function Navigation() {
             activeClassName="NavLink--active"
           >
             Currency
+          </NavLink>
+
+          <NavLink
+            to={routes.dashboardView}
+            exact
+            className="NavLink"
+            activeClassName="NavLink--active"
+          >
+            Dashboard
           </NavLink>
         </>
       )}

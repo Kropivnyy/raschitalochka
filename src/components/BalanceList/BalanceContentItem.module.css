@@ -1,3 +1,11 @@
+.balanceContentItem {
+  padding: 16px 0 16px 16px;
+}
+
+.balanceContentItem:nth-child(odd) {
+  background-color: #f3f6f6;
+}
+
 @media (min-width: 700px) {
   .balanceContentItem:nth-child(1) {
     width: 14%;
@@ -26,11 +34,11 @@
     padding-right: calc(0.2vw + 3vw);
   }
 
-  .tableLine {
+  .balanceContentItem {
     padding: 16px 0;
   }
 
-  .tableLine:nth-child(odd) {
+  .balanceContentItem:nth-child(odd) {
     background-color: transparent;
   }
 }

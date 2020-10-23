@@ -12,4 +12,8 @@
     font-weight: 500;
     font-size: 11px;
   }
+
+  .balanceHeadList:not(:first-child) {
+    display: none;
+  }
 }
