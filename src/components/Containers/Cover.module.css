@@ -1,0 +1,9 @@
+.cover {
+  padding: 17px 7px;
+}
+
+@media (min-width: 700px) {
+  .cover {
+    padding: 0;
+  }
+}

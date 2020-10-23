@@ -1,0 +1,28 @@
+.btn {
+  display: none;
+}
+
+@media (min-width: 700px) {
+  .btn {
+    display: block;
+    color: #ffffff;
+    background-color: #619361;
+    box-shadow: 1px 2px 2px -1px #2b2727;
+    border: none;
+    width: 151px;
+    height: 42px;
+    border-radius: 5px;
+    font-family: 'HelveticaNeueCyr';
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .btn:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  .btn:hover {
+    background: linear-gradient(to right, #ebca48 2%, #ec6614);
+  }
+}

@@ -1,0 +1,11 @@
+.balanceContentList {
+  list-style: none;
+  width: 50%;
+}
+
+@media (min-width: 700px) {
+  .balanceContentList {
+    display: flex;
+    width: auto;
+  }
+}
