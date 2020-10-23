@@ -1,7 +1,9 @@
 import React, { useState, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../../redux/auth';
+import routes from '../../routes';
 import styles from './Registration.module.css';
+
 export default function RegisterView() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -117,6 +119,7 @@ export default function RegisterView() {
         </label>
         <button type="submit">Register</button>
       </form>
+      <a href={routes.loginView}> Login</a>
     </div>
   );
 }
