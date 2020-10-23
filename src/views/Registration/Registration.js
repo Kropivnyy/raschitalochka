@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../../redux/auth';
-
+import styles from './Registration.module.css';
 export default function RegisterView() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -60,7 +60,7 @@ export default function RegisterView() {
   };
 
   return (
-    <div className="">
+    <div className={styles.Registration__container}>
       <h2>Register page</h2>
       <form className="" onSubmit={handleSubmit}>
         <label className="">
