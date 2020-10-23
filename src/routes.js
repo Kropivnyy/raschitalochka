@@ -3,7 +3,7 @@ export default {
   loginView: '/login',
   registrationView: '/registration',
   statisticsView: '/statistics',
-  errrView: '/error',
+  errorView: '/error',
   currencyView: '/currency',
   dashboardView: '/dashboard',
 };

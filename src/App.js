@@ -8,6 +8,7 @@ import routes from './routes';
 import RegistrationView from './views/Registration';
 import LoginView from './views/Login';
 import DashboardView from './views/Dashboard';
+import ErrorView from './views/Error';
 import Loader from 'react-loader-spinner';
 
 function App() {
@@ -34,12 +35,20 @@ function App() {
           <RegistrationView />
         </PublicRoute>
 
-        <PublicRoute path={routes.loginView}>
+        <PublicRoute
+          path={routes.loginView}
+          restricted
+          redirectTo={routes.statisticsView}
+        >
           <LoginView />
         </PublicRoute>
 
+
         <PublicRoute path={routes.dashboardView}>
           <DashboardView />
+
+        <PublicRoute path={routes.errorView}>
+          <ErrorView />
         </PublicRoute>
       </Switch>
     </div>

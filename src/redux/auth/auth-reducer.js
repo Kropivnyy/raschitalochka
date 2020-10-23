@@ -4,10 +4,6 @@ import authActions from './auth-actions';
 
 const initialUserState = { name: null, email: null };
 
-const userIsRegistration = createReducer(false, {
-  [authActions.registrationSuccess]: (_, { payload }) => payload.success,
-});
-
 const user = createReducer(initialUserState, {
   [authActions.loginSuccess]: (_, { payload }) => payload.user,
 });
@@ -26,6 +22,7 @@ const error = createReducer(null, {
 });
 
 const isAuthenticated = createReducer(false, {
+  [authActions.registrationSuccess]: () => true,
   [authActions.loginSuccess]: () => true,
   [authActions.registrationError]: () => false,
   [authActions.loginError]: () => false,
@@ -33,7 +30,6 @@ const isAuthenticated = createReducer(false, {
 
 export default combineReducers({
   isAuthenticated,
-  userIsRegistration,
   user,
   token,
   error,

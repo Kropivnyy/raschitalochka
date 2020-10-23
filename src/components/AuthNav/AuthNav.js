@@ -1,15 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import routes from '../../routes';
-import './AuthNav.scss';
-
+import styles from './AuthNav.module.css';
 const AuthNav = () => {
   return (
-    <nav className="Navigation">
+    <nav className={styles.AuthNav__container}>
       <NavLink
-        to={routes.registerView}
+        to={routes.registrationView}
         exact
-        className="NavLink"
+        className={styles.linc}
         activeClassName="NavLink--active"
       >
         Registraton
@@ -17,7 +16,7 @@ const AuthNav = () => {
       <NavLink
         to={routes.loginView}
         exact
-        className="NavLink"
+        className={styles.linc}
         activeClassName="NavLink--active"
       >
         Login
