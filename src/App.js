@@ -18,7 +18,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(authOperations.getTokeFromLS());
+    dispatch(authOperations.getTokenFromLS());
   }, [dispatch]);
   return (
     <div className="">

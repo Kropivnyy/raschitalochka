@@ -41,7 +41,7 @@ const registrationLogin = credentials => async dispatch => {
   await logIn(credentials)(dispatch);
 };
 
-const getTokeFromLS = () => async (dispatch, getState) => {
+const getTokenFromLS = () => async (dispatch, getState) => {
   const {
     auth: { token: persistedToken },
   } = getState();
@@ -73,6 +73,6 @@ export default {
   registration,
   logIn,
   registrationLogin,
-  getTokeFromLS,
+  getTokenFromLS,
   logOut,
 };
