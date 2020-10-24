@@ -1,9 +1,8 @@
 .Navigation__container {
   margin: 0 auto;
-  padding: 10px 20px;
   color: #2c353e;
 }
 
-.linc {
-  color: var(--userMame-mobile-color);
+.link {
+  color: var(--user-name-mobile-color);
 }

@@ -2,7 +2,6 @@ import React, { Suspense, useEffect } from 'react';
 import { Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { authOperations } from './redux/auth';
-import AppBar from './components/AppBar';
 import PrivateRoute from './servises/PrivateRoute';
 import PublicRoute from './servises/PublicRoute';
 import routes from './routes';
@@ -22,7 +21,6 @@ function App() {
   }, [dispatch]);
   return (
     <>
-      <AppBar />
       <Suspense
         fallback={
           <Loader

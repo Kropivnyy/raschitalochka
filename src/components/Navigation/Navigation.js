@@ -16,7 +16,7 @@ export default function Navigation() {
           <NavLink
             to={routes.homePageView}
             exact
-            className={styles.linc}
+            className={styles.link}
             activeClassName=""
           >
             Home page
@@ -24,7 +24,7 @@ export default function Navigation() {
           <NavLink
             to={routes.statisticsView}
             exact
-            className={styles.linc}
+            className={styles.link}
             activeClassName="NavLink--active"
           >
             Statistics
@@ -32,7 +32,7 @@ export default function Navigation() {
           <NavLink
             to={routes.currencyView}
             exact
-            className={styles.linc}
+            className={styles.link}
             activeClassName="NavLink--active"
           >
             Currency
