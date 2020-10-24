@@ -8,7 +8,6 @@ import UserMenu from '../UserMenu';
 import Wrapper from '../Wrapper';
 
 export default function Navigation() {
-  //
   return (
     <nav className={styles.Navigation__container}>
       <>
@@ -17,7 +16,7 @@ export default function Navigation() {
           <NavLink
             to={routes.homePageView}
             exact
-            className={styles.linc}
+            className={styles.link}
             activeClassName=""
           >
             Home page
@@ -25,7 +24,7 @@ export default function Navigation() {
           <NavLink
             to={routes.statisticsView}
             exact
-            className={styles.linc}
+            className={styles.link}
             activeClassName="NavLink--active"
           >
             Statistics
@@ -33,7 +32,7 @@ export default function Navigation() {
           <NavLink
             to={routes.currencyView}
             exact
-            className={styles.linc}
+            className={styles.link}
             activeClassName="NavLink--active"
           >
             Currency

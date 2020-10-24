@@ -1,14 +1,7 @@
 .AppBar__container {
-  height: var(--header-height-mobile);
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 100%;
   background-color: var(--header-bg-mobile-color);
-}
-
-@media screen and (min-width: 768px) {
-  .AppBar__container {
-    height: var(--header-height-tablet);
-  }
 }
