@@ -21,16 +21,16 @@ const error = createReducer(null, {
   [authActions.statisticsError]: setError,
   [authActions.fetchStatisticsError]: setError,
   [authActions.currencyError]: setError,
-  [authActions.getTokeFromLsError]: setError,
+  [authActions.getTokenFromLSError]: setError,
 });
 
 const isAuthenticated = createReducer(false, {
   [authActions.registrationSuccess]: () => true,
   [authActions.loginSuccess]: () => true,
-  [authActions.getTokeFromLsRequest]: () => true,
+  [authActions.getTokenFromLSRequest]: () => true,
   [authActions.registrationError]: () => false,
   [authActions.loginError]: () => false,
-  [authActions.getTokeFromLsError]: () => false,
+  [authActions.getTokenFromLSError]: () => false,
   [authActions.logoutSuccess]: () => false,
 });
 

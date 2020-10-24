@@ -51,11 +51,11 @@ const getTokenFromLS = () => async (dispatch, getState) => {
   }
   token.set(persistedToken);
 
-  dispatch(authActions.getTokeFromLsRequest());
+  dispatch(authActions.getTokenFromLSRequest());
   try {
-    dispatch(authActions.getTokeFromLsSuccess());
+    dispatch(authActions.getTokenFromLSSuccess());
   } catch (error) {
-    dispatch(authActions.getTokeFromLsError());
+    dispatch(authActions.getTokenFromLSError());
   }
 };
 

@@ -24,9 +24,9 @@ const currencyRequest = createAction('auth/currencyRequest');
 const currencySuccess = createAction('auth/currencySuccess');
 const currencyError = createAction('auth/currencyError');
 
-const getTokeFromLsRequest = createAction('auth/getCurrentUserRequest');
-const getTokeFromLsSuccess = createAction('auth/getCurrentUserSuccess');
-const getTokeFromLsError = createAction('auth/getCurrentUserError');
+const getTokenFromLSRequest = createAction('auth/getCurrentUserRequest');
+const getTokenFromLSSuccess = createAction('auth/getCurrentUserSuccess');
+const getTokenFromLSError = createAction('auth/getCurrentUserError');
 
 export default {
   registrationRequest,
@@ -47,7 +47,7 @@ export default {
   currencyRequest,
   currencySuccess,
   currencyError,
-  getTokeFromLsRequest,
-  getTokeFromLsSuccess,
-  getTokeFromLsError,
+  getTokenFromLSRequest,
+  getTokenFromLSSuccess,
+  getTokenFromLSError,
 };
