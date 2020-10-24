@@ -1,0 +1,17 @@
+.MainLayout {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: yellow;
+}
+.Sidebar {
+  height: 40px;
+  width: 100%;
+  background-color: red;
+}
+.Page {
+  width: 100%;
+  flex-grow: 1;
+  background-color: blue;
+}

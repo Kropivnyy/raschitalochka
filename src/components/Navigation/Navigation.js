@@ -8,7 +8,6 @@ import UserMenu from '../UserMenu';
 import Wrapper from '../Wrapper';
 
 export default function Navigation() {
-  //
   return (
     <nav className={styles.Navigation__container}>
       <>

@@ -74,7 +74,7 @@ export default function LoginView() {
         </label>
         <button type="submit"> Log in</button>
       </form>
-      <a href={routes.registrationView}> Registration</a>
+      <a href={routes.registrationView}>Registration</a>
     </div>
   );
 }

@@ -21,7 +21,7 @@ function App() {
     dispatch(authOperations.getTokenFromLS());
   }, [dispatch]);
   return (
-    <div className="">
+    <>
       <AppBar />
       <Suspense
         fallback={
@@ -33,53 +33,44 @@ function App() {
             visible={true}
           />
         }
-      ></Suspense>
-      <Switch>
-        <PublicRoute
-          path={routes.loginView}
-          restricted
-          redirectTo={routes.statisticsView}
-        >
-          <LoginView />
-        </PublicRoute>
+      >
+        <Switch>
+          <PublicRoute
+            path={routes.loginView}
+            restricted
+            redirectTo={routes.homePageView}
+            component={LoginView}
+          />
 
-        <PublicRoute
-          path={routes.registrationView}
-          restricted
-          redirectTo={routes.statisticsView}
-        >
-          <RegistrationView />
-        </PublicRoute>
+          <PublicRoute
+            path={routes.registrationView}
+            restricted
+            redirectTo={routes.homePageView}
+            component={RegistrationView}
+          />
 
-        <PrivateRoute
-          path={routes.statisticsView}
-          restricted
-          redirectTo={routes.loginView}
-        >
-          <StatisticsView />
-        </PrivateRoute>
+          <PrivateRoute
+            path={routes.statisticsView}
+            redirectTo={routes.loginView}
+            component={StatisticsView}
+          />
 
-        <PrivateRoute
-          path={routes.currencyView}
-          restricted
-          redirectTo={routes.loginView}
-        >
-          <CurrencyView />
-        </PrivateRoute>
+          <PrivateRoute
+            path={routes.currencyView}
+            redirectTo={routes.loginView}
+            component={CurrencyView}
+          />
 
-        <PrivateRoute
-          path={routes.homePageView}
-          restricted
-          redirectTo={routes.loginView}
-        >
-          <HomePageView />
-        </PrivateRoute>
+          <PrivateRoute
+            path={routes.homePageView}
+            redirectTo={routes.loginView}
+            component={HomePageView}
+          />
 
-        <PublicRoute>
-          <ErrorView />
-        </PublicRoute>
-      </Switch>
-    </div>
+          <PublicRoute component={ErrorView} />
+        </Switch>
+      </Suspense>
+    </>
   );
 }
 
