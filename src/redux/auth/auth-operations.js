@@ -41,8 +41,38 @@ const registrationLogin = credentials => async dispatch => {
   await logIn(credentials)(dispatch);
 };
 
+const getTokenFromLS = () => async (dispatch, getState) => {
+  const {
+    auth: { token: persistedToken },
+  } = getState();
+
+  if (!persistedToken) {
+    return;
+  }
+  token.set(persistedToken);
+
+  dispatch(authActions.getTokeFromLsRequest());
+  try {
+    dispatch(authActions.getTokeFromLsSuccess());
+  } catch (error) {
+    dispatch(authActions.getTokeFromLsError());
+  }
+};
+
+const logOut = () => async dispatch => {
+  dispatch(authActions.logoutRequest());
+  try {
+    token.unset();
+    dispatch(authActions.logoutSuccess());
+  } catch ({ message }) {
+    dispatch(authActions.logoutError(message));
+  }
+};
+
 export default {
   registration,
   logIn,
   registrationLogin,
+  getTokenFromLS,
+  logOut,
 };
