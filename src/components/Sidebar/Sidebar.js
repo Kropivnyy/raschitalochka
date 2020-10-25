@@ -1,5 +1,4 @@
 import React from 'react';
-import Navigation from '../Navigation';
 import Currency from '../../views/Currency';
 import styles from './Sidebar.module.css';
 import { NavLink } from 'react-router-dom';
