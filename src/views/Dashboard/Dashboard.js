@@ -1,7 +1,7 @@
 import React from 'react';
+import Media from 'react-media';
 
 import Cover from '../../components/Containers/Cover';
-// import BalanceComponent from '../../components/Balance/BalanceContent';
 
 import BalanceHead from '../../components/Balance/BalanceHead';
 
@@ -30,48 +30,74 @@ const DashboardView = () => {
     <>
       <Cover>
         <BalanceHead>
-          <BalanceContentBox>
-            <BalanceContent />
-          </BalanceContentBox>
-          <ButtonsBox>
-            <MainButton text={'Add Income'} />
-            <MainButton text={'Add Cost'} />
-          </ButtonsBox>
+          <Media queries={{ big: '(min-width: 700px)' }}>
+            {matches =>
+              matches.big ? (
+                <ButtonsBox>
+                  <MainButton text={'Add Income'} />
+                  <MainButton text={'Add Cost'} />
+                </ButtonsBox>
+              ) : (
+                <BalanceContentBox>
+                  <BalanceContent />
+                </BalanceContentBox>
+              )
+            }
+          </Media>
         </BalanceHead>
 
-        <BalanceListBox>
-          <BalanceList>
-            <BalanceHeadList>
-              <BalanceHeadItem />
-            </BalanceHeadList>
-            <BalanceContentList>
-              <BalanceContentItem />
-            </BalanceContentList>
-          </BalanceList>
+        <Media queries={{ big: '(min-width: 700px)' }}>
+          {matches =>
+            matches.big ? (
+              <BalanceListBox>
+                <BalanceHeadList>
+                  <BalanceHeadItem />
+                </BalanceHeadList>
 
-          <BalanceList>
-            <BalanceHeadList>
-              <BalanceHeadItem />
-            </BalanceHeadList>
-            <BalanceContentList>
-              <BalanceContentItem />
-            </BalanceContentList>
-          </BalanceList>
-        </BalanceListBox>
+                <BalanceList>
+                  <BalanceContentList>
+                    <BalanceContentItem />
+                  </BalanceContentList>
+                </BalanceList>
+
+                <BalanceList>
+                  <BalanceContentList>
+                    <BalanceContentItem />
+                  </BalanceContentList>
+                </BalanceList>
+
+                <BalanceList>
+                  <BalanceContentList>
+                    <BalanceContentItem />
+                  </BalanceContentList>
+                </BalanceList>
+              </BalanceListBox>
+            ) : (
+              <BalanceListBox>
+                <BalanceList>
+                  <BalanceHeadList>
+                    <BalanceHeadItem />
+                  </BalanceHeadList>
+                  <BalanceContentList>
+                    <BalanceContentItem />
+                  </BalanceContentList>
+                </BalanceList>
+
+                <BalanceList>
+                  <BalanceHeadList>
+                    <BalanceHeadItem />
+                  </BalanceHeadList>
+                  <BalanceContentList>
+                    <BalanceContentItem />
+                  </BalanceContentList>
+                </BalanceList>
+              </BalanceListBox>
+            )
+          }
+        </Media>
       </Cover>
     </>
   );
 };
-
-// const DashboardView = () => {
-//     return (
-//       <>
-//       <Cover>
-//           <BalanceComponent/>
-//       </Cover>
-
-//       </>
-//     );
-//   };
 
 export default DashboardView;

@@ -2,7 +2,7 @@ import React from 'react';
 import s from './BalanceHeadList.module.css';
 
 const BalanceHeadList = ({ children }) => {
-  return <ul className={s.balanceHeadList}>{children}</ul>;
+  return <div className={s.balanceHeadList}>{children}</div>;
 };
 
 export default BalanceHeadList;

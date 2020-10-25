@@ -22,7 +22,7 @@
     display: none;
   }
 
-  .balanceList:nth-child(even) {
+  .balanceList:nth-child(odd) {
     background-color: #f3f6f6;
   }
 }

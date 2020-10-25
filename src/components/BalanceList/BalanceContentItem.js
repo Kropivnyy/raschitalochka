@@ -4,12 +4,12 @@ import s from './BalanceContentItem.module.css';
 const BalanceContentItem = () => {
   return (
     <>
-      <li className={s.balanceContentItem}>07.01.19</li>
-      <li className={s.balanceContentItem}>+</li>
-      <li className={s.balanceContentItem}>Irregular Income</li>
-      <li className={s.balanceContentItem}>Cash</li>
-      <li className={s.balanceContentItem}>1 000.00</li>
-      <li className={s.balanceContentItem}>14 870.00</li>
+      <div className={s.balanceContentItem}>07.01.19</div>
+      <div className={s.balanceContentItem}>+</div>
+      <div className={s.balanceContentItem}>Irregular Income</div>
+      <div className={s.balanceContentItem}>Cash</div>
+      <div className={s.balanceContentItem}>1 000.00</div>
+      <div className={s.balanceContentItem}>14 870.00</div>
     </>
   );
 };

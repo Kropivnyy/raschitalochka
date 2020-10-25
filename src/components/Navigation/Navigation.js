@@ -1,14 +1,11 @@
 import React from 'react';
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import routes from '../../routes';
-// import { authSelectors } from '../../redux/auth';
-import styles from './Navigation.module.css';
-import UserMenu from '../UserMenu';
-import Wrapper from '../Wrapper';
+import { authSelectors } from '../../redux/auth';
 
 export default function Navigation() {
-  //
+  const isLoggedIn = useSelector(authSelectors.getAuthenticated);
   return (
     <nav className="">
       <NavLink to={routes.homePageView} exact className="" activeClassName="">
@@ -34,22 +31,10 @@ export default function Navigation() {
       </NavLink>
       {isLoggedIn && (
         <>
-    <nav className={styles.Navigation__container}>
-      <>
-        <Wrapper>
-          <UserMenu />
-          <NavLink
-            to={routes.homePageView}
-            exact
-            className={styles.linc}
-            activeClassName=""
-          >
-            Home page
-          </NavLink>
           <NavLink
             to={routes.statisticsView}
             exact
-            className={styles.linc}
+            className="NavLink"
             activeClassName="NavLink--active"
           >
             Statistics
@@ -57,11 +42,12 @@ export default function Navigation() {
           <NavLink
             to={routes.currencyView}
             exact
-            className={styles.linc}
+            className="NavLink"
             activeClassName="NavLink--active"
           >
             Currency
           </NavLink>
+
           <NavLink
             to={routes.dashboardView}
             exact
@@ -72,8 +58,6 @@ export default function Navigation() {
           </NavLink>
         </>
       )}
-        </Wrapper>
-      </>
     </nav>
   );
 }

@@ -4,12 +4,12 @@ import s from './BalanceHeadItem.module.css';
 const BalanceHeadItem = () => {
   return (
     <>
-      <li className={s.balanceHeadItem}>Date</li>
-      <li className={s.balanceHeadItem}>Type</li>
-      <li className={s.balanceHeadItem}>Category</li>
-      <li className={s.balanceHeadItem}>Comments</li>
-      <li className={s.balanceHeadItem}>Amount, UAH</li>
-      <li className={s.balanceHeadItem}>Balance After</li>
+      <div className={s.balanceHeadItem}>Date</div>
+      <div className={s.balanceHeadItem}>Type</div>
+      <div className={s.balanceHeadItem}>Category</div>
+      <div className={s.balanceHeadItem}>Comments</div>
+      <div className={s.balanceHeadItem}>Amount, UAH</div>
+      <div className={s.balanceHeadItem}>Balance After</div>
     </>
   );
 };
