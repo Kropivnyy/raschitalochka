@@ -14,9 +14,7 @@
   background-color: blue;
 }
 .Sidebar {
-  height: var(--header-height-mobile);
-  width: 100%;
-  background-color: red;
+  display: none;
 }
 .Page {
   width: 100%;
@@ -30,9 +28,6 @@
 @media screen and (min-width: 768px) {
   .MainLayout {
     min-height: calc(100vh - var(--header-height-tablet));
-  }
-  .Sidebar {
-    height: var(--header-height-tablet);
   }
   .Page {
     padding-top: 0;
@@ -53,9 +48,11 @@
     padding-left: 40px;
   }
   .Sidebar {
+    display: block;
     height: auto;
     flex: 0 0 22%;
     margin-right: 40px;
+    background-color: red;
   }
   .Page {
     flex-grow: 1;

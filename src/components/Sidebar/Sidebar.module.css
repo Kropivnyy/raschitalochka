@@ -5,3 +5,16 @@
   max-width: 100%;
   background-color: var(--header-bg-mobile-color);
 }
+
+.mb {
+  margin-bottom: 30px;
+}
+
+.link {
+  display: block;
+  color: var(--user-name-mobile-color);
+}
+
+.activeLink {
+  font-weight: 700;
+}
