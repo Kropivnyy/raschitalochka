@@ -69,24 +69,10 @@ const logOut = () => async dispatch => {
   }
 };
 
-const fetchCurrency = () => async dispatch => {
-  dispatch(authActions.currencyRequest());
-  try {
-    const currency = await axios.get(
-      'https://cors-anywhere.herokuapp.com/https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5',
-    );
-    if (!currency) return new Error('Error currency');
-    await dispatch(authActions.currencySuccess(currency));
-  } catch ({ message }) {
-    dispatch(authActions.currencyError(message));
-  }
-};
-
 export default {
   registration,
   logIn,
   registrationLogin,
   getTokenFromLS,
   logOut,
-  fetchCurrency,
 };

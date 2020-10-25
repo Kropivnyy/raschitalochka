@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import authOps from '../../redux/auth/auth-operations';
-import authSls from '../../redux/auth/auth-selectors';
+import currencyOperations from '../../redux/currency/currency-operations';
+import currencySelectors from '../../redux/currency/currency-selectors';
 
 import styles from './Currency.module.css';
 
 export default function CurrencyView() {
   const dispatch = useDispatch();
-  const currency = useSelector(authSls.getCurrency);
+  const currency = useSelector(currencySelectors.getCurrency);
 
   useEffect(() => {
-    dispatch(authOps.fetchCurrency());
+    dispatch(currencyOperations.fetchCurrency());
   }, [dispatch]);
 
   return (
