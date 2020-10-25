@@ -1,7 +1,5 @@
 import React from 'react';
 // import { useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
-import routes from '../../routes';
 // import { authSelectors } from '../../redux/auth';
 import styles from './Navigation.module.css';
 import UserMenu from '../UserMenu';
@@ -13,30 +11,6 @@ export default function Navigation() {
       <>
         <Wrapper>
           <UserMenu />
-          <NavLink
-            to={routes.homePageView}
-            exact
-            className={styles.link}
-            activeClassName=""
-          >
-            Home page
-          </NavLink>
-          <NavLink
-            to={routes.statisticsView}
-            exact
-            className={styles.link}
-            activeClassName="NavLink--active"
-          >
-            Statistics
-          </NavLink>
-          <NavLink
-            to={routes.currencyView}
-            exact
-            className={styles.link}
-            activeClassName="NavLink--active"
-          >
-            Currency
-          </NavLink>
         </Wrapper>
       </>
     </nav>

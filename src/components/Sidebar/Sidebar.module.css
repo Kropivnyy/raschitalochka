@@ -6,15 +6,51 @@
   background-color: var(--header-bg-mobile-color);
 }
 
-.mb {
-  margin-bottom: 30px;
+.container {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
 }
 
-.link {
-  display: block;
-  color: var(--user-name-mobile-color);
+.svgLogo {
+  width: 30px;
+  fill: var(--white);
+  background-color: var(--header-bg-mobile-color);
+  padding: 5px;
+  border-radius: 5px;
 }
 
-.activeLink {
-  font-weight: 700;
+.asideBarDesktop {
+  width: 100%;
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    display: block;
+    width: 100%;
+    background-color: var(--header-bg-mobile-color);
+    margin-bottom: 20px;
+  }
+
+  .svgLogo {
+    margin-right: 10px;
+  }
+
+  .link {
+    display: flex;
+    flex-basis: 80%;
+    align-items: center;
+    color: var(--white);
+    padding: 10px;
+  }
+
+  .activeLink {
+    background-color: var(--user-name-mobile-color);
+  }
+
+  .totalBalance {
+    margin-bottom: 20px;
+  }
 }
