@@ -1,7 +1,9 @@
 import React, { useState, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../../redux/auth';
+import routes from '../../routes';
 import styles from './Login.module.css';
+
 export default function LoginView() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -72,6 +74,7 @@ export default function LoginView() {
         </label>
         <button type="submit"> Log in</button>
       </form>
+      <a href={routes.registrationView}>Registration</a>
     </div>
   );
 }

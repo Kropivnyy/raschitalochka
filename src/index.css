@@ -4,6 +4,7 @@ body {
     'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
     'Helvetica Neue', sans-serif;
   background-color: var(--white);
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -22,4 +23,8 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+h2 {
+  margin: 0;
 }
