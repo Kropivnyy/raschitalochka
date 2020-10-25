@@ -35,23 +35,6 @@ export default function Navigation() {
             to={routes.statisticsView}
             exact
             className="NavLink"
-  return (
-    <nav className={styles.Navigation__container}>
-      <>
-        <Wrapper>
-          <UserMenu />
-          <NavLink
-            to={routes.homePageView}
-            exact
-            className={styles.link}
-            activeClassName=""
-          >
-            Home page
-          </NavLink>
-          <NavLink
-            to={routes.statisticsView}
-            exact
-            className={styles.link}
             activeClassName="NavLink--active"
           >
             Statistics
@@ -60,7 +43,6 @@ export default function Navigation() {
             to={routes.currencyView}
             exact
             className="NavLink"
-            className={styles.link}
             activeClassName="NavLink--active"
           >
             Currency
