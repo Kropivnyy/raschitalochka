@@ -9,7 +9,7 @@
 @media (min-width: 700px) {
   .balanceContentItem:nth-child(1) {
     width: 14%;
-    padding-left: calc(0.2vw + 3vw);
+    padding-left: calc(0.2vw + 2vw);
   }
   .balanceContentItem:nth-child(2) {
     width: 11%;
@@ -31,7 +31,7 @@
   .balanceContentItem:nth-child(6) {
     width: 20%;
     text-align: right;
-    padding-right: calc(0.2vw + 3vw);
+    padding-right: calc(0.2vw + 2vw);
   }
 
   .balanceContentItem {

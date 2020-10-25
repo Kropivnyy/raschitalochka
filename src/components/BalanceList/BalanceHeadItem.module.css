@@ -13,7 +13,7 @@
 
   .balanceHeadItem:nth-child(1) {
     width: 14%;
-    padding-left: calc(0.2vw + 3vw);
+    padding-left: calc(0.2vw + 2vw);
   }
 
   .balanceHeadItem:nth-child(2) {
@@ -36,7 +36,7 @@
   .balanceHeadItem:nth-child(6) {
     width: 20%;
     text-align: right;
-    padding-right: calc(0.2vw + 3vw);
+    padding-right: calc(0.2vw + 2vw);
   }
 
   .balanceHeadItem {

@@ -1,9 +1,12 @@
 .cover {
   padding: 17px 7px;
+  width: 100%;
 }
 
 @media (min-width: 700px) {
   .cover {
     padding: 0;
+    width: 65.67%;
+    margin-left: auto;
   }
 }
