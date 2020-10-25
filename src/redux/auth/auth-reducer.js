@@ -34,9 +34,21 @@ const isAuthenticated = createReducer(false, {
   [authActions.logoutSuccess]: () => false,
 });
 
+const currency = createReducer(null, {
+  [authActions.currencySuccess]: (_, { payload }) => payload.data,
+});
+
+const loading = createReducer(false, {
+  [authActions.currencyRequest]: () => true,
+  [authActions.currencySuccess]: () => false,
+  [authActions.currencyError]: () => false,
+});
+
 export default combineReducers({
   isAuthenticated,
   user,
   token,
   error,
+  currency,
+  loading,
 });
