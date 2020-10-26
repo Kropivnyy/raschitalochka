@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: yellow;
 }
 .Container {
   width: 100%;
@@ -11,12 +10,17 @@
   flex-direction: column;
   align-items: center;
   flex-grow: 1;
-  background-color: blue;
+  background-color: var(--body-bg-desktop-color);
 }
 .Sidebar {
-  height: var(--header-height-mobile);
+  min-height: var(--header-height-mobile);
   width: 100%;
-  background-color: red;
+  background-color: var(--user-name-mobile-color);
+  display: flex;
+  align-items: center;
+}
+.Sidebar__container {
+  margin: 0 auto;
 }
 .Page {
   width: 100%;
@@ -24,7 +28,7 @@
   padding-top: 20px;
   padding-right: 10px;
   padding-left: 10px;
-  background-color: green;
+  background-color: var(--body-bg-desktop-color);
 }
 
 @media screen and (min-width: 768px) {
@@ -32,13 +36,12 @@
     min-height: calc(100vh - var(--header-height-tablet));
   }
   .Sidebar {
-    height: var(--header-height-tablet);
+    min-height: var(--header-height-tablet);
   }
   .Page {
     padding-top: 0;
     padding-right: 30px;
     padding-left: 30px;
-    background-color: green;
   }
 }
 
@@ -53,9 +56,15 @@
     padding-left: 40px;
   }
   .Sidebar {
-    height: auto;
+    height: 100%;
     flex: 0 0 22%;
+    flex-wrap: wrap;
+    align-items: flex-start;
     margin-right: 40px;
+    background-color: var(--body-bg-desktop-color);
+  }
+  .Sidebar__container {
+    width: 100%;
   }
   .Page {
     flex-grow: 1;

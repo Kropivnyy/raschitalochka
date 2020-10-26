@@ -1,0 +1,14 @@
+.totalBalance {
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 30px;
+  background-color: var(--header-bg-mobile-color);
+  border-radius: 5px;
+}
+
+.text {
+  color: var(--white);
+}

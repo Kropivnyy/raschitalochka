@@ -5,3 +5,71 @@
   max-width: 100%;
   background-color: var(--header-bg-mobile-color);
 }
+
+.container {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.svgLogo {
+  width: 30px;
+  height: 30px;
+  fill: var(--white);
+  padding: 5px;
+}
+
+.asideBarDesktop {
+  width: 100%;
+}
+
+.link {
+  height: 30px;
+  border-radius: 5px;
+  background-color: var(--header-bg-mobile-color);
+  transition: 0.2s linear;
+}
+
+.activeLink {
+  height: 30px;
+  border-radius: 5px;
+  background-color: var(--primary-green-color);
+  transition: 0.2s linear;
+}
+
+@media screen and (min-width: 1280px) {
+  .asideBarDesktop {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    background-color: var(--header-bg-mobile-color);
+    margin-bottom: 30px;
+  }
+
+  .container {
+    display: block;
+    width: 100%;
+    background-color: var(--header-bg-mobile-color);
+  }
+
+  .svgLogo {
+    margin-right: 10px;
+    background: none;
+  }
+
+  .link {
+    display: flex;
+    flex-basis: 80%;
+    align-items: center;
+    color: var(--white);
+    padding: 10px;
+    transition: 0.2s linear;
+  }
+
+  .activeLink {
+    background-color: var(--user-name-mobile-color);
+    transition: 0.2s linear;
+  }
+}
