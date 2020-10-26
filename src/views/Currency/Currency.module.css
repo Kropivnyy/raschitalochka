@@ -1,4 +1,9 @@
-/* .Currency__container {} */
+.Currency__container {
+  min-height: 400px;
+  background: -130px -10px / 150% url('../../svg/waves-chart-bg.svg') var(--white);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
 
 .list {
   display: flex;
