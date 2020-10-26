@@ -2,6 +2,10 @@
   --white: #fff;
   --primary-green-color: #66ff00;
   --grid-container-padding: 16px;
+  --header-height-mobile: 40px;
+  --header-height-tablet: 80px;
+  --header-bg-mobile-color: #3f5544;
+  --user-name-mobile-color: #669668;
 }
 
 /* background-color: var(--primary-green-color); */

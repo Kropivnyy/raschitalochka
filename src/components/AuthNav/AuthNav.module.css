@@ -1,0 +1,8 @@
+.AuthNav__container {
+  margin: 0 auto;
+  padding: 10px 20px;
+  color: #2c353e;
+}
+.linc {
+  color: var(--user-name-mobile-color);
+}

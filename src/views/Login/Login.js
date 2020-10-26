@@ -1,6 +1,8 @@
 import React, { useState, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../../redux/auth';
+import routes from '../../routes';
+import styles from './Login.module.css';
 
 export default function LoginView() {
   const [email, setEmail] = useState('');
@@ -42,7 +44,7 @@ export default function LoginView() {
   };
 
   return (
-    <div className="">
+    <div className={styles.Login__container}>
       <h2>Login page</h2>
       <form onSubmit={handleSubmit} className="">
         <label className="">
@@ -72,6 +74,7 @@ export default function LoginView() {
         </label>
         <button type="submit"> Log in</button>
       </form>
+      <a href={routes.registrationView}>Registration</a>
     </div>
   );
 }

@@ -8,6 +8,10 @@ const loginRequest = createAction('auth/loginRequest');
 const loginSuccess = createAction('auth/loginSuccess');
 const loginError = createAction('auth/loginError');
 
+const logoutRequest = createAction('auth/logoutRequest');
+const logoutSuccess = createAction('auth/logoutSuccess');
+const logoutError = createAction('auth/logoutError');
+
 const statisticsRequest = createAction('auth/statisticsRequest');
 const statisticsSuccess = createAction('auth/statisticsSuccess');
 const statisticsError = createAction('auth/statisticsError');
@@ -16,9 +20,9 @@ const fetchStatisticsRequest = createAction('auth/fetchStatisticsRequest');
 const fetchStatisticsSuccess = createAction('auth/fetchStatisticsSuccess');
 const fetchStatisticsError = createAction('auth/fetchStatisticsError');
 
-const currencyRequest = createAction('auth/currencyRequest');
-const currencySuccess = createAction('auth/currencySuccess');
-const currencyError = createAction('auth/currencyError');
+const getTokenFromLSRequest = createAction('auth/getCurrentUserRequest');
+const getTokenFromLSSuccess = createAction('auth/getCurrentUserSuccess');
+const getTokenFromLSError = createAction('auth/getCurrentUserError');
 
 export default {
   registrationRequest,
@@ -27,13 +31,16 @@ export default {
   loginRequest,
   loginSuccess,
   loginError,
+  logoutRequest,
+  logoutSuccess,
+  logoutError,
   statisticsRequest,
   statisticsSuccess,
   statisticsError,
   fetchStatisticsRequest,
   fetchStatisticsSuccess,
   fetchStatisticsError,
-  currencyRequest,
-  currencySuccess,
-  currencyError,
+  getTokenFromLSRequest,
+  getTokenFromLSSuccess,
+  getTokenFromLSError,
 };

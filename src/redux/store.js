@@ -1,5 +1,6 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import { authReducer } from './auth';
+import { currencyReducer } from './currency';
 import storage from 'redux-persist/lib/storage';
 import {
   persistStore,
@@ -21,7 +22,7 @@ const middleware = [
 ];
 
 const authPersistConfig = {
-  key: 'auth',
+  key: 'session',
   storage,
   whitelist: ['token'],
 };
@@ -29,6 +30,7 @@ const authPersistConfig = {
 const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
+    currency: currencyReducer,
   },
   middleware,
   devTools: process.env.NODE_ENV === 'development',

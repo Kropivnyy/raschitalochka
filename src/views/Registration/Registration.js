@@ -2,6 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../../redux/auth';
 import IPhoneImg from '../../images/iPhone-6.png';
+import routes from '../../routes';
 import styles from './Registration.module.css';
 
 export default function RegisterView() {
