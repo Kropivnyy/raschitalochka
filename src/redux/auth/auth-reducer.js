@@ -20,7 +20,6 @@ const error = createReducer(null, {
   [authActions.loginError]: setError,
   [authActions.statisticsError]: setError,
   [authActions.fetchStatisticsError]: setError,
-  [authActions.currencyError]: setError,
   [authActions.getTokenFromLSError]: setError,
 });
 

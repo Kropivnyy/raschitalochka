@@ -20,10 +20,6 @@ const fetchStatisticsRequest = createAction('auth/fetchStatisticsRequest');
 const fetchStatisticsSuccess = createAction('auth/fetchStatisticsSuccess');
 const fetchStatisticsError = createAction('auth/fetchStatisticsError');
 
-const currencyRequest = createAction('auth/currencyRequest');
-const currencySuccess = createAction('auth/currencySuccess');
-const currencyError = createAction('auth/currencyError');
-
 const getTokenFromLSRequest = createAction('auth/getCurrentUserRequest');
 const getTokenFromLSSuccess = createAction('auth/getCurrentUserSuccess');
 const getTokenFromLSError = createAction('auth/getCurrentUserError');
@@ -44,9 +40,6 @@ export default {
   fetchStatisticsRequest,
   fetchStatisticsSuccess,
   fetchStatisticsError,
-  currencyRequest,
-  currencySuccess,
-  currencyError,
   getTokenFromLSRequest,
   getTokenFromLSSuccess,
   getTokenFromLSError,
