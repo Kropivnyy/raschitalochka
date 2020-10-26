@@ -1,0 +1,18 @@
+/* .Currency__container {} */
+
+.list {
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--white);
+  padding: 20px 0;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom: 1px solid var(--grey);
+}
+
+.title {
+  composes: list;
+  background-color: var(--grey);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
