@@ -69,10 +69,34 @@ const logOut = () => async dispatch => {
   }
 };
 
+const getUserFinanseById = credentials => async (dispatch, getState) => {
+  const {
+    auth: {
+      user: { id },
+    },
+  } = getState();
+
+  if (!id) {
+    return;
+  }
+
+  const response = await axios.get(`finance/${id}`, credentials);
+  const { finance } = response.data;
+  console.log(finance.data);
+
+  dispatch(authActions.getUserFinanseByIdRequest());
+  try {
+    dispatch(authActions.getUserFinanseByIdSuccess(finance.data));
+  } catch ({ message }) {
+    dispatch(authActions.getUserFinanseByIdError(message));
+  }
+};
+
 export default {
   registration,
   logIn,
   registrationLogin,
   getTokenFromLS,
   logOut,
+  getUserFinanseById,
 };

@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import { createReducer } from '@reduxjs/toolkit';
 import authActions from './auth-actions';
 
-const initialUserState = { name: null, email: null };
+const initialUserState = { name: null, email: null, id: null };
 
 const user = createReducer(initialUserState, {
   [authActions.loginSuccess]: (_, { payload }) => payload.user,
@@ -33,9 +33,21 @@ const isAuthenticated = createReducer(false, {
   [authActions.logoutSuccess]: () => false,
 });
 
+const finance = createReducer([], {
+  [authActions.getUserFinanseByIdRequest]: (_, { payload }) => payload,
+  // [authActions.logoutSuccess]: () => null,
+});
+const isLoading = createReducer(false, {
+  [authActions.getUserFinanseByIdRequest]: () => true,
+  [authActions.getUserFinanseByIdSuccess]: () => false,
+  [authActions.getUserFinanseByIdError]: () => false,
+});
+
 export default combineReducers({
   isAuthenticated,
   user,
   token,
   error,
+  finance,
+  isLoading,
 });

@@ -16,9 +16,13 @@ const statisticsRequest = createAction('auth/statisticsRequest');
 const statisticsSuccess = createAction('auth/statisticsSuccess');
 const statisticsError = createAction('auth/statisticsError');
 
-const fetchStatisticsRequest = createAction('auth/fetchStatisticsRequest');
-const fetchStatisticsSuccess = createAction('auth/fetchStatisticsSuccess');
-const fetchStatisticsError = createAction('auth/fetchStatisticsError');
+const getUserFinanseByIdRequest = createAction(
+  'auth/getUserFinanseByIdRequest',
+);
+const getUserFinanseByIdSuccess = createAction(
+  'auth/getUserFinanseByIdSuccess',
+);
+const getUserFinanseByIdError = createAction('auth/getUserFinanseByIdError');
 
 const getTokenFromLSRequest = createAction('auth/getCurrentUserRequest');
 const getTokenFromLSSuccess = createAction('auth/getCurrentUserSuccess');
@@ -37,9 +41,9 @@ export default {
   statisticsRequest,
   statisticsSuccess,
   statisticsError,
-  fetchStatisticsRequest,
-  fetchStatisticsSuccess,
-  fetchStatisticsError,
+  getUserFinanseByIdRequest,
+  getUserFinanseByIdSuccess,
+  getUserFinanseByIdError,
   getTokenFromLSRequest,
   getTokenFromLSSuccess,
   getTokenFromLSError,
