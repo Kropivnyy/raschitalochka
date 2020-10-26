@@ -1,6 +1,6 @@
 .UserMenu {
   display: flex;
-  vertical-align: middle;
+  align-items: center;
 }
 
 .name {
