@@ -21,7 +21,7 @@ export default function Sidebar() {
             to={routes.homePageView}
             exact
             className={styles.link}
-            activeClassName=""
+            activeClassName={styles.activeLink}
           >
             <HomeLogo className={styles.svgLogo} />
           </NavLink>
@@ -29,7 +29,7 @@ export default function Sidebar() {
             to={routes.statisticsView}
             exact
             className={styles.link}
-            activeClassName="NavLink--active"
+            activeClassName={styles.activeLink}
           >
             <BaselineTimelineLogo className={styles.svgLogo} />
           </NavLink>
@@ -37,7 +37,7 @@ export default function Sidebar() {
             to={routes.currencyView}
             exact
             className={styles.link}
-            activeClassName="NavLink--active"
+            activeClassName={styles.activeLink}
           >
             <DollarLogo className={styles.svgLogo} />
           </NavLink>

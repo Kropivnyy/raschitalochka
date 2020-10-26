@@ -17,13 +17,25 @@
   width: 30px;
   height: 30px;
   fill: var(--white);
-  background-color: var(--header-bg-mobile-color);
   padding: 5px;
-  border-radius: 5px;
 }
 
 .asideBarDesktop {
   width: 100%;
+}
+
+.link {
+  height: 30px;
+  border-radius: 5px;
+  background-color: var(--header-bg-mobile-color);
+  transition: 0.2s linear;
+}
+
+.activeLink {
+  height: 30px;
+  border-radius: 5px;
+  background-color: var(--primary-green-color);
+  transition: 0.2s linear;
 }
 
 @media screen and (min-width: 1280px) {
