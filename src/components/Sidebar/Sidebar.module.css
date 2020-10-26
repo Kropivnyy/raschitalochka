@@ -53,9 +53,11 @@
     align-items: center;
     color: var(--white);
     padding: 10px;
+    transition: 0.2s linear;
   }
 
   .activeLink {
     background-color: var(--user-name-mobile-color);
+    transition: 0.2s linear;
   }
 }
