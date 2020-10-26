@@ -1,6 +1,8 @@
 import React, { useState, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../../redux/auth';
+import IPhoneImg from '../../images/iPhone-6.png';
+import styles from './Registration.module.css';
 
 export default function RegisterView() {
   const [name, setName] = useState('');
@@ -60,63 +62,86 @@ export default function RegisterView() {
   };
 
   return (
-    <div className="">
-      <h2>Register page</h2>
-      <form className="" onSubmit={handleSubmit}>
-        <label className="">
-          <input
-            autoFocus
-            required
-            type="email"
-            name="email"
-            value={email}
-            placeholder="Email"
-            onChange={handleChange}
-            className=""
-          />
-        </label>
+    <div className={styles.container}>
+      <div className={styles.desktopWrap}>
+        <div className={styles.sloganWrap}>
+          <div className={styles.logoWrap}>
+            <span className={styles.logoIcon}></span>
+            <h2 className={styles.sloganTitle}>Raschitalochka</h2>
+          </div>
+          <p className={styles.slogan}>Create your own categories of costs</p>
+        </div>
+        <img className={styles.desktopWrapImg} src={IPhoneImg} alt="IPhone" />
+      </div>
+      <div className={styles.mainRegisterWrap}>
+        <div className={styles.registerWrap}>
+          <div className={styles.logo}></div>
+          <h2 className={styles.headerMob}>Raschitalochka</h2>
+          <h2 className={styles.header}>Registration</h2>
+          <form className={styles.form} onSubmit={handleSubmit}>
+            <label className={styles.label}>
+              <input
+                autoFocus
+                required
+                type="email"
+                name="email"
+                value={email}
+                placeholder="E-mail as login"
+                onChange={handleChange}
+                className={styles.input}
+              />
+            </label>
 
-        <label className="">
-          <input
-            required
-            minLength="8"
-            pattern="[A-Za-z-0-9]{8,}"
-            type="password"
-            name="password"
-            value={password}
-            placeholder="Password"
-            onChange={handleChange}
-            className=""
-          />
-        </label>
+            <label className={styles.label}>
+              <input
+                required
+                minLength="8"
+                pattern="[A-Za-z-0-9]{8,}"
+                type="password"
+                name="password"
+                value={password}
+                placeholder="Password"
+                onChange={handleChange}
+                className={styles.input}
+              />
+            </label>
 
-        {/* <label className="">
-          <input
-            required
-            minLength="8"
-            pattern="[A-Za-z-0-9]{8,}"
-            type="password"
-            name="passwordConf"
-            value={passwordConf}
-            placeholder="Password Confirmation"
-            onChange={handleChange}
-            className=""
-          />
-        </label> */}
+            <label className={styles.label}>
+              <input
+                required
+                minLength="8"
+                pattern="[A-Za-z-0-9]{8,}"
+                type="password"
+                name="passwordConf"
+                // value={passwordConf}
+                placeholder="Password Confirmation"
+                onChange={handleChange}
+                className={styles.input}
+              />
+            </label>
 
-        <label className="">
-          <input
-            required
-            type="text"
-            name="name"
-            value={name}
-            placeholder="Name"
-            onChange={handleChange}
-            className=""
-          />
-        </label>
-        <button type="submit">Register</button>
-      </form>
+            <div className={styles.progress}></div>
+
+            <label className={styles.label}>
+              <input
+                required
+                type="text"
+                name="name"
+                value={name}
+                placeholder="Your Name"
+                onChange={handleChange}
+                className={styles.input}
+              />
+            </label>
+            <button className={styles.regButton} type="submit">
+              Register
+            </button>
+            <a className={styles.loginLink} href="/login">
+              Login
+            </a>
+          </form>
+        </div>
+      </div>
     </div>
   );
 }

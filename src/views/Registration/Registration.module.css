@@ -1,0 +1,275 @@
+.desktopWrap {
+  display: none;
+}
+
+.registerWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 22px;
+  width: 320px;
+  text-align: center;
+}
+
+.logo {
+  margin: 0 auto 4px;
+  width: 48px;
+  height: 48px;
+  background: url('../../svg/logo.svg') no-repeat center;
+  background-size: cover;
+}
+
+.headerMob {
+  margin: 0 0 34px;
+  font-size: 16px;
+  font-weight: 700;
+  color: rgb(44, 53, 62);
+}
+
+.header {
+  display: none;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 356px;
+  width: 100%;
+}
+
+.label {
+  position: relative;
+}
+
+.label:last-of-type {
+  margin-bottom: 24px;
+}
+
+.label::before {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 16px;
+  left: 20px;
+  top: 12px;
+}
+
+.label:first-of-type::before {
+  content: url('../../svg/baseline-email-24px.svg');
+}
+
+.label:nth-child(2)::before,
+.label:nth-child(3)::before {
+  content: url('../../svg/baseline-lock-24px.svg');
+}
+
+.label:last-of-type::before {
+  content: url('../../svg/baseline-account_box-24px.svg');
+}
+
+.input {
+  padding: 0 0 0 60px;
+  width: 100%;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(1, 10, 17);
+  border-radius: 6px;
+  background-color: rgb(249, 251, 251);
+  border: none;
+  outline: none;
+}
+
+.input::placeholder {
+  font-size: 13px;
+  font-weight: 100;
+  color: rgb(185, 201, 212);
+}
+
+.progress {
+  height: 6px;
+  background-color: rgba(97, 147, 97, 0.2);
+  border-radius: 6px;
+}
+
+.regButton {
+  position: relative;
+  height: 48px;
+  margin-bottom: 14px;
+  padding: 0;
+  z-index: 1;
+  font-size: 15px;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+  background-image: linear-gradient(
+    0deg,
+    rgb(117, 193, 110) 0%,
+    rgba(81, 109, 87, 0.70196) 100%
+  );
+  box-shadow: 0px 3px 3px 0px rgba(92, 135, 94, 0.2);
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.regButton::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background-image: linear-gradient(
+    0deg,
+    rgb(236, 178, 42) 0%,
+    rgba(255, 108, 0, 0.70196) 100%
+  );
+  border-radius: 6px;
+  transition: opacity 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+}
+
+.regButton:hover::before {
+  opacity: 1;
+}
+
+.loginLink {
+  font-size: 12px;
+  color: rgb(107, 125, 131);
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(../../images/mock-up.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .registerWrap {
+    width: 550px;
+    padding: 38px 60px 42px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    box-shadow: 10px 17.321px 40px 0px rgba(107, 125, 131, 0.3);
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .headerMob {
+    display: none;
+  }
+
+  .header {
+    display: inline-block;
+    margin: 0 0 30px;
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(44, 53, 62);
+  }
+
+  .form {
+    height: 410px;
+  }
+
+  .label::before {
+    top: 16px;
+  }
+
+  .input {
+    height: 58px;
+    font-size: 15px;
+  }
+
+  .regButton {
+    height: 58px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    background-image: none;
+  }
+
+  .desktopWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100vh;
+    padding: 40px;
+    background: url(../../images/desktop-overlay.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .mainRegisterWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100vh;
+    background: url(../../images/bg-desktop-register.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .sloganWrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 446px;
+    color: rgb(255, 255, 255);
+  }
+
+  .logoWrap {
+    position: relative;
+    padding-left: 42px;
+    margin-bottom: 42px;
+  }
+
+  .logoIcon {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 32px;
+    height: 24px;
+    background: url('../../images/logo.png');
+  }
+
+  .sloganTitle {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .slogan {
+    margin: 0;
+    font-size: 35px;
+    font-weight: 800;
+  }
+
+  .desktopWrapImg {
+    max-height: 798px;
+    min-height: 560px;
+    height: 100%;
+    max-width: 396px;
+  }
+}
