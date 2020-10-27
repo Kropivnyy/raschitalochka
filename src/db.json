@@ -1,0 +1,50 @@
+[
+  {
+    "comments": "buy to home Divan",
+    "_id": "1",
+    "date": 199482466656,
+    "type": "+",
+    "category": "Job",
+    "amount": 2000,
+    "balanceAfter": 6000,
+    "typeBalanceAfter": "+",
+    "updatedAt": "2019-03-27T14:29:15.184Z",
+    "createdAt": "2019-03-27T14:29:15.184Z"
+  },
+  {
+    "comments": "buy to notebook",
+    "_id": "2",
+    "date": 199482466656,
+    "type": "+",
+    "category": "Fun",
+    "amount": 1000,
+    "balanceAfter": 5000,
+    "typeBalanceAfter": "+",
+    "updatedAt": "2019-03-27T14:29:15.184Z",
+    "createdAt": "2019-03-27T14:29:15.184Z"
+  },
+  {
+    "comments": "buy to home TV",
+    "_id": "3",
+    "date": 199482466656,
+    "type": "+",
+    "category": "Design",
+    "amount": 500,
+    "balanceAfter": 4500,
+    "typeBalanceAfter": "+",
+    "updatedAt": "2019-03-27T14:29:15.184Z",
+    "createdAt": "2019-03-27T14:29:15.184Z"
+  },
+  {
+    "comments": "buy to home picture",
+    "_id": "4",
+    "date": 199482466656,
+    "type": "+",
+    "category": "Art",
+    "amount": 500,
+    "balanceAfter": 4000,
+    "typeBalanceAfter": "+",
+    "updatedAt": "2019-03-27T14:29:15.184Z",
+    "createdAt": "2019-03-27T14:29:15.184Z"
+  }
+]

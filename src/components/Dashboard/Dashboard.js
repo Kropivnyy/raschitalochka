@@ -1,4 +1,7 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { transactionsOperations } from '../../redux/transactions';
+
 import Media from 'react-media';
 
 import Cover from './Balance/Containers/Cover';
@@ -25,7 +28,18 @@ import BalanceContentList from './BalanceList/BalanceContentList';
 
 import BalanceContentItem from './BalanceList/BalanceContentItem';
 
+// ----------------------
+
+import dataBase from '../../db.json';
+
+// ----------------------
+
 const DashboardView = () => {
+  const userId = '5f9726599043240c96228703';
+
+  useDispatch(transactionsOperations.getTransactions(userId));
+  const lastActualBalance = dataBase[dataBase.length - 1].balanceAfter;
+
   return (
     <>
       <Cover>
@@ -39,7 +53,7 @@ const DashboardView = () => {
                 </ButtonsBox>
               ) : (
                 <BalanceContentBox>
-                  <BalanceContent />
+                  <BalanceContent actualBalance={lastActualBalance} />
                 </BalanceContentBox>
               )
             }
@@ -59,18 +73,6 @@ const DashboardView = () => {
                     <BalanceContentItem />
                   </BalanceContentList>
                 </BalanceList>
-
-                <BalanceList>
-                  <BalanceContentList>
-                    <BalanceContentItem />
-                  </BalanceContentList>
-                </BalanceList>
-
-                <BalanceList>
-                  <BalanceContentList>
-                    <BalanceContentItem />
-                  </BalanceContentList>
-                </BalanceList>
               </BalanceListBox>
             ) : (
               <>
@@ -79,15 +81,6 @@ const DashboardView = () => {
                   <MainButton text={'Add Cost'} />
                 </ButtonsBox>
                 <BalanceListBox>
-                  <BalanceList>
-                    <BalanceHeadList>
-                      <BalanceHeadItem />
-                    </BalanceHeadList>
-                    <BalanceContentList>
-                      <BalanceContentItem />
-                    </BalanceContentList>
-                  </BalanceList>
-
                   <BalanceList>
                     <BalanceHeadList>
                       <BalanceHeadItem />
