@@ -17,18 +17,18 @@
   width: 100%;
   background-color: var(--user-name-mobile-color);
   display: flex;
+  justify-content: center;
   align-items: center;
-}
-.Sidebar__container {
-  margin: 0 auto;
 }
 .Page {
   width: 100%;
+  height: auto;
   flex-grow: 1;
   padding-top: 20px;
   padding-right: 10px;
   padding-left: 10px;
-  background-color: var(--body-bg-desktop-color);
+  background: center bottom / 150% no-repeat url('../svg/waves-chart-bg.svg'),
+    var(--white);
 }
 
 @media screen and (min-width: 768px) {
@@ -37,11 +37,13 @@
   }
   .Sidebar {
     min-height: var(--header-height-tablet);
+    background-color: var(--body-bg-desktop-color);
   }
   .Page {
     padding-top: 0;
     padding-right: 30px;
     padding-left: 30px;
+    background-size: contain;
   }
 }
 
@@ -61,7 +63,6 @@
     flex-wrap: wrap;
     align-items: flex-start;
     margin-right: 40px;
-    background-color: var(--body-bg-desktop-color);
   }
   .Sidebar__container {
     width: 100%;
@@ -70,5 +71,6 @@
     flex-grow: 1;
     padding-right: 0;
     padding-left: 0;
+    background: none;
   }
 }
