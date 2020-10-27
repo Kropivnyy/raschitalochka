@@ -16,7 +16,7 @@ const colors = {
 const defaultLabelStyle = {
   fontSize: '5px',
   fontFamily: 'sans-serif',
-  color: 'white',
+  fill: 'white',
 };
 
 export default function Diagram(prop) {
@@ -35,6 +35,7 @@ export default function Diagram(prop) {
   }, {});
   const normalizedData = Object.values(mappedData);
   const isTransaction = normalizedData.length !== 0;
+
   return (
     <>
       {isTransaction ? (
@@ -42,8 +43,8 @@ export default function Diagram(prop) {
           data={normalizedData}
           animate={true}
           startAngle={-90}
-          segmentsShift={0.5}
-          radius={45}
+          paddingAngle={1}
+          style={{ height: '300px' }}
           label={({ dataEntry }) => dataEntry.title}
           labelStyle={{ ...defaultLabelStyle }}
         />
