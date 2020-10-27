@@ -1,0 +1,20 @@
+.balanceHead {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'HelveticaNeueCyr';
+  background-color: #516d57;
+  color: #ffffff;
+  font-weight: 600;
+  height: 92px;
+  width: 100%;
+  font-size: 15px;
+  border-radius: 3px;
+  margin-bottom: 19px;
+}
+
+@media (min-width: 1000px) {
+  .balanceHead {
+    margin-bottom: 0px;
+  }
+}

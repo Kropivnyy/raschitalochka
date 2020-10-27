@@ -1,0 +1,7 @@
+.cover {
+  background-color: #fff;
+  border-radius: 5px;
+  min-width: 330px;
+  /* box-shadow: 5px 3px 4px 2px #3b3b3b; */
+  box-shadow: 3px 17px 62px -29px rgba(65, 63, 63, 0.5);
+}
