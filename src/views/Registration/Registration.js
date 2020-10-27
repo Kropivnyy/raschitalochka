@@ -2,7 +2,8 @@ import React, { useState, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../../redux/auth';
 import IPhoneImg from '../../images/iPhone-6.png';
-import routes from '../../routes';
+import IPhoneImg2x from '../../images/iPhone-6@2x.png';
+// import routes from '../../routes';
 import styles from './Registration.module.css';
 
 export default function RegisterView() {
@@ -72,7 +73,11 @@ export default function RegisterView() {
           </div>
           <p className={styles.slogan}>Create your own categories of costs</p>
         </div>
-        <img className={styles.desktopWrapImg} src={IPhoneImg} alt="IPhone" />
+        <img
+          className={styles.desktopWrapImg}
+          src={window.devicePixelRatio > 1.5 ? IPhoneImg2x : IPhoneImg}
+          alt="IPhone"
+        />
       </div>
       <div className={styles.mainRegisterWrap}>
         <div className={styles.registerWrap}>
@@ -80,7 +85,7 @@ export default function RegisterView() {
           <h2 className={styles.headerMob}>Raschitalochka</h2>
           <h2 className={styles.header}>Registration</h2>
           <form className={styles.form} onSubmit={handleSubmit}>
-            <label className={styles.label}>
+            <label className={`${styles.label} ${styles.labelEmail}`}>
               <input
                 autoFocus
                 required
@@ -93,7 +98,7 @@ export default function RegisterView() {
               />
             </label>
 
-            <label className={styles.label}>
+            <label className={`${styles.label} ${styles.labelPass}`}>
               <input
                 required
                 minLength="8"
@@ -107,7 +112,7 @@ export default function RegisterView() {
               />
             </label>
 
-            <label className={styles.label}>
+            <label className={`${styles.label} ${styles.labelPass}`}>
               <input
                 required
                 minLength="8"
@@ -123,7 +128,7 @@ export default function RegisterView() {
 
             <div className={styles.progress}></div>
 
-            <label className={styles.label}>
+            <label className={`${styles.label} ${styles.labelName}`}>
               <input
                 required
                 type="text"

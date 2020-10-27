@@ -6,6 +6,16 @@
   --header-height-tablet: 80px;
   --header-bg-mobile-color: #3f5544;
   --user-name-mobile-color: #669668;
+  --register-header-color: #2c353e;
+  --form-input-color: #010a11;
+  --form-input-bg-color: #f9fbfb;
+  --form-input-ph-color: #b9c9d4;
+  --progress-bg-color: #619361;
+  --reg-btn-box-shadow: 0px 3px 3px 0px #5c875e33;
+  --reg-btn-bg-image: linear-gradient(0deg, #75c16e 0%, #516d57b3 100%);
+  --reg-btn-bg-image-before: linear-gradient(0deg, #ecb22a 0%, #ff6c00b3 100%);
+  --login-link-color: #6b7d83;
+  --reg-wrap-box-shadow: 10px 17.321px 40px 0px #6b7d834d;
 }
 
 /* background-color: var(--primary-green-color); */
