@@ -6,8 +6,9 @@ const error = createReducer(null, {
   [userActions.userError]: (_, { payload }) => payload,
 });
 
-const totalBalance = createReducer(0, {
-  [userActions.userSuccess]: (_, { payload }) => payload.finance.totalBalance,
+const totalBalance = createReducer(null, {
+  [userActions.userSuccess]: (_, { payload }) =>
+    payload.data.finance.totalBalance,
 });
 
 const loading = createReducer(false, {

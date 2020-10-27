@@ -22,32 +22,34 @@ export default function Sidebar() {
       {matches => (
         <>
           {matches.mobile && (
-            <div className={styles.container}>
-              <NavLink
-                to={routes.homePageView}
-                exact
-                className={styles.link}
-                activeClassName={styles.activeLink}
-              >
-                <HomeLogo className={styles.svgLogo} />
-              </NavLink>
-              <NavLink
-                to={routes.statisticsView}
-                exact
-                className={styles.link}
-                activeClassName={styles.activeLink}
-              >
-                <BaselineTimelineLogo className={styles.svgLogo} />
-              </NavLink>
-              <NavLink
-                to={routes.currencyView}
-                exact
-                className={styles.link}
-                activeClassName={styles.activeLink}
-              >
-                <DollarLogo className={styles.svgLogo} />
-              </NavLink>
-            </div>
+            <>
+              <div className={styles.container}>
+                <NavLink
+                  to={routes.homePageView}
+                  exact
+                  className={styles.link}
+                  activeClassName={styles.activeLink}
+                >
+                  <HomeLogo className={styles.svgLogo} />
+                </NavLink>
+                <NavLink
+                  to={routes.statisticsView}
+                  exact
+                  className={styles.link}
+                  activeClassName={styles.activeLink}
+                >
+                  <BaselineTimelineLogo className={styles.svgLogo} />
+                </NavLink>
+                <NavLink
+                  to={routes.currencyView}
+                  exact
+                  className={styles.link}
+                  activeClassName={styles.activeLink}
+                >
+                  <DollarLogo className={styles.svgLogo} />
+                </NavLink>
+              </div>
+            </>
           )}
           {matches.tablet && (
             <div className={styles.container}>
