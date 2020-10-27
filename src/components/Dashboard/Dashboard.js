@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { transactionsOperations } from '../../redux/transactions';
 
 import Media from 'react-media';
@@ -35,10 +35,13 @@ import dataBase from '../../db.json';
 // ----------------------
 
 const DashboardView = () => {
+  // TODO: need to get form redux store
   const userId = '5f9726599043240c96228703';
-
-  useDispatch(transactionsOperations.getTransactions(userId));
   const lastActualBalance = dataBase[dataBase.length - 1].balanceAfter;
+
+  const dispatch = useDispatch();
+
+  dispatch(transactionsOperations.getTransactions(userId));
 
   return (
     <>
