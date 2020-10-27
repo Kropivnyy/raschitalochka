@@ -21,6 +21,7 @@ const error = createReducer(null, {
   [authActions.statisticsError]: setError,
   [authActions.fetchStatisticsError]: setError,
   [authActions.getTokenFromLSError]: setError,
+  [authActions.getFinanceByIdError]: setError,
 });
 
 const isAuthenticated = createReducer(false, {
@@ -33,9 +34,21 @@ const isAuthenticated = createReducer(false, {
   [authActions.logoutSuccess]: () => false,
 });
 
+const finance = createReducer([], {
+  [authActions.getFinanceByIdSuccess]: (_, { payload }) => payload,
+});
+
+const isLoading = createReducer(false, {
+  [authActions.getFinanceByIdRequest]: () => false,
+  [authActions.getFinanceByIdSuccess]: () => true,
+  [authActions.getFinanceByIdError]: () => false,
+});
+
 export default combineReducers({
   isAuthenticated,
   user,
   token,
   error,
+  finance,
+  isLoading,
 });

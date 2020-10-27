@@ -24,6 +24,10 @@ const getTokenFromLSRequest = createAction('auth/getCurrentUserRequest');
 const getTokenFromLSSuccess = createAction('auth/getCurrentUserSuccess');
 const getTokenFromLSError = createAction('auth/getCurrentUserError');
 
+const getFinanceByIdRequest = createAction('auth/getFinanceByIdRequest');
+const getFinanceByIdSuccess = createAction('auth/getFinanceByIdSuccess');
+const getFinanceByIdError = createAction('auth/getFinanceByIdError');
+
 export default {
   registrationRequest,
   registrationSuccess,
@@ -43,4 +47,7 @@ export default {
   getTokenFromLSRequest,
   getTokenFromLSSuccess,
   getTokenFromLSError,
+  getFinanceByIdRequest,
+  getFinanceByIdSuccess,
+  getFinanceByIdError,
 };
