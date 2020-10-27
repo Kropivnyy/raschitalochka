@@ -21,18 +21,19 @@ const defaultLabelStyle = {
 
 export default function Diagram(prop) {
   const { finance } = prop;
-
-  const mappedData = finance.reduce((acc, curr) => {
-    const title = curr.category;
-    const value = curr.amount;
-    const color = colors[title];
-    return acc[title]
-      ? {
-          ...acc,
-          [title]: { title, value: acc[title].value + value, color },
-        }
-      : { ...acc, [title]: { title, value, color } };
-  }, {});
+  const mappedData = finance
+    .filter(item => item.type === '-')
+    .reduce((acc, curr) => {
+      const title = curr.category;
+      const value = curr.amount;
+      const color = colors[title];
+      return acc[title]
+        ? {
+            ...acc,
+            [title]: { title, value: acc[title].value + value, color },
+          }
+        : { ...acc, [title]: { title, value, color } };
+    }, {});
   const normalizedData = Object.values(mappedData);
   const isTransaction = normalizedData.length !== 0;
 
