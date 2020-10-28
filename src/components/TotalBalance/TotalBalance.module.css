@@ -4,10 +4,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 90%;
   margin-bottom: 30px;
   background-color: var(--header-bg-mobile-color);
   border-radius: 5px;
+  margin: 0 auto;
 }
 
 .text {
@@ -25,7 +26,6 @@
     flex-direction: row;
     justify-content: start;
     background: none;
-    margin: 0;
   }
 
   .text {
@@ -41,6 +41,7 @@
 
 @media screen and (min-width: 1280px) {
   .totalBalance {
+    width: 100%;
     justify-content: space-around;
     margin-bottom: 30px;
     background-color: var(--header-bg-mobile-color);

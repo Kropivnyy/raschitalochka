@@ -24,7 +24,7 @@ import BalanceHeadItem from './BalanceList/BalanceHeadItem';
 import BalanceContentList from './BalanceList/BalanceContentList';
 
 import BalanceContentItem from './BalanceList/BalanceContentItem';
-import TotalBalance from '../TotalBalance';
+// import TotalBalance from '../TotalBalance';
 
 const DashboardView = () => {
   return (
@@ -47,9 +47,9 @@ const DashboardView = () => {
           </Media>
         </BalanceHead> */}
 
-        <Media queries={{ mobile: '(max-width: 767px)' }}>
+        {/* <Media queries={{ mobile: '(max-width: 767px)' }}>
           {matches => <>{matches.mobile && <TotalBalance />}</>}
-        </Media>
+        </Media> */}
 
         <Media queries={{ big: '(min-width: 700px)' }}>
           {matches =>

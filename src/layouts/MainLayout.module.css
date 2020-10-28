@@ -15,10 +15,6 @@
 .Sidebar {
   min-height: var(--header-height-mobile);
   width: 100%;
-  background-color: var(--user-name-mobile-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .Page {
   width: 100%;
@@ -36,6 +32,9 @@
     min-height: calc(100vh - var(--header-height-tablet));
   }
   .Sidebar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: var(--header-height-tablet);
     background-color: var(--body-bg-desktop-color);
   }

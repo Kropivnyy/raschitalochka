@@ -7,10 +7,13 @@
 }
 
 .container {
-  width: 200px;
+  min-width: 200px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  background-color: var(--user-name-mobile-color);
+  padding: 10px 0;
+  margin-bottom: 20px;
 }
 
 .asideBarDesktop {
@@ -23,6 +26,10 @@
   fill: var(--white);
   background-color: var(--header-bg-mobile-color);
   transition: 0.2s linear;
+}
+
+.link:not(:last-child) {
+  margin-right: 30px;
 }
 
 .activeLink {
@@ -40,7 +47,8 @@
 
 @media screen and (min-width: 768px) {
   .container {
-    justify-content: center;
+    margin-bottom: 0;
+    background-color: var(--body-bg-desktop-color);
   }
 
   .link {
@@ -50,6 +58,10 @@
     background: none;
     color: var(--user-name-mobile-color);
     fill: var(--user-name-mobile-color);
+  }
+
+  .link:not(:last-child) {
+    margin-right: 10px;
   }
 
   .activeLink {
@@ -91,6 +103,10 @@
     color: var(--white);
     padding: 10px;
     transition: 0.2s linear;
+  }
+
+  .link:not(:last-child) {
+    margin-right: 0;
   }
 
   .activeLink {
