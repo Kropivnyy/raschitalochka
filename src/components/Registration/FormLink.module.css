@@ -1,0 +1,5 @@
+.link {
+  font-size: 12px;
+  color: var(--login-link-color);
+  text-decoration: underline;
+}

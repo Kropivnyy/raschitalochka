@@ -1,0 +1,227 @@
+.container {
+  height: 100vh;
+  background-image: url(../../images/bg-mob.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+@media (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .container {
+    background-image: url(../../images/bg-mob@2x.png);
+  }
+}
+
+.desktopWrap {
+  display: none;
+}
+
+.loginWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 22px;
+  max-width: 320px;
+  min-width: 240px;
+  text-align: center;
+}
+
+.logo {
+  margin: 0 auto 4px;
+  width: 48px;
+  height: 48px;
+  background: url('../../svg/logo.svg') no-repeat center;
+  background-size: cover;
+}
+
+.header {
+  margin: 0 0 34px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--register-header-color);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 224px;
+  width: 100%;
+}
+
+.label {
+  position: relative;
+}
+
+.label:last-of-type {
+  margin-bottom: 18px;
+}
+
+.label::before {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 16px;
+  left: 20px;
+  top: 12px;
+}
+
+.labelEmail::before {
+  content: url('../../svg/baseline-email-24px.svg');
+}
+
+.labelPass::before {
+  content: url('../../svg/baseline-lock-24px.svg');
+}
+
+.input {
+  padding: 0 0 0 60px;
+  width: 100%;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--form-input-color);
+  border-radius: 6px;
+  background-color: var(--form-input-bg-color);
+  border: none;
+  outline: none;
+}
+
+.input::placeholder {
+  font-size: 13px;
+  font-weight: 100;
+  color: var(--form-input-ph-color);
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../images/bg-tab-login.jpg);
+    background-size: cover;
+  }
+
+  @media (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    .container {
+      background-image: url(../../images/bg-tab-login@2x.jpg);
+    }
+  }
+
+  .loginWrap {
+    min-width: 550px;
+    padding: 38px 60px 42px;
+    background-color: var(--white);
+    border-radius: 5px;
+    box-shadow: var(--reg-wrap-box-shadow);
+  }
+
+  .headerWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 26px;
+  }
+
+  .header {
+    margin: 0;
+    font-size: 20px;
+  }
+
+  .logo {
+    margin: 0;
+  }
+
+  .form {
+    min-height: 248px;
+  }
+
+  .desktopWrap {
+    display: block;
+  }
+
+  .desktopWrapImg {
+    display: none;
+  }
+
+  .loginSlogan {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 6%;
+    margin: 0;
+    font-size: 18px;
+    color: var(--tab-slogan-color);
+  }
+
+  .label::before {
+    top: 16px;
+  }
+
+  .input {
+    height: 58px;
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    background-image: none;
+  }
+
+  .desktopWrap {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    height: 100vh;
+    padding: 48px;
+    background-image: url(../../images/desk-overlay-log.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .mainLoginWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100vh;
+    background-image: url(../../images/bg-desktop-register.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .loginSlogan {
+    position: relative;
+    left: 0%;
+    transform: translateX(0%);
+    bottom: 0%;
+    max-width: 446px;
+    font-size: 35px;
+    font-weight: 800;
+    color: var(--white);
+  }
+
+  .desktopWrapImg {
+    display: block;
+    max-height: 798px;
+    min-height: 560px;
+    height: 100%;
+    max-width: 396px;
+    margin-right: 30px;
+  }
+
+  @media (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    .desktopWrap {
+      background-image: url(../../images/desk-overlay-log@2x.jpg);
+    }
+
+    .mainRegisterWrap {
+      background-image: url(../../images/bg-desktop-register@2x.jpg);
+    }
+  }
+}
