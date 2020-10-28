@@ -12,6 +12,17 @@ const colors = {
   Education: '#b6aa41',
   Other: 'palevioletred',
 };
+// const colors = {
+//   'main-expenses': '#df8e25',
+//   'food': 'olive',
+//   'car': 'red',
+//   'entertainment': '#25badf',
+//   'self-care': 'aqua',
+//   'child-care': 'maroon',
+//   'household-products': '#aa25df',
+//   'education': '#b6aa41',
+//   'other-expenses': 'palevioletred',
+// };
 
 const defaultLabelStyle = {
   fontSize: '5px',

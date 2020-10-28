@@ -45,35 +45,99 @@ export default function StatisticsView() {
             <h3 className={styles.Statistic__costs_descr}>Categories</h3>
             <h3 className={styles.Statistic__costs_descr}>Amount</h3>
           </div>
-          <ul className={styles.Statistic__costs_list}>
-            <li className={styles.Statistic__costs_item}>
-              <div className={styles.Statistic__costs_item_container}>
-                <div className={styles.Statistic__categories}>
-                  <div className={styles.Statistic__categories_color}></div>
-                  <p className={styles.Statistic__categories_descr}>Food</p>
-                </div>
-                <p className={styles.Statistic__categories_amount}> 222</p>
+        </div>
+        <ul className={styles.Statistic__costs_list}>
+          <li className={styles.Statistic__costs_item}>
+            <div className={styles.Statistic__costs_item_container}>
+              <div className={styles.Statistic__categories}>
+                <div className={styles.Statistic__categories_color}></div>
+                <p className={styles.Statistic__categories_descr}>Food</p>
               </div>
-            </li>
-            <li className={styles.Statistic__costs_item}>
-              <div className={styles.Statistic__costs_item_container}>
-                <div className={styles.Statistic__categories}>
-                  <div className={styles.Statistic__categories_color}></div>
-                  <p className={styles.Statistic__categories_descr}>Food</p>
-                </div>
-                <p className={styles.Statistic__categories_amount}> 222</p>
+              <p className={styles.Statistic__categories_amount}> 222</p>
+            </div>
+          </li>
+          <li className={styles.Statistic__costs_item}>
+            <div className={styles.Statistic__costs_item_container}>
+              <div className={styles.Statistic__categories}>
+                <div className={styles.Statistic__categories_color}></div>
+                <p className={styles.Statistic__categories_descr}>Food</p>
               </div>
-            </li>
-            <li className={styles.Statistic__costs_item}>
-              <div className={styles.Statistic__costs_item_container}>
-                <div className={styles.Statistic__categories}>
-                  <div className={styles.Statistic__categories_color}></div>
-                  <p className={styles.Statistic__categories_descr}>Food</p>
-                </div>
-                <p className={styles.Statistic__categories_amount}> 222</p>
+              <p className={styles.Statistic__categories_amount}> 222</p>
+            </div>
+          </li>
+          <li className={styles.Statistic__costs_item}>
+            <div className={styles.Statistic__costs_item_container}>
+              <div className={styles.Statistic__categories}>
+                <div className={styles.Statistic__categories_color}></div>
+                <p className={styles.Statistic__categories_descr}>Food</p>
               </div>
-            </li>
-          </ul>
+              <p className={styles.Statistic__categories_amount}> 222</p>
+            </div>
+          </li>
+          <li className={styles.Statistic__costs_item}>
+            <div className={styles.Statistic__costs_item_container}>
+              <div className={styles.Statistic__categories}>
+                <div className={styles.Statistic__categories_color}></div>
+                <p className={styles.Statistic__categories_descr}>Food</p>
+              </div>
+              <p className={styles.Statistic__categories_amount}> 222</p>
+            </div>
+          </li>
+          <li className={styles.Statistic__costs_item}>
+            <div className={styles.Statistic__costs_item_container}>
+              <div className={styles.Statistic__categories}>
+                <div className={styles.Statistic__categories_color}></div>
+                <p className={styles.Statistic__categories_descr}>Food</p>
+              </div>
+              <p className={styles.Statistic__categories_amount}> 222</p>
+            </div>
+          </li>
+          <li className={styles.Statistic__costs_item}>
+            <div className={styles.Statistic__costs_item_container}>
+              <div className={styles.Statistic__categories}>
+                <div className={styles.Statistic__categories_color}></div>
+                <p className={styles.Statistic__categories_descr}>Food</p>
+              </div>
+              <p className={styles.Statistic__categories_amount}> 222</p>
+            </div>
+          </li>
+          <li className={styles.Statistic__costs_item}>
+            <div className={styles.Statistic__costs_item_container}>
+              <div className={styles.Statistic__categories}>
+                <div className={styles.Statistic__categories_color}></div>
+                <p className={styles.Statistic__categories_descr}>Food</p>
+              </div>
+              <p className={styles.Statistic__categories_amount}> 222</p>
+            </div>
+          </li>
+          <li className={styles.Statistic__costs_item}>
+            <div className={styles.Statistic__costs_item_container}>
+              <div className={styles.Statistic__categories}>
+                <div className={styles.Statistic__categories_color}></div>
+                <p className={styles.Statistic__categories_descr}>Food</p>
+              </div>
+              <p className={styles.Statistic__categories_amount}> 222</p>
+            </div>
+          </li>
+          <li className={styles.Statistic__costs_item}>
+            <div className={styles.Statistic__costs_item_container}>
+              <div className={styles.Statistic__categories}>
+                <div className={styles.Statistic__categories_color}></div>
+                <p className={styles.Statistic__categories_descr}>Food</p>
+              </div>
+              <p className={styles.Statistic__categories_amount}> 222</p>
+            </div>
+          </li>
+        </ul>
+        <div className={styles.Statistic__total_container}>
+          <div className={styles.Statistic__total}>
+            <p className={styles.Statistic__total_descr}>Total Costs</p>
+            <p className={styles.Statistic__total_cost}>22 222</p>
+          </div>
+          <div className={styles.Statistic__total}>
+            <p className={styles.Statistic__total_descr}>Total Income</p>
+            <p className={styles.Statistic__total_income}>11000</p>
+          </div>
         </div>
       </div>
     </div>
