@@ -9,7 +9,8 @@ import Loader from 'react-loader-spinner';
 export default function TotalBalance() {
   const dispatch = useDispatch();
   const totalBalance = useSelector(userSelectors.getTotalBalance);
-  const userId = useSelector(authSelectors.getUserId);
+  // const userId = useSelector(authSelectors.getUserId);
+  const userId = '45ytrhh';
 
   useEffect(() => {
     dispatch(userOperations.fetchTotalBalance(userId));
@@ -20,7 +21,7 @@ export default function TotalBalance() {
       <span className={styles.text}>Total Balance, UAH</span>
       {totalBalance === null ? (
         <div className={styles.loader}>
-          <Loader type="Bars" color="#fff" width={20} visible={true} />
+          <Loader type="Bars" color="#669668" width={20} visible={true} />
         </div>
       ) : (
         <span className={styles.text__tablet}>{totalBalance}</span>
