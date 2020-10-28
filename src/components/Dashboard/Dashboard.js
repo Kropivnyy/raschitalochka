@@ -24,12 +24,13 @@ import BalanceHeadItem from './BalanceList/BalanceHeadItem';
 import BalanceContentList from './BalanceList/BalanceContentList';
 
 import BalanceContentItem from './BalanceList/BalanceContentItem';
+import TotalBalance from '../TotalBalance';
 
 const DashboardView = () => {
   return (
     <>
       <Cover>
-        <BalanceHead>
+        {/* <BalanceHead>
           <Media queries={{ big: '(min-width: 700px)' }}>
             {matches =>
               matches.big ? (
@@ -44,7 +45,11 @@ const DashboardView = () => {
               )
             }
           </Media>
-        </BalanceHead>
+        </BalanceHead> */}
+
+        <Media queries={{ mobile: '(max-width: 767px)' }}>
+          {matches => <>{matches.mobile && <TotalBalance />}</>}
+        </Media>
 
         <Media queries={{ big: '(min-width: 700px)' }}>
           {matches =>
