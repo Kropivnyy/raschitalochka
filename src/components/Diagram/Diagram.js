@@ -56,7 +56,6 @@ export default function Diagram(prop) {
           animate={true}
           startAngle={-90}
           paddingAngle={1}
-          style={{ height: '300px' }}
           label={({ dataEntry }) => dataEntry.title}
           labelStyle={{ ...defaultLabelStyle }}
         />
