@@ -2,12 +2,14 @@
   --white: #fff;
   --grey: #d4d4d4;
   --primary-green-color: #3a9200;
-  --grid-container-padding: 16px;
+  --primary-bg-green-color: #516d57;
   --header-height-mobile: 40px;
   --header-height-tablet: 80px;
   --header-bg-mobile-color: #3f5544;
   --body-bg-desktop-color: #eeecec;
   --user-name-mobile-color: #669668;
+  --primary-font-color: #282828;
+  --dashboard-odd-string-bg-color: #f3f6f6;
   --register-header-color: #2c353e;
   --form-input-color: #010a11;
   --form-input-bg-color: #f9fbfb;
@@ -20,5 +22,3 @@
   --reg-wrap-box-shadow: 10px 17.321px 40px 0px #6b7d834d;
   --tab-slogan-color: #282828;
 }
-
-/* background-color: var(--primary-green-color); */

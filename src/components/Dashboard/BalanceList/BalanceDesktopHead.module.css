@@ -1,0 +1,38 @@
+.BalanceDesktopHead {
+  display: flex;
+  align-items: center;
+  min-height: 72px;
+  padding: 15px;
+  background-color: var(--dashboard-odd-string-bg-color);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.BalanceDesktopHead * {
+  text-overflow: ellipsis;
+}
+
+.BalanceDesktopHead span:not(:last-child) {
+  padding-right: 15px;
+}
+
+.Date {
+  flex: 1 1 12%;
+}
+.Type {
+  flex: 1 1 12%;
+}
+.Category {
+  flex: 1 1 20%;
+}
+.Comments {
+  flex: 1 1 22%;
+}
+.Amount {
+  flex: 1 1 16%;
+  text-align: right;
+}
+.Balance {
+  flex: 1 1 18%;
+  text-align: right;
+}

@@ -1,31 +1,23 @@
 .totalBalance {
   min-height: 80px;
+  width: 100%;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  margin-bottom: 30px;
   background-color: var(--header-bg-mobile-color);
   border-radius: 5px;
-}
-
-.text {
-  color: var(--white);
-  margin-bottom: 10px;
-}
-
-.text__tablet {
   color: var(--white);
 }
 
 @media screen and (min-width: 768px) {
   .totalBalance {
-    white-space: nowrap;
+    margin: 0;
     flex-direction: row;
     justify-content: start;
     background: none;
-    margin: 0;
+    white-space: nowrap;
   }
 
   .text {
@@ -41,10 +33,13 @@
 
 @media screen and (min-width: 1280px) {
   .totalBalance {
-    justify-content: space-around;
     margin-bottom: 30px;
-    background-color: var(--header-bg-mobile-color);
+    padding: 15px;
+    justify-content: space-around;
+    background-color: var(--primary-bg-green-color);
     border-radius: 5px;
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+      0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
   }
 
   .text,
