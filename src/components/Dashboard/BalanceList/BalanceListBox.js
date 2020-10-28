@@ -3,6 +3,9 @@ import { useSelector } from 'react-redux';
 import { transactionsSelectors } from '../../../redux/transactions';
 import Media from 'react-media';
 import BalanceMobileNote from './BalanceMobileNote';
+import BalanceDesktopHead from './BalanceDesktopHead';
+import BalanceDesktopNote from './BalanceDesktopNote';
+import ButtonsBox from '../Buttons/ButtonsBox';
 import s from './BalanceListBox.module.css';
 
 const BalanceListBox = () => {
@@ -11,26 +14,42 @@ const BalanceListBox = () => {
     <Media
       queries={{
         mobile: '(max-width: 767px)',
-        tablet: '(min-width: 768px) and (max-width: 1279px)',
-        desktop: '(min-width: 1280px)',
       }}
     >
-      {matches =>
-        matches.mobile && (
-          <>
-            <div className={s.balanceListBox}>
-              {transactions.map(balanceList => {
-                return (
-                  <BalanceMobileNote
-                    key={balanceList._id}
-                    balanceList={balanceList}
-                  />
-                );
-              })}
-            </div>
-          </>
-        )
-      }
+      {matches => (
+        <>
+          {matches.mobile ? (
+            <>
+              <div className={s.balanceListBox}>
+                <ButtonsBox />
+                {transactions.map(balanceList => {
+                  return (
+                    <BalanceMobileNote
+                      key={balanceList._id}
+                      balanceList={balanceList}
+                    />
+                  );
+                })}
+              </div>
+            </>
+          ) : (
+            <>
+              <div className={s.balanceListBox}>
+                <ButtonsBox />
+                <BalanceDesktopHead />
+                {transactions.map(balanceList => {
+                  return (
+                    <BalanceDesktopNote
+                      key={balanceList._id}
+                      balanceList={balanceList}
+                    />
+                  );
+                })}
+              </div>
+            </>
+          )}
+        </>
+      )}
     </Media>
   );
 };

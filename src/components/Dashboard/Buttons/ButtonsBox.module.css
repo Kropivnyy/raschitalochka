@@ -3,8 +3,10 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  padding: 15px;
+  min-height: 69px;
+  padding: 0 15px;
   display: flex;
+  align-items: center;
   justify-content: center;
   background-color: var(--dashboard-odd-string-bg-color);
   box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
@@ -14,7 +16,9 @@
 @media (min-width: 768px) {
   .buttonsBox {
     position: static;
-    background-color: transparent;
-    border-top: none;
+    min-height: 90px;
+    background-color: var(--primary-bg-green-color);
+    border-radius: 5px 5px 0 0;
+    box-shadow: none;
   }
 }

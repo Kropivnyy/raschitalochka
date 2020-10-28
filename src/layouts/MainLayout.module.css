@@ -36,7 +36,7 @@
   }
   .Sidebar {
     min-height: var(--header-height-tablet);
-    background-color: var(--body-bg-desktop-color);
+    background-color: var(--white);
   }
   .Page {
     padding-top: 0;
@@ -64,6 +64,7 @@
     flex-wrap: wrap;
     align-items: flex-start;
     margin-right: 40px;
+    background-color: var(--body-bg-desktop-color);
   }
   .Sidebar__container {
     width: 100%;

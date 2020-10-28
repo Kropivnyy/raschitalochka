@@ -1,5 +1,15 @@
 .balanceListBox {
-  padding-bottom: 68px;
+  padding-bottom: 80px;
   font-size: 13px;
   color: var(--primary-font-color);
+}
+
+@media (min-width: 768px) {
+  .balanceListBox {
+    padding-bottom: 0;
+    border-radius: 5px;
+    background-color: var(--white);
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+      0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+  }
 }

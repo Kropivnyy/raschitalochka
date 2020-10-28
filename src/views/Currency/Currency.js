@@ -30,7 +30,7 @@ export default function CurrencyView() {
           <div>Loading...</div>
         ) : (
           currency.map(value => {
-            if (value.ccy === 'BTC') return;
+            if (value.ccy === 'BTC') return null;
             return (
               <li key={value.ccy} className={styles.list}>
                 <span>{value.ccy}</span>{' '}
