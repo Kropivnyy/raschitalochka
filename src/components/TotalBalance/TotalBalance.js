@@ -9,8 +9,7 @@ import Loader from 'react-loader-spinner';
 export default function TotalBalance() {
   const dispatch = useDispatch();
   const totalBalance = useSelector(userSelectors.getTotalBalance);
-  // const userId = useSelector(authSelectors.getUserId);
-  const userId = '45ytrhh';
+  const userId = useSelector(authSelectors.getUserId);
 
   useEffect(() => {
     dispatch(userOperations.fetchTotalBalance(userId));
