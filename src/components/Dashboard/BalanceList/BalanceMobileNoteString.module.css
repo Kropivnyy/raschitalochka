@@ -1,0 +1,16 @@
+.BalanceMobileNoteString {
+  padding: 13px;
+  display: flex;
+}
+
+.BalanceMobileNoteString:nth-child(odd) {
+  background-color: var(--dashboard-odd-string-bg-color);
+}
+
+.Heading {
+  flex: 0 0 40%;
+}
+
+.Value {
+  flex: 1 0 60%;
+}

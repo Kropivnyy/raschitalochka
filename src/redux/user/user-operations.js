@@ -4,9 +4,9 @@ import userActions from './user-actions';
 const fetchTotalBalance = userId => async dispatch => {
   dispatch(userActions.userRequest());
   try {
-    const user = await axios.get(`/finance/${userId}`);
-    if (!user) return new Error('Error user total balance');
-    await dispatch(userActions.userSuccess(user));
+    const { data } = await axios.get(`/finance/${userId}`);
+    if (!data) return new Error('Error user total balance');
+    await dispatch(userActions.userSuccess(data));
   } catch ({ message }) {
     dispatch(userActions.userError(message));
   }

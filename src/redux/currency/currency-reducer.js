@@ -7,7 +7,7 @@ const error = createReducer(null, {
 });
 
 const data = createReducer(null, {
-  [currencyActions.currencySuccess]: (_, { payload }) => payload.data,
+  [currencyActions.currencySuccess]: (_, { payload }) => payload,
 });
 
 const loading = createReducer(false, {

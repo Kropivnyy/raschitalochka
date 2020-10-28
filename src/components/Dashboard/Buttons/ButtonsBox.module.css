@@ -1,23 +1,24 @@
 .buttonsBox {
-  position: relative;
-  display: flex;
-  text-align: center;
   position: fixed;
-  background-color: #f3f6f6;
-  width: 100%;
-  padding: 15px 0;
-  bottom: 0;
   left: 0;
-  right: 0;
+  bottom: 0;
+  width: 100%;
+  min-height: 69px;
+  padding: 0 15px;
   display: flex;
+  align-items: center;
   justify-content: center;
-  border-top: 4px solid rgba(65, 63, 63, 0.1);
+  background-color: var(--dashboard-odd-string-bg-color);
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
 }
 
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   .buttonsBox {
     position: static;
-    background-color: transparent;
-    border-top: none;
+    min-height: 90px;
+    background-color: var(--primary-bg-green-color);
+    border-radius: 5px 5px 0 0;
+    box-shadow: none;
   }
 }

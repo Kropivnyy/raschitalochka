@@ -1,0 +1,45 @@
+.BalanceMobileNote {
+  border-left: 8px solid;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+}
+
+.BalanceMobileNote:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.BalanceMobileNote:nth-child(9n + 1) {
+  border-color: #df8e25;
+}
+
+.BalanceMobileNote:nth-child(9n + 2) {
+  border-color: olive;
+}
+
+.BalanceMobileNote:nth-child(9n + 3) {
+  border-color: red;
+}
+
+.BalanceMobileNote:nth-child(9n + 4) {
+  border-color: #25badf;
+}
+
+.BalanceMobileNote:nth-child(9n + 5) {
+  border-color: aqua;
+}
+
+.BalanceMobileNote:nth-child(9n + 6) {
+  border-color: maroon;
+}
+
+.BalanceMobileNote:nth-child(9n + 7) {
+  border-color: #aa25df;
+}
+
+.BalanceMobileNote:nth-child(9n + 8) {
+  border-color: #b6aa41;
+}
+
+.BalanceMobileNote:nth-child(9n + 9) {
+  border-color: palevioletred;
+}

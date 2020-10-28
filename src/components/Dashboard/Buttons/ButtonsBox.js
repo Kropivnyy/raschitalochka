@@ -1,8 +1,14 @@
 import React from 'react';
+import AddTransactionBtn from './AddTransactionBtn';
 import s from './ButtonsBox.module.css';
 
-const ButtonsBox = ({ children }) => {
-  return <div className={s.buttonsBox}>{children}</div>;
+const ButtonsBox = () => {
+  return (
+    <div className={s.buttonsBox}>
+      <AddTransactionBtn text="Add Income" />
+      <AddTransactionBtn text="Add Cost" />
+    </div>
+  );
 };
 
 export default ButtonsBox;

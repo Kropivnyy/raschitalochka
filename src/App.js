@@ -11,7 +11,6 @@ import StatisticsView from './views/Statistics';
 import CurrencyView from './views/Currency';
 import HomePageView from './views/HomePage';
 import ErrorView from './views/Error';
-import Dashboard from './components/Dashboard';
 import Loader from 'react-loader-spinner';
 
 function App() {
