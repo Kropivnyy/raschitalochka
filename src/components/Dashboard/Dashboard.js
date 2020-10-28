@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { transactionsOperations } from '../../redux/transactions';
 import Media from 'react-media';
 import BalanceListBox from './BalanceList/BalanceListBox';
-import TotalBalance from '../TotalBalance';
 
 const Dashboard = () => {
   // TODO: need to get form redux store
@@ -22,7 +21,6 @@ const Dashboard = () => {
           <>
             {matches.mobile ? (
               <>
-                <TotalBalance />
                 <BalanceListBox />
               </>
             ) : (

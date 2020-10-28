@@ -4,10 +4,20 @@
 }
 
 .name {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700;
-  color: var(--user-name-mobile-color);
-  margin-right: 20px;
+  color: var(--primary-bg-green-color);
+  margin-right: 5px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-right: 1px solid var(--primary-bg-green-color);
+}
+.logout {
+  composes: name;
+  border: none;
 }
 
 .button {
@@ -18,5 +28,6 @@
 }
 
 .logoutLogo {
-  width: 30px;
+  width: var(--svg-width);
+  padding: 5px;
 }

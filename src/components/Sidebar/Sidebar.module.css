@@ -1,14 +1,15 @@
 .container {
-  width: 200px;
+  min-width: 200px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  background-color: var(--user-name-mobile-color);
+  padding: 10px 0;
+  margin-bottom: 20px;
 }
-
 .asideBarDesktop {
   width: 100%;
 }
-
 .link {
   height: 30px;
   border-radius: 5px;
@@ -16,7 +17,9 @@
   background-color: var(--header-bg-mobile-color);
   transition: 0.2s linear;
 }
-
+.link:not(:last-child) {
+  margin-right: 40px;
+}
 .activeLink {
   height: 30px;
   border-radius: 5px;
@@ -25,14 +28,15 @@
 }
 
 .svgLogo {
-  width: 30px;
-  height: 30px;
+  width: var(--svg-width);
   padding: 5px;
 }
 
 @media screen and (min-width: 768px) {
   .container {
     justify-content: center;
+    background: none;
+    margin-bottom: 0;
   }
 
   .link {
@@ -42,6 +46,10 @@
     background: none;
     color: var(--user-name-mobile-color);
     fill: var(--user-name-mobile-color);
+  }
+
+  .link:not(:last-child) {
+    margin-right: 10px;
   }
 
   .activeLink {
@@ -61,7 +69,7 @@
     display: flex;
     align-items: center;
     border-radius: 5px;
-    background-color: var(--header-bg-mobile-color);
+    background-color: var(--primary-bg-green-color);
     margin-bottom: 30px;
     box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
       0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
@@ -70,7 +78,7 @@
   .container {
     display: block;
     width: 100%;
-    background-color: var(--header-bg-mobile-color);
+    background-color: var(--primary-bg-green-color);
   }
 
   .svgLogo {
@@ -85,7 +93,13 @@
     align-items: center;
     flex-basis: 80%;
     color: var(--white);
+    fill: var(--white);
     transition: 0.2s linear;
+    border-radius: 0;
+  }
+
+  .link:not(:last-child) {
+    margin-right: 0;
   }
 
   .activeLink {

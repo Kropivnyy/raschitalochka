@@ -49,6 +49,8 @@ export default function Sidebar() {
                   <DollarLogo className={styles.svgLogo} />
                 </NavLink>
               </div>
+
+              <TotalBalance />
             </>
           )}
           {matches.tablet && (
