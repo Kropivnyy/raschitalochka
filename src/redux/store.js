@@ -1,6 +1,8 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import { authReducer } from './auth';
 import { currencyReducer } from './currency';
+import { userReducer } from './user';
+import { financeReducer } from './finance';
 import storage from 'redux-persist/lib/storage';
 import {
   persistStore,
@@ -24,13 +26,15 @@ const middleware = [
 const authPersistConfig = {
   key: 'session',
   storage,
-  whitelist: ['token'],
+  whitelist: ['token', 'user'],
 };
 
 const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
     currency: currencyReducer,
+    user: userReducer,
+    finance: financeReducer,
   },
   middleware,
   devTools: process.env.NODE_ENV === 'development',

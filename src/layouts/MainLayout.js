@@ -10,7 +10,9 @@ export default function MainLayout({ children }) {
       <div className={styles.MainLayout}>
         <div className={styles.Container}>
           <aside className={styles.Sidebar}>
-            <Sidebar />
+            <div className={styles.Sidebar__container}>
+              <Sidebar />
+            </div>
           </aside>
           <section className={styles.Page}>{children}</section>
         </div>

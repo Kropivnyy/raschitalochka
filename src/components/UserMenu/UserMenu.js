@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { authSelectors, authOperations } from '../../redux/auth';
 import styles from './UserMenu.module.css';
+import { ReactComponent as LogoutLogo } from '../../svg/logout.svg';
 
 export default function UserMenu() {
   const dispatch = useDispatch();
@@ -10,10 +11,10 @@ export default function UserMenu() {
     dispatch,
   ]);
   return (
-    <div className="">
+    <div className={styles.UserMenu}>
       <span className={styles.name}>{name}</span>
-      <button type="button" onClick={onLogOut}>
-        Logout
+      <button type="button" className={styles.button} onClick={onLogOut}>
+        <LogoutLogo className={styles.logoutLogo} />
       </button>
     </div>
   );

@@ -1,8 +1,8 @@
 import { createAction } from '@reduxjs/toolkit';
 
-const currencyRequest = createAction('auth/currencyRequest');
-const currencySuccess = createAction('auth/currencySuccess');
-const currencyError = createAction('auth/currencyError');
+const currencyRequest = createAction('currency/currencyRequest');
+const currencySuccess = createAction('currency/currencySuccess');
+const currencyError = createAction('currency/currencyError');
 
 export default {
   currencyRequest,
