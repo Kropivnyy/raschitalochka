@@ -3,7 +3,9 @@ import { useDispatch } from 'react-redux';
 import { authOperations } from '../../redux/auth';
 import IPhoneImg from '../../images/iPhone-6.png';
 import IPhoneImg2x from '../../images/iPhone-6@2x.png';
-// import routes from '../../routes';
+import routes from '../../routes';
+import FormLink from '../../components/Registration/FormLink';
+import FormButton from '../../components/Registration/FormButton';
 import styles from './Registration.module.css';
 
 export default function RegisterView() {
@@ -139,12 +141,8 @@ export default function RegisterView() {
                 className={styles.input}
               />
             </label>
-            <button className={styles.regButton} type="submit">
-              Register
-            </button>
-            <a className={styles.loginLink} href="/login">
-              Login
-            </a>
+            <FormButton text={'Register'} />
+            <FormLink route={routes.loginView} text={'Login'} />
           </form>
         </div>
       </div>
