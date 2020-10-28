@@ -15,10 +15,9 @@
 .Sidebar {
   min-height: var(--header-height-mobile);
   width: 100%;
-  background-color: var(--user-name-mobile-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
+.Sidebar__container {
+  width: 100%;
 }
 .Page {
   width: 100%;
@@ -37,6 +36,11 @@
   .Sidebar {
     min-height: var(--header-height-tablet);
     background-color: var(--white);
+  }
+  .Sidebar__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .Page {
     padding-top: 0;
@@ -67,6 +71,7 @@
     background-color: var(--body-bg-desktop-color);
   }
   .Sidebar__container {
+    display: block;
     width: 100%;
   }
   .Page {

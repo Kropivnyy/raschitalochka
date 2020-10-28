@@ -1,7 +1,6 @@
 import React from 'react';
 import Media from 'react-media';
 import BalanceListBox from './BalanceList/BalanceListBox';
-import TotalBalance from '../TotalBalance';
 
 const DashboardView = () => {
   return (
@@ -15,7 +14,6 @@ const DashboardView = () => {
           <>
             {matches.mobile ? (
               <>
-                <TotalBalance />
                 <BalanceListBox />
               </>
             ) : (

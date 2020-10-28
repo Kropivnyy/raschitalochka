@@ -1,6 +1,6 @@
 import React from 'react';
 import { PieChart } from 'react-minimal-pie-chart';
-
+import styles from './Diagram.module.css';
 const colors = {
   Main: '#df8e25',
   Food: 'olive',
@@ -38,7 +38,7 @@ export default function Diagram(prop) {
   const isTransaction = normalizedData.length !== 0;
 
   return (
-    <>
+    <div className={styles.Diagram__container}>
       {isTransaction ? (
         <PieChart
           data={normalizedData}
@@ -52,6 +52,6 @@ export default function Diagram(prop) {
       ) : (
         <h2>Made operations...</h2>
       )}
-    </>
+    </div>
   );
 }

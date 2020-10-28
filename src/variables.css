@@ -5,9 +5,16 @@
   --primary-bg-green-color: #516d57;
   --header-height-mobile: 40px;
   --header-height-tablet: 80px;
+  --svg-width: 30px;
   --header-bg-mobile-color: #3f5544;
   --body-bg-desktop-color: #eeecec;
   --user-name-mobile-color: #669668;
+  --statistic-selector-border-color: #b9c9d4;
+  --statistic-btn-bcgr-color: #619361;
+  --statistic-selector-color: #2c353e;
+  --statistic-costs-header-color: #f3f6f6;
+  --statistic-costs-descr: #282828;
+  --statistic-categories-amount-color: #2c353e;
   --primary-font-color: #282828;
   --dashboard-odd-string-bg-color: #f3f6f6;
   --register-header-color: #2c353e;

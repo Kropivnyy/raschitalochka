@@ -1,6 +1,6 @@
 .totalBalance {
   min-height: 80px;
-  width: 100%;
+  width: 90%;
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
@@ -9,6 +9,13 @@
   background-color: var(--header-bg-mobile-color);
   border-radius: 5px;
   color: var(--white);
+  margin: 0 auto;
+}
+
+.loader {
+  height: 30px;
+  display: flex;
+  align-items: center;
 }
 
 @media screen and (min-width: 768px) {
@@ -33,6 +40,7 @@
 
 @media screen and (min-width: 1280px) {
   .totalBalance {
+    width: 100%;
     margin-bottom: 30px;
     padding: 15px;
     justify-content: space-around;
