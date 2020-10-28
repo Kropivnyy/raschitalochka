@@ -12,6 +12,12 @@
   margin: 0 auto;
 }
 
+.loader {
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
 @media screen and (min-width: 768px) {
   .totalBalance {
     margin: 0;
