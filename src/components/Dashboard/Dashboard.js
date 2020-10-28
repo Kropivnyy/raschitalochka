@@ -47,56 +47,17 @@ const DashboardView = () => {
     <>
       <Cover>
         <BalanceHead>
-          <Media queries={{ big: '(min-width: 700px)' }}>
-            {matches =>
-              matches.big ? (
-                <ButtonsBox>
-                  <MainButton text={'Add Income'} />
-                  <MainButton text={'Add Cost'} />
-                </ButtonsBox>
-              ) : (
-                <BalanceContentBox>
-                  <BalanceContent actualBalance={lastActualBalance} />
-                </BalanceContentBox>
-              )
-            }
-          </Media>
+          <BalanceContentBox>
+            <BalanceContent />
+          </BalanceContentBox>
+          <ButtonsBox>
+            <MainButton text={'Add Income'} />
+            <MainButton text={'Add Cost'} />
+          </ButtonsBox>
         </BalanceHead>
-
-        <Media queries={{ big: '(min-width: 700px)' }}>
-          {matches =>
-            matches.big ? (
-              <BalanceListBox>
-                <BalanceHeadList>
-                  <BalanceHeadItem />
-                </BalanceHeadList>
-
-                <BalanceList>
-                  <BalanceContentList>
-                    <BalanceContentItem />
-                  </BalanceContentList>
-                </BalanceList>
-              </BalanceListBox>
-            ) : (
-              <>
-                <ButtonsBox>
-                  <MainButton text={'Add Income'} />
-                  <MainButton text={'Add Cost'} />
-                </ButtonsBox>
-                <BalanceListBox>
-                  <BalanceList>
-                    <BalanceHeadList>
-                      <BalanceHeadItem />
-                    </BalanceHeadList>
-                    <BalanceContentList>
-                      <BalanceContentItem />
-                    </BalanceContentList>
-                  </BalanceList>
-                </BalanceListBox>
-              </>
-            )
-          }
-        </Media>
+        <BalanceListBox>
+          <BalanceList />
+        </BalanceListBox>
       </Cover>
     </>
   );

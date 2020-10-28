@@ -6,6 +6,18 @@
   background-color: #f3f6f6;
 }
 
+.plusColor {
+  color: seagreen;
+}
+
+.minusColor {
+  color: red;
+}
+
+.devColor {
+  color: blue;
+}
+
 @media (min-width: 700px) {
   .balanceContentItem:nth-child(1) {
     width: 14%;

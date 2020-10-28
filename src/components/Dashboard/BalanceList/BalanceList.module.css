@@ -2,10 +2,16 @@
   box-shadow: 29px 34px 80px -58px #bfbdbd;
   border-left: 9px solid #75c16e;
   display: flex;
+  flex-direction: column;
 }
 
 .balanceList:not(:last-child) {
   margin-bottom: 14px;
+}
+
+.balanceTable {
+  width: 100%;
+  display: flex;
 }
 
 @media (min-width: 700px) {
