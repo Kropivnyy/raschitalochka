@@ -23,6 +23,12 @@
   border-top-right-radius: 5px;
 }
 
+.loader {
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
 @media screen and (min-width: 768px) {
   .Currency__container {
     height: auto;
