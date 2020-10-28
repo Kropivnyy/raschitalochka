@@ -1,4 +1,125 @@
-.Diagram__container {
-  width: 300px;
-  height: 300px;
+.Statistic__selectors_container {
+  margin: 0 auto;
+  margin-bottom: 22px;
+  width: 280px;
+  display: flex;
+  justify-content: space-between;
+}
+.Statistics__loader {
+  width: 100px;
+  margin: 0 auto;
+}
+.Statistic__selector {
+  font-size: 13px;
+  color: var(--statistic-selector-color);
+  font-weight: 700;
+  border: 2px solid var(--statistic-selector-border-color);
+  border-radius: 4px;
+  background-color: var(--white);
+  width: 126px;
+  height: 31px;
+  padding: 0 12px;
+}
+
+.Statistic__btn {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  width: 280px;
+  height: 39px;
+  border-radius: 5px;
+  border: none;
+  filter: drop-shadow(0px 3px 1.5px rgba(84, 123, 87, 0.25));
+  background: var(--statistic-btn-bcgr-color);
+  font-size: 15px;
+  color: var(--white);
+  font-weight: bold;
+  font-family: 'HelveticaNeueCyr';
+  outline: none;
+}
+
+.Statistic__btn:hover {
+  background: linear-gradient(45deg, rgb(235, 202, 72) 22%, rgb(236, 102, 20));
+}
+
+.Statistic__costs {
+  width: 320px;
+  margin: 0 auto;
+  height: auto;
+}
+
+.Statistic__costs_header_container {
+  width: 100%;
+  margin: 0 auto;
+  height: 50px;
+  background-color: var(--statistic-costs-header-color);
+}
+
+.Statistic__costs_header {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  width: 280px;
+}
+
+.Statistic__costs_descr {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  letter-spacing: 0px;
+  line-height: 30px;
+  color: var(--statistic-costs-descr);
+  font-weight: bold;
+  font-family: 'HelveticaNeueCyr';
+  line-height: 50px;
+}
+
+.Statistic__costs_list {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.Statistic__costs_item {
+  border-bottom: 2px solid #f3f6f6;
+}
+
+.Statistic__costs_item:last-child {
+  border-bottom: 2px solid #b9c9d4;
+}
+
+.Statistic__costs_item_container {
+  width: 280px;
+  height: 40px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Statistic__categories {
+  display: flex;
+}
+
+.Statistic__categories_color {
+  margin: 0;
+  margin-right: 15px;
+  width: 15px;
+  height: 15px;
+  background-color: olive;
+  align-self: center;
+}
+
+.Statistic__categories_descr {
+  margin: 0;
+  font-size: 13px;
+  color: var(--statistic-costs-descr);
+  font-family: 'HelveticaNeueCyr';
+}
+
+.Statistic__categories_amount {
+  margin: 0;
+  font-size: 13px;
+  color: var(--statistic-categories-amount-color);
+  font-family: 'Segoe UI';
+  /* text-align: right; */
 }
