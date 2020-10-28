@@ -2,12 +2,11 @@
   --white: #fff;
   --grey: #d4d4d4;
   --primary-green-color: #3a9200;
-  --grid-container-padding: 16px;
   --header-height-mobile: 40px;
   --header-height-tablet: 80px;
   --header-bg-mobile-color: #3f5544;
   --body-bg-desktop-color: #eeecec;
   --user-name-mobile-color: #669668;
+  --primary-font-color: #282828;
+  --dashboard-odd-string-bg-color: #f3f6f6;
 }
-
-/* background-color: var(--primary-green-color); */

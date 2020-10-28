@@ -1,6 +1,4 @@
 .Currency__container {
-  min-height: 400px;
-  background: -130px -10px / 150% url('../../svg/waves-chart-bg.svg') var(--white);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -8,7 +6,6 @@
 .list {
   display: flex;
   justify-content: space-around;
-  background-color: var(--white);
   padding: 20px 0;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -20,4 +17,22 @@
   background-color: var(--grey);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .Currency__container {
+    height: auto;
+    margin-top: 30px;
+    background: var(--white);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .Currency__container {
+    min-height: 400px;
+    margin-top: 0;
+    background: -130px 220px / 150% no-repeat
+        url('../../svg/waves-chart-bg.svg'),
+      var(--white);
+  }
 }

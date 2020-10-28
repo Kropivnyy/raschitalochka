@@ -20,21 +20,16 @@
 @media screen and (min-width: 768px) {
   .AppBar__container {
     height: var(--header-height-tablet);
-  }
-
-  .logoSvg {
-    width: 100px;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .AppBar__container {
     background-color: var(--white);
   }
 
   .logo__container {
     display: flex;
     align-items: center;
+  }
+
+  .logoSvg {
+    width: 100px;
   }
 
   .logoTitle {

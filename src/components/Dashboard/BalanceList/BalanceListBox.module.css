@@ -1,7 +1,5 @@
 .balanceListBox {
-  color: #282828;
-  list-style: none;
-  font-family: 'HelveticaNeueCyr';
+  padding-bottom: 68px;
   font-size: 13px;
-  text-align: left;
+  color: var(--primary-font-color);
 }
