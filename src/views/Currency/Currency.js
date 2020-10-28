@@ -16,8 +16,7 @@ export default function CurrencyView() {
 
   const minimizeValue = value => {
     const number = (Math.round(value * 100) / 100).toString();
-    if (number.split('.')[0].length === 1) return '0' + number;
-    if (number.length === 4) return number + '0';
+    if (number.split('.')[1].length === 1) return number + '0';
     return number;
   };
 
