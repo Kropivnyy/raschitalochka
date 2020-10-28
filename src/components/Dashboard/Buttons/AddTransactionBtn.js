@@ -1,8 +1,15 @@
 import React from 'react';
 import s from './AddTransactionBtn.module.css';
 
-const AddTransactionBtn = ({ text }) => {
-  return <button className={s.AddTransactionBtn}>{text}</button>;
+const AddTransactionBtn = ({ onClick, type }) => {
+  const openModal = () => {
+    onClick(type);
+  };
+  return (
+    <button onClick={openModal} className={s.AddTransactionBtn}>
+      Add {type}
+    </button>
+  );
 };
 
 export default AddTransactionBtn;

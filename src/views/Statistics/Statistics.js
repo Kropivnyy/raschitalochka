@@ -4,10 +4,11 @@ import { financeSelectors, financeOperations } from '../../redux/finance';
 import Diagram from '../../components/Diagram';
 import styles from './Statistics.module.css';
 import Loader from 'react-loader-spinner';
+
 export default function StatisticsView() {
   const dispatch = useDispatch();
 
-  const financeTransaction = useSelector(financeSelectors.getFinanceOparation);
+  const financeTransaction = useSelector(financeSelectors.getFinanceOperation);
   const isLoading = useSelector(financeSelectors.getLoading);
   useEffect(() => {
     dispatch(financeOperations.getOperationsById());
@@ -27,7 +28,6 @@ export default function StatisticsView() {
         />
       ) : (
         <div className={styles.Diagram__container}>
-          {' '}
           <Diagram finance={financeTransaction} />
         </div>
       )}

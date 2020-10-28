@@ -12,7 +12,6 @@ export default function RegisterView() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  // const [passwordConf, setPasswordConf] = useState('');
 
   const dispatch = useDispatch();
 
@@ -37,10 +36,6 @@ export default function RegisterView() {
         setPassword(value);
         break;
 
-      // case 'passwordConf':
-      //   setPasswordConf(value);
-      //   break;
-
       default:
         console.warn(`Тип поля ${name} не обрабатывается`);
     }
@@ -48,11 +43,6 @@ export default function RegisterView() {
 
   const handleSubmit = event => {
     event.preventDefault();
-    // if ( password  !==  passwordConf ) {
-    //   alert("password")
-    //   resetState();
-    //   return;
-    // }
 
     onRegister({ name, email, password });
     resetState();
@@ -62,7 +52,6 @@ export default function RegisterView() {
     setName('');
     setEmail('');
     setPassword('');
-    // setPasswordConf('');
   };
 
   return (
@@ -121,7 +110,6 @@ export default function RegisterView() {
                 pattern="[A-Za-z-0-9]{8,}"
                 type="password"
                 name="passwordConf"
-                // value={passwordConf}
                 placeholder="Password Confirmation"
                 onChange={handleChange}
                 className={styles.input}
