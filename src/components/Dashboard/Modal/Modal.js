@@ -78,7 +78,10 @@ const Modal = ({ type, isVisibleModal, onClose }) => {
   useEffect(() => {
     const onOverlay = event => {
       const attribute = event.target.attributes[0].value;
-      if (attribute && attribute === 'overlayId') onClose();
+      if (attribute && attribute === 'overlayId') {
+        onClose();
+        event.stopPropagation();
+      }
     };
     window.addEventListener('click', onOverlay);
     return () => {
@@ -129,7 +132,7 @@ const Modal = ({ type, isVisibleModal, onClose }) => {
                               value={cat.value}
                               name="category"
                               type="radio"
-                              className={styles.radioInput}
+                              className={styles.radioInputIncome}
                             />
                             <span className={styles.radioName}>{cat.text}</span>
                           </label>
@@ -148,7 +151,7 @@ const Modal = ({ type, isVisibleModal, onClose }) => {
                               value={cat.value}
                               name="category"
                               type="radio"
-                              className={styles.radioInput}
+                              className={styles.radioInputCost}
                             />
                             {cat.text}
                           </label>

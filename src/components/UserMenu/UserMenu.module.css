@@ -14,13 +14,23 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   border-right: 1px solid var(--primary-bg-green-color);
+  cursor: default;
 }
 .logout {
   composes: name;
   border: none;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+.logout:hover,
+.logout:focus {
+  color: var(--user-name-mobile-color);
+  transition: 0.2s linear;
 }
 
 .button {
+  display: flex;
+  align-items: center;
   background: transparent;
   border-style: none;
   cursor: pointer;
@@ -29,5 +39,5 @@
 
 .logoutLogo {
   width: var(--svg-width);
-  padding: 5px;
+  padding: 0 5px 5px;
 }

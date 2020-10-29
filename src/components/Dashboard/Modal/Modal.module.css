@@ -6,24 +6,27 @@
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   background-color: var(--modal-overlay);
   z-index: 1200;
 }
 
 .Modal {
-  min-width: 300px;
-  width: 90%;
-  min-height: 330px;
-  height: 90%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 50px);
   background-color: var(--white);
   color: var(--primary-font-color);
   border-radius: 5px;
   text-align: center;
+  margin-top: 40px;
+  overflow-y: scroll;
 }
 .container {
   width: 90%;
-  margin: 0 auto 10px;
+  margin: 0 auto 20px;
 }
 .Heading {
   min-height: 50px;
@@ -40,16 +43,15 @@
 }
 .Form {
   text-align: left;
-  height: 80%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   margin: 0 auto;
 }
 .input__container {
   display: flex;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .input {
   width: 135px;
@@ -81,7 +83,7 @@
   /* margin-bottom: 10px; */
 }
 /* Radio button */
-.radioInput {
+.radioInputIncome {
   margin-right: 10px;
   appearance: none;
   border-radius: 50%;
@@ -92,7 +94,7 @@
   outline: none;
   position: relative;
 }
-.radioInput:checked::after {
+.radioInputIncome:checked::after {
   content: '';
   display: block;
   width: 7px;
@@ -102,6 +104,13 @@
   position: relative;
   top: 2px;
   left: 2px;
+}
+.radioInputCost {
+  composes: radioInputIncome;
+  border-color: var(--statistic-total-cost-color);
+}
+.radioInputCost:checked::after {
+  background-color: var(--statistic-total-cost-color);
 }
 .radioName {
   font-weight: 500;
@@ -155,11 +164,16 @@
   opacity: 1;
 }
 @media screen and (min-width: 768px) {
+  .Overlay {
+    align-items: center;
+  }
   .Modal {
     max-width: 500px;
-    max-height: 500px;
+    height: initial;
+    overflow-y: auto;
   }
   .Form {
     max-width: 400px;
+    height: auto;
   }
 }

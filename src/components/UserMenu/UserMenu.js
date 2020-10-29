@@ -16,16 +16,18 @@ export default function UserMenu() {
       <span className={styles.name}>{name}</span>
       <button type="button" className={styles.button} onClick={onLogOut}>
         <LogoutLogo className={styles.logoutLogo} />
+        <Media
+          queries={{
+            tablet: '(min-width: 768px)',
+          }}
+        >
+          {matches => (
+            <>
+              {matches.tablet && <span className={styles.logout}>Logout</span>}
+            </>
+          )}
+        </Media>
       </button>
-      <Media
-        queries={{
-          tablet: '(min-width: 768px)',
-        }}
-      >
-        {matches => (
-          <>{matches.tablet && <span className={styles.logout}>Logout</span>}</>
-        )}
-      </Media>
     </div>
   );
 }
