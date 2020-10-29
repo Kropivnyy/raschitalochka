@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { createPortal } from 'react-dom';
 import { financeOperations } from '../../../redux/finance';
@@ -63,17 +63,27 @@ const Modal = ({ type, isVisibleModal, onClose }) => {
     );
   };
 
-  //   useEffect(() => {
-  //     const onKeydownEscape = event => {
-  //       if (event.code === 'Escape') {
-  //         onClose();
-  //       }
-  //     };
-  //     window.addEventListener('keydown', onKeydownEscape);
-  //     return () => {
-  //       window.removeEventListener('keydown', onKeydownEscape);
-  //     };
-  //   }, [onClose]);
+  useEffect(() => {
+    const onKeydownEscape = event => {
+      if (event.code === 'Escape') {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', onKeydownEscape);
+    return () => {
+      window.removeEventListener('keydown', onKeydownEscape);
+    };
+  }, [onClose]);
+
+  useEffect(() => {
+    const onOverlay = event => {
+      if (event.target.classList.value === 'Modal_Overlay__qhGGZ') onClose();
+    };
+    window.addEventListener('click', onOverlay);
+    return () => {
+      window.removeEventListener('click', onOverlay);
+    };
+  }, [onClose]);
 
   return isVisibleModal
     ? createPortal(
