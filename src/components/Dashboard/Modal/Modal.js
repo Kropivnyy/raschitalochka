@@ -137,6 +137,7 @@ const Modal = ({ type, isVisibleModal, onClose }) => {
                               value={cat.value}
                               name="category"
                               type="radio"
+                              className={styles.radioInput}
                             />
                             {cat.text}
                           </label>
