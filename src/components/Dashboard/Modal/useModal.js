@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const useModal = () => {
-  const [isVisibleModal, setShowModal] = useState(true);
+  const [isVisibleModal, setShowModal] = useState(false);
   const [modalType, changeModalType] = useState('Income');
 
   function toggleModal() {
