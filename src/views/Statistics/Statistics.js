@@ -4,10 +4,11 @@ import { financeSelectors, financeOperations } from '../../redux/finance';
 import Diagram from '../../components/Diagram';
 import styles from './Statistics.module.css';
 import Loader from 'react-loader-spinner';
+
 export default function StatisticsView() {
   const dispatch = useDispatch();
 
-  const financeTransaction = useSelector(financeSelectors.getFinanceOparation);
+  const financeTransaction = useSelector(financeSelectors.getFinanceOperation);
   const isLoading = useSelector(financeSelectors.getLoading);
   useEffect(() => {
     dispatch(financeOperations.getOperationsById());
@@ -16,15 +17,13 @@ export default function StatisticsView() {
   return (
     <div className={styles.Statistics__container}>
       {!isLoading ? (
-        <div className={styles.Statistics__loader}>
-          <Loader
-            type="Bars"
-            color="#3f5544"
-            height={50}
-            width={100}
-            visible={true}
-          />
-        </div>
+        <Loader
+          type="Bars"
+          color="#3f5544"
+          height={50}
+          width={100}
+          visible={true}
+        />
       ) : (
         <div className={styles.Statistc__diagram}>
           <Diagram finance={financeTransaction} />

@@ -1,15 +1,8 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { transactionsOperations } from '../../redux/transactions';
 import Media from 'react-media';
 import BalanceListBox from './BalanceList/BalanceListBox';
 
-const Dashboard = () => {
-  // TODO: need to get form redux store
-  const userId = '5f9726599043240c96228703';
-  const dispatch = useDispatch();
-  dispatch(transactionsOperations.getTransactions(userId));
-
+const DashboardView = () => {
   return (
     <>
       <Media
@@ -35,4 +28,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default DashboardView;

@@ -4,6 +4,12 @@
   color: var(--primary-font-color);
 }
 
+.Fallback {
+  padding: 15px;
+  font-size: 20px;
+  text-align: center;
+}
+
 @media (min-width: 768px) {
   .balanceListBox {
     padding-bottom: 0;

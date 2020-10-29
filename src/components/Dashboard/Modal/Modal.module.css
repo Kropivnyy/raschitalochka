@@ -1,0 +1,92 @@
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1200;
+}
+
+.Modal {
+  min-width: 500px;
+  background-color: var(--white);
+  color: var(--primary-font-color);
+  border-radius: 5px;
+  text-align: center;
+}
+.Heading {
+  min-height: 74px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dashboard-odd-string-bg-color);
+  border-radius: 5px 5px 0 0;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.Form {
+  display: inline-block;
+  text-align: left;
+}
+
+.subHeading {
+  margin: 0;
+}
+
+.inputAmount::-webkit-outer-spin-button,
+.inputAmount::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.inputAmount {
+  -moz-appearance: textfield;
+}
+
+.submitButton {
+  position: relative;
+  height: 48px;
+  margin-bottom: 14px;
+  padding: 0;
+  z-index: 1;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--white);
+  background-image: var(--reg-btn-bg-image);
+  box-shadow: var(--reg-btn-box-shadow);
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.submitButton::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background-image: var(--reg-btn-bg-image-before);
+  border-radius: 6px;
+  transition: opacity 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+}
+
+.submitButton:hover::before {
+  opacity: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .submitButton {
+    height: 58px;
+    font-size: 20px;
+  }
+}

@@ -6,9 +6,9 @@ const BalanceMobileNote = ({ balanceList }) => {
   const { date, type, category, comments, amount, balanceAfter } = balanceList;
   const dataInCorrectFormat = new Date(date);
   const day = ('0' + dataInCorrectFormat.getDate()).slice(-2);
-  const getMonth = ('0' + dataInCorrectFormat.getMonth()).slice(-2);
+  const month = ('0' + (dataInCorrectFormat.getMonth() + 1)).slice(-2);
   const year = dataInCorrectFormat.getFullYear().toString().substr(-2);
-  const fullData = `${day}.${getMonth}.${year}`;
+  const fullData = `${day}.${month}.${year}`;
 
   return (
     <ul className={s.BalanceMobileNote}>

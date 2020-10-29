@@ -11,6 +11,7 @@
   box-shadow: var(--reg-btn-box-shadow);
   border-radius: 6px;
   border: none;
+  outline: none;
   cursor: pointer;
 }
 

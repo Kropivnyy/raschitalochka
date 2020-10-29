@@ -1,6 +1,6 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { transactionsSelectors } from '../../../redux/transactions';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { financeSelectors, financeOperations } from '../../../redux/finance';
 import Media from 'react-media';
 import BalanceMobileNote from './BalanceMobileNote';
 import BalanceDesktopHead from './BalanceDesktopHead';
@@ -9,7 +9,14 @@ import ButtonsBox from '../Buttons/ButtonsBox';
 import s from './BalanceListBox.module.css';
 
 const BalanceListBox = () => {
-  const transactions = useSelector(transactionsSelectors.getTransactions);
+  const dispatch = useDispatch();
+
+  const transactions = useSelector(financeSelectors.getFinanceOperation);
+
+  useEffect(() => {
+    dispatch(financeOperations.getOperationsById());
+  }, [dispatch]);
+
   return (
     <Media
       queries={{
@@ -22,29 +29,45 @@ const BalanceListBox = () => {
             <>
               <div className={s.balanceListBox}>
                 <ButtonsBox />
-                {transactions.map(balanceList => {
-                  return (
-                    <BalanceMobileNote
-                      key={balanceList._id}
-                      balanceList={balanceList}
-                    />
-                  );
-                })}
+                {transactions.length > 0 ? (
+                  <>
+                    {transactions.map(balanceList => {
+                      return (
+                        <BalanceMobileNote
+                          key={balanceList._id}
+                          balanceList={balanceList}
+                        />
+                      );
+                    })}
+                  </>
+                ) : (
+                  <div className={s.Fallback}>
+                    You have not made any transactions
+                  </div>
+                )}
               </div>
             </>
           ) : (
             <>
               <div className={s.balanceListBox}>
                 <ButtonsBox />
-                <BalanceDesktopHead />
-                {transactions.map(balanceList => {
-                  return (
-                    <BalanceDesktopNote
-                      key={balanceList._id}
-                      balanceList={balanceList}
-                    />
-                  );
-                })}
+                {transactions.length > 0 ? (
+                  <>
+                    <BalanceDesktopHead />
+                    {transactions.map(balanceList => {
+                      return (
+                        <BalanceDesktopNote
+                          key={balanceList._id}
+                          balanceList={balanceList}
+                        />
+                      );
+                    })}
+                  </>
+                ) : (
+                  <div className={s.Fallback}>
+                    You have not made any transactions
+                  </div>
+                )}
               </div>
             </>
           )}
