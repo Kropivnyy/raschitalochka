@@ -17,7 +17,7 @@ const getOperationsById = credentials => async (dispatch, getState) => {
   try {
     const { data } = await axios.get(`/finance/${id}`, credentials);
 
-    dispatch(financeActions.getFinanceByIdSuccess(data.finance.data));
+    dispatch(financeActions.getFinanceByIdSuccess(data.finance));
   } catch (error) {
     dispatch(financeActions.getFinanceByIdError());
   }
