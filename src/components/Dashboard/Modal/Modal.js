@@ -77,7 +77,8 @@ const Modal = ({ type, isVisibleModal, onClose }) => {
 
   useEffect(() => {
     const onOverlay = event => {
-      if (event.target.classList.value === 'Modal_Overlay__qhGGZ') onClose();
+      const attribute = event.target.attributes[0].value;
+      if (attribute && attribute === 'overlayId') onClose();
     };
     window.addEventListener('click', onOverlay);
     return () => {
@@ -88,7 +89,7 @@ const Modal = ({ type, isVisibleModal, onClose }) => {
   return isVisibleModal
     ? createPortal(
         <>
-          <div className={styles.Overlay}>
+          <div id="overlayId" className={styles.Overlay}>
             <div className={styles.Modal}>
               <h3 className={styles.Heading}>Add {type}</h3>
               <form className={styles.Form} onSubmit={handleSubmit}>
