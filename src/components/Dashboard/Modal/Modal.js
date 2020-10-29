@@ -180,7 +180,7 @@ const Modal = ({ type, isVisibleModal, onClose }) => {
                     aria-label="Close"
                     onClick={onClose}
                   >
-                    <span aria-hidden="true">&times;</span>
+                    Close
                   </button>
                 </div>
               </form>
