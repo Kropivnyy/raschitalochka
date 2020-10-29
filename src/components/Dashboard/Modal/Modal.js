@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { createPortal } from 'react-dom';
 import { financeOperations } from '../../../redux/finance';
@@ -63,26 +63,37 @@ const Modal = ({ type, isVisibleModal, onClose }) => {
     );
   };
 
-  //   useEffect(() => {
-  //     const onKeydownEscape = event => {
-  //       if (event.code === 'Escape') {
-  //         onClose();
-  //       }
-  //     };
-  //     window.addEventListener('keydown', onKeydownEscape);
-  //     return () => {
-  //       window.removeEventListener('keydown', onKeydownEscape);
-  //     };
-  //   }, [onClose]);
+  useEffect(() => {
+    const onKeydownEscape = event => {
+      if (event.code === 'Escape') {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', onKeydownEscape);
+    return () => {
+      window.removeEventListener('keydown', onKeydownEscape);
+    };
+  }, [onClose]);
+
+  useEffect(() => {
+    const onOverlay = event => {
+      const attribute = event.target.attributes[0].value;
+      if (attribute && attribute === 'overlayId') onClose();
+    };
+    window.addEventListener('click', onOverlay);
+    return () => {
+      window.removeEventListener('click', onOverlay);
+    };
+  }, [onClose]);
 
   return isVisibleModal
     ? createPortal(
         <>
-          <div className={styles.Overlay}>
+          <div id="overlayId" className={styles.Overlay}>
             <div className={styles.Modal}>
               <h3 className={styles.Heading}>Add {type}</h3>
               <form className={styles.Form} onSubmit={handleSubmit}>
-                <label className={`${styles.label} ${styles.labelEmail}`}>
+                <div className={styles.input__container}>
                   <input
                     autoFocus
                     required
@@ -95,10 +106,8 @@ const Modal = ({ type, isVisibleModal, onClose }) => {
                     className={`${styles.input} ${styles.inputAmount}`}
                     autoComplete="off"
                   />
-                </label>
-                <label className={`${styles.label} ${styles.labelEmail}`}>
                   <input
-                    type="date"
+                    // type="date"
                     name="date"
                     value={date}
                     readOnly
@@ -106,68 +115,74 @@ const Modal = ({ type, isVisibleModal, onClose }) => {
                     onChange={handleChangeDate}
                     className={styles.input}
                   />
-                </label>
-
-                <h4 className={styles.subHeading}>Categories</h4>
-                {type === 'Income' ? (
-                  <>
-                    {incomeCategories.map(cat => (
-                      <React.Fragment key={cat.value}>
-                        <label>
-                          <input
-                            onChange={handleChangeInput}
-                            checked={category === cat.value}
-                            value={cat.value}
-                            name="category"
-                            type="radio"
-                          />
-                          {cat.text}
-                        </label>
-                        <br />
-                      </React.Fragment>
-                    ))}
-                  </>
-                ) : (
-                  <>
-                    {costCategories.map(cat => (
-                      <React.Fragment key={cat.value}>
-                        <label>
-                          <input
-                            onChange={handleChangeInput}
-                            checked={category === cat.value}
-                            value={cat.value}
-                            name="category"
-                            type="radio"
-                          />
-                          {cat.text}
-                        </label>
-                        <br />
-                      </React.Fragment>
-                    ))}
-                  </>
-                )}
-                <h4 className={styles.subHeading}>Comments</h4>
-                <textarea
-                  name="comments"
-                  value={comments}
-                  placeholder="Write comment (optional)"
-                  onChange={handleChangeInput}
-                  className={styles.input}
-                  autoComplete="off"
-                ></textarea>
-                <br />
-                <button className={styles.submitButton} type="submit">
-                  Add
-                </button>
-                <button
-                  type="button"
-                  className="modal-close-button"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                  onClick={onClose}
-                >
-                  <span aria-hidden="true">&times;</span>
-                </button>
+                </div>
+                <div className={styles.container}>
+                  <h4 className={styles.subHeading}>Categories</h4>
+                  {type === 'Income' ? (
+                    <>
+                      {incomeCategories.map(cat => (
+                        <React.Fragment key={cat.value}>
+                          <label>
+                            <input
+                              onChange={handleChangeInput}
+                              checked={category === cat.value}
+                              value={cat.value}
+                              name="category"
+                              type="radio"
+                              className={styles.radioInput}
+                            />
+                            <span className={styles.radioName}>{cat.text}</span>
+                          </label>
+                          <br />
+                        </React.Fragment>
+                      ))}
+                    </>
+                  ) : (
+                    <>
+                      {costCategories.map(cat => (
+                        <React.Fragment key={cat.value}>
+                          <label>
+                            <input
+                              onChange={handleChangeInput}
+                              checked={category === cat.value}
+                              value={cat.value}
+                              name="category"
+                              type="radio"
+                              className={styles.radioInput}
+                            />
+                            {cat.text}
+                          </label>
+                          <br />
+                        </React.Fragment>
+                      ))}
+                    </>
+                  )}
+                </div>
+                <div className={styles.container}>
+                  <h4 className={styles.subHeading}>Comments</h4>
+                  <textarea
+                    name="comments"
+                    value={comments}
+                    placeholder="Write comment (optional)"
+                    onChange={handleChangeInput}
+                    className={styles.inputTextarea}
+                    autoComplete="off"
+                  />
+                </div>
+                <div className={styles.input__container}>
+                  <button className={styles.submitButton} type="submit">
+                    Add
+                  </button>
+                  <button
+                    type="button"
+                    className={`modal-close-button ${styles.closeButton}`}
+                    data-dismiss="modal"
+                    aria-label="Close"
+                    onClick={onClose}
+                  >
+                    Close
+                  </button>
+                </div>
               </form>
             </div>
           </div>

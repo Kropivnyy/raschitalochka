@@ -15,9 +15,10 @@ export default function CurrencyView() {
   }, [dispatch]);
 
   const minimizeValue = value => {
+    if (!value) return;
     const number = (Math.round(value * 100) / 100).toString();
-    if (number.split('.')[0].length === 1) return '0' + number;
-    if (number.length === 4) return number + '0';
+    if (!number.split('.')[1]) return number + '.00';
+    if (number.split('.')[1].length === 1) return number + '0';
     return number;
   };
 
@@ -36,9 +37,8 @@ export default function CurrencyView() {
             if (value.ccy === 'BTC') return null;
             return (
               <li key={value.ccy} className={styles.list}>
-                <span>{value.ccy}</span>{' '}
-                <span>{minimizeValue(value.sale)}</span>{' '}
-                <span>{minimizeValue(value.buy)}</span>
+                <span>{value.ccy}</span> <span>{minimizeValue(value.buy)}</span>{' '}
+                <span>{minimizeValue(value.sale)}</span>
               </li>
             );
           })
