@@ -37,9 +37,8 @@ export default function CurrencyView() {
             if (value.ccy === 'BTC') return null;
             return (
               <li key={value.ccy} className={styles.list}>
-                <span>{value.ccy}</span>{' '}
-                <span>{minimizeValue(value.sale)}</span>{' '}
-                <span>{minimizeValue(value.buy)}</span>
+                <span>{value.ccy}</span> <span>{minimizeValue(value.buy)}</span>{' '}
+                <span>{minimizeValue(value.sale)}</span>
               </li>
             );
           })
