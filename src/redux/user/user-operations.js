@@ -5,7 +5,7 @@ const fetchTotalBalance = userId => async dispatch => {
   dispatch(userActions.userRequest());
   try {
     const { data } = await axios.get(`/finance/${userId}`);
-    if (!data) return new Error('Error user total balance');
+    if (!data) return;
     await dispatch(userActions.userSuccess(data));
   } catch ({ message }) {
     dispatch(userActions.userError(message));
