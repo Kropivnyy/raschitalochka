@@ -12,6 +12,17 @@ const colors = {
   Education: '#b6aa41',
   Other: 'palevioletred',
 };
+// const colors = {
+//   'main-expenses': '#df8e25',
+//   'food': 'olive',
+//   'car': 'red',
+//   'entertainment': '#25badf',
+//   'self-care': 'aqua',
+//   'child-care': 'maroon',
+//   'household-products': '#aa25df',
+//   'education': '#b6aa41',
+//   'other-expenses': 'palevioletred',
+// };
 
 const defaultLabelStyle = {
   fontSize: '5px',
@@ -45,7 +56,6 @@ export default function Diagram(prop) {
           animate={true}
           startAngle={-90}
           paddingAngle={1}
-          style={{ height: '300px' }}
           label={({ dataEntry }) => dataEntry.title}
           labelStyle={{ ...defaultLabelStyle }}
         />
