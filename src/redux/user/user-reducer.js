@@ -10,14 +10,7 @@ const totalBalance = createReducer(null, {
   [userActions.userSuccess]: (_, { payload }) => payload.finance.totalBalance,
 });
 
-const loading = createReducer(false, {
-  [userActions.userRequest]: () => true,
-  [userActions.userSuccess]: () => false,
-  [userActions.userError]: () => false,
-});
-
 export default combineReducers({
   error,
   totalBalance,
-  loading,
 });
