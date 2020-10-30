@@ -3,7 +3,9 @@ import { useDispatch } from 'react-redux';
 import { createPortal } from 'react-dom';
 import { financeOperations } from '../../../redux/finance';
 import { costCategories, incomeCategories } from '../../../categories';
+import Media from 'react-media';
 import styles from './Modal.module.css';
+import { ReactComponent as ArrowLogo } from '../../../svg/arrow.svg';
 
 const Modal = ({ type, isVisibleModal, onClose }) => {
   const modalRootRef = document.querySelector('#modal-root');
@@ -125,7 +127,7 @@ const Modal = ({ type, isVisibleModal, onClose }) => {
                     <>
                       {incomeCategories.map(cat => (
                         <React.Fragment key={cat.value}>
-                          <label>
+                          <label className={styles.radioLabel}>
                             <input
                               onChange={handleChangeInput}
                               checked={category === cat.value}
@@ -136,7 +138,6 @@ const Modal = ({ type, isVisibleModal, onClose }) => {
                             />
                             <span className={styles.radioName}>{cat.text}</span>
                           </label>
-                          <br />
                         </React.Fragment>
                       ))}
                     </>
@@ -144,7 +145,7 @@ const Modal = ({ type, isVisibleModal, onClose }) => {
                     <>
                       {costCategories.map(cat => (
                         <React.Fragment key={cat.value}>
-                          <label>
+                          <label className={styles.radioLabel}>
                             <input
                               onChange={handleChangeInput}
                               checked={category === cat.value}
@@ -153,9 +154,8 @@ const Modal = ({ type, isVisibleModal, onClose }) => {
                               type="radio"
                               className={styles.radioInputCost}
                             />
-                            {cat.text}
+                            <span className={styles.radioName}>{cat.text}</span>
                           </label>
-                          <br />
                         </React.Fragment>
                       ))}
                     </>
@@ -176,15 +176,27 @@ const Modal = ({ type, isVisibleModal, onClose }) => {
                   <button className={styles.submitButton} type="submit">
                     Add
                   </button>
-                  <button
-                    type="button"
-                    className={`modal-close-button ${styles.closeButton}`}
-                    data-dismiss="modal"
-                    aria-label="Close"
-                    onClick={onClose}
+                  <Media
+                    queries={{
+                      mobile: '(max-width: 767px)',
+                    }}
                   >
-                    Close
-                  </button>
+                    {matches => (
+                      <>
+                        {matches.mobile && (
+                          <button
+                            type="button"
+                            className={`modal-close-button ${styles.closeButton}`}
+                            data-dismiss="modal"
+                            aria-label="Close"
+                            onClick={onClose}
+                          >
+                            <ArrowLogo className={styles.closeButton__svg} />
+                          </button>
+                        )}
+                      </>
+                    )}
+                  </Media>
                 </div>
               </form>
             </div>

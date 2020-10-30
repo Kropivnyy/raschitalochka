@@ -1,7 +1,6 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import { authReducer } from './auth';
 import { currencyReducer } from './currency';
-import { userReducer } from './user';
 import { financeReducer } from './finance';
 import storage from 'redux-persist/lib/storage';
 import {
@@ -33,7 +32,6 @@ const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
     currency: currencyReducer,
-    user: userReducer,
     finance: financeReducer,
   },
   middleware,

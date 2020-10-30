@@ -22,12 +22,6 @@
   cursor: pointer;
   transition: 0.2s linear;
 }
-.logout:hover,
-.logout:focus {
-  color: var(--user-name-mobile-color);
-  transition: 0.2s linear;
-}
-
 .button {
   display: flex;
   align-items: center;
@@ -36,7 +30,11 @@
   cursor: pointer;
   fill: var(--user-name-mobile-color);
 }
-
+.button:hover .logout,
+.button:focus .logout {
+  color: var(--user-name-mobile-color);
+  transition: 0.2s linear;
+}
 .logoutLogo {
   width: var(--svg-width);
   padding: 0 5px 5px;
