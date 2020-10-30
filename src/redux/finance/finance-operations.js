@@ -1,6 +1,5 @@
 import axios from 'axios';
 import financeActions from './finance-actions';
-import userActions from '../user/user-actions';
 
 axios.defaults.baseURL = 'https://raschitalochka.goit.co.ua/api/';
 
@@ -16,12 +15,9 @@ const getOperationsById = credentials => async (dispatch, getState) => {
   }
   dispatch(financeActions.getFinanceByIdRequest());
   try {
-    const user = await axios.get(`/finance/${id}`);
-    console.log('USER: ', user.data);
-    await dispatch(userActions.userSuccess(user.data));
-
     const { data } = await axios.get(`/finance/${id}`, credentials);
-    dispatch(financeActions.getFinanceByIdSuccess(data.finance.data));
+
+    dispatch(financeActions.getFinanceByIdSuccess(data.finance));
   } catch (error) {
     dispatch(financeActions.getFinanceByIdError());
   }
