@@ -1,19 +1,23 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import styles from './TotalBalance.module.css';
-import userOperations from '../../redux/user/user-operations';
-import userSelectors from '../../redux/user/user-selectors';
-import authSelectors from '../../redux/auth/auth-selectors';
+import financeSelectors from '../../redux/finance/finance-selectors';
 import Loader from 'react-loader-spinner';
 
 export default function TotalBalance() {
-  const dispatch = useDispatch();
-  const totalBalance = useSelector(userSelectors.getTotalBalance);
-  const userId = useSelector(authSelectors.getUserId);
+  const data = useSelector(financeSelectors.getFinanceOperation);
+  const [totalBalance, setTotalBalance] = useState(null);
+
+  const getTotalBalance = ops => {
+    return ops.reduce((acc, { amount, type }) => {
+      acc += +`${type}${amount}`;
+      return acc;
+    }, 0);
+  };
 
   useEffect(() => {
-    dispatch(userOperations.fetchTotalBalance(userId));
-  }, [dispatch, userId]);
+    setTotalBalance(getTotalBalance(data));
+  }, [data]);
 
   return (
     <div className={styles.totalBalance}>

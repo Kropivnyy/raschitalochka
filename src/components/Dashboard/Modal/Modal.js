@@ -3,7 +3,9 @@ import { useDispatch } from 'react-redux';
 import { createPortal } from 'react-dom';
 import { financeOperations } from '../../../redux/finance';
 import { costCategories, incomeCategories } from '../../../categories';
+import Media from 'react-media';
 import styles from './Modal.module.css';
+import { ReactComponent as ArrowLogo } from '../../../svg/arrow.svg';
 
 const Modal = ({ type, isVisibleModal, onClose }) => {
   const modalRootRef = document.querySelector('#modal-root');
@@ -78,7 +80,10 @@ const Modal = ({ type, isVisibleModal, onClose }) => {
   useEffect(() => {
     const onOverlay = event => {
       const attribute = event.target.attributes[0].value;
-      if (attribute && attribute === 'overlayId') onClose();
+      if (attribute && attribute === 'overlayId') {
+        onClose();
+        event.stopPropagation();
+      }
     };
     window.addEventListener('click', onOverlay);
     return () => {
@@ -122,18 +127,17 @@ const Modal = ({ type, isVisibleModal, onClose }) => {
                     <>
                       {incomeCategories.map(cat => (
                         <React.Fragment key={cat.value}>
-                          <label>
+                          <label className={styles.radioLabel}>
                             <input
                               onChange={handleChangeInput}
                               checked={category === cat.value}
                               value={cat.value}
                               name="category"
                               type="radio"
-                              className={styles.radioInput}
+                              className={styles.radioInputIncome}
                             />
                             <span className={styles.radioName}>{cat.text}</span>
                           </label>
-                          <br />
                         </React.Fragment>
                       ))}
                     </>
@@ -141,18 +145,17 @@ const Modal = ({ type, isVisibleModal, onClose }) => {
                     <>
                       {costCategories.map(cat => (
                         <React.Fragment key={cat.value}>
-                          <label>
+                          <label className={styles.radioLabel}>
                             <input
                               onChange={handleChangeInput}
                               checked={category === cat.value}
                               value={cat.value}
                               name="category"
                               type="radio"
-                              className={styles.radioInput}
+                              className={styles.radioInputCost}
                             />
-                            {cat.text}
+                            <span className={styles.radioName}>{cat.text}</span>
                           </label>
-                          <br />
                         </React.Fragment>
                       ))}
                     </>
@@ -173,15 +176,27 @@ const Modal = ({ type, isVisibleModal, onClose }) => {
                   <button className={styles.submitButton} type="submit">
                     Add
                   </button>
-                  <button
-                    type="button"
-                    className={`modal-close-button ${styles.closeButton}`}
-                    data-dismiss="modal"
-                    aria-label="Close"
-                    onClick={onClose}
+                  <Media
+                    queries={{
+                      mobile: '(max-width: 767px)',
+                    }}
                   >
-                    Close
-                  </button>
+                    {matches => (
+                      <>
+                        {matches.mobile && (
+                          <button
+                            type="button"
+                            className={`modal-close-button ${styles.closeButton}`}
+                            data-dismiss="modal"
+                            aria-label="Close"
+                            onClick={onClose}
+                          >
+                            <ArrowLogo className={styles.closeButton__svg} />
+                          </button>
+                        )}
+                      </>
+                    )}
+                  </Media>
                 </div>
               </form>
             </div>

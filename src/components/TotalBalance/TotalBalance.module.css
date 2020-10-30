@@ -31,6 +31,7 @@
     color: var(--header-bg-mobile-color);
     margin-right: 20px;
     margin-bottom: 0;
+    cursor: default;
   }
 
   .text__tablet {
