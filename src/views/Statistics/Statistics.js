@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { financeSelectors, financeOperations } from '../../redux/finance';
 import Diagram from '../../components/Diagram';
@@ -8,16 +8,41 @@ import NormalizedData from '../../servises/NormalizedData';
 import StatisticsCost from '../../components/StatisticsCosts';
 
 export default function StatisticsView() {
+  const [income, setIncome] = useState(0);
+  const [cost, setCost] = useState(0);
   const dispatch = useDispatch();
 
   const financeTransaction = useSelector(financeSelectors.getFinanceOperation);
   const isLoading = useSelector(financeSelectors.getLoading);
 
+  const totalIncome = data => {
+    if (!data) return;
+    return data.reduce((acc, { amount, type }) => {
+      if (type !== '+') return acc;
+      acc += amount;
+      return acc;
+    }, 0);
+  };
+
+  const totalCost = data => {
+    if (!data) return;
+    return data.reduce((acc, { amount, type }) => {
+      if (type !== '-') return acc;
+      acc += amount;
+      return acc;
+    }, 0);
+  };
+
   useEffect(() => {
     dispatch(financeOperations.getOperationsById());
   }, [dispatch]);
 
-  const costsByCategories = NormalizedData(financeTransaction.data);
+  useEffect(() => {
+    setIncome(totalIncome(financeTransaction));
+    setCost(totalCost(financeTransaction));
+  }, [financeTransaction]);
+
+  const costsByCategories = NormalizedData(financeTransaction);
 
   return (
     <div className={styles.Statistics__wrapper}>
@@ -62,12 +87,12 @@ export default function StatisticsView() {
 
             <div className={styles.Statistic__total_container}>
               <div className={styles.Statistic__total}>
-                <p className={styles.Statistic__total_descr}>Total Costs</p>
-                <p className={styles.Statistic__total_cost}>22 222</p>
+                <p className={styles.Statistic__total_descr}>Total Costs:</p>
+                <p className={styles.Statistic__total_cost}>{cost}</p>
               </div>
               <div className={styles.Statistic__total}>
-                <p className={styles.Statistic__total_descr}>Total Income</p>
-                <p className={styles.Statistic__total_income}>11000</p>
+                <p className={styles.Statistic__total_descr}>Total Income:</p>
+                <p className={styles.Statistic__total_income}>{income}</p>
               </div>
             </div>
           </div>

@@ -1,10 +1,7 @@
 import React from 'react';
-// import { PieChart } from 'react-minimal-pie-chart';
 import styles from './StatisticsCosts.module.css';
 
-export default function StatisticsCosts(prop) {
-  const { finance } = prop;
-
+export default function StatisticsCosts({ finance }) {
   const isTransaction = finance.length !== 0;
 
   return (
