@@ -77,19 +77,19 @@ const Modal = ({ type, isVisibleModal, onClose }) => {
     };
   }, [onClose]);
 
-  useEffect(() => {
-    const onOverlay = event => {
-      const attribute = event.target.attributes[0].value;
-      if (attribute && attribute === 'overlayId') {
-        onClose();
-        event.stopPropagation();
-      }
-    };
-    window.addEventListener('click', onOverlay);
-    return () => {
-      window.removeEventListener('click', onOverlay);
-    };
-  }, [onClose]);
+  // useEffect(() => {
+  //   const onOverlay = event => {
+  //     const attribute = event.target.attributes[0].value;
+  //     if (attribute && attribute === 'overlayId') {
+  //       onClose();
+  //       event.stopPropagation();
+  //     }
+  //   };
+  //   window.addEventListener('click', onOverlay);
+  //   return () => {
+  //     window.removeEventListener('click', onOverlay);
+  //   };
+  // }, [onClose]);
 
   return isVisibleModal
     ? createPortal(

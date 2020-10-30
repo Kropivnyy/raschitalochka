@@ -8,9 +8,7 @@ const defaultLabelStyle = {
   fill: 'white',
 };
 
-export default function Diagram(prop) {
-  const { finance } = prop;
-
+export default function Diagram({ finance }) {
   const isTransaction = finance.length !== 0;
 
   return (

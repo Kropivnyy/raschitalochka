@@ -5,10 +5,11 @@ import financeSelectors from '../../redux/finance/finance-selectors';
 import Loader from 'react-loader-spinner';
 
 export default function TotalBalance() {
-  const data = useSelector(financeSelectors.getFinanceOperation);
+  const finance = useSelector(financeSelectors.getFinanceOperation);
   const [totalBalance, setTotalBalance] = useState(null);
 
   const getTotalBalance = ops => {
+    if (!ops) return;
     return ops.reduce((acc, { amount, type }) => {
       acc += +`${type}${amount}`;
       return acc;
@@ -16,8 +17,8 @@ export default function TotalBalance() {
   };
 
   useEffect(() => {
-    setTotalBalance(getTotalBalance(data));
-  }, [data]);
+    setTotalBalance(getTotalBalance(finance));
+  }, [finance]);
 
   return (
     <div className={styles.totalBalance}>
