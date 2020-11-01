@@ -42,6 +42,7 @@
 
 .label {
   position: relative;
+  margin-bottom: 10px;
 }
 
 .label:last-of-type {
@@ -86,6 +87,11 @@
   font-size: 13px;
   font-weight: 100;
   color: var(--form-input-ph-color);
+}
+
+.inputError {
+  margin: 0;
+  color: var(--statistic-total-cost-color);
 }
 
 .progress {

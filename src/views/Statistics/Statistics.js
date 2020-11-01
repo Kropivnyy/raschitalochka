@@ -61,7 +61,7 @@ export default function StatisticsView() {
         ) : (
           <div className={styles.Statistc__diagram}>
             <Diagram finance={costsByCategories} />
-            <button className={styles.Statistic__btn}>Update Diagram</button>
+            {/* <button className={styles.Statistic__btn}>Update Diagram</button> */}
           </div>
         )}
 
