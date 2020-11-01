@@ -4,8 +4,12 @@ const useModal = () => {
   const [isVisibleModal, setShowModal] = useState(false);
   const [modalType, changeModalType] = useState('Income');
 
-  function toggleModal() {
-    setShowModal(!isVisibleModal);
+  function showModal() {
+    setShowModal(true);
+  }
+
+  function hideModal() {
+    setShowModal(false);
   }
   function setModalType(value) {
     changeModalType(value);
@@ -13,7 +17,8 @@ const useModal = () => {
 
   return {
     isVisibleModal,
-    toggleModal,
+    showModal,
+    hideModal,
     modalType,
     setModalType,
   };

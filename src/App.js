@@ -1,17 +1,30 @@
-import React, { Suspense, useEffect } from 'react';
+import React, { Suspense, lazy, useEffect } from 'react';
 import { Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { authOperations } from './redux/auth';
 import PrivateRoute from './servises/PrivateRoute';
 import PublicRoute from './servises/PublicRoute';
 import routes from './routes';
-import RegistrationView from './views/Registration';
-import LoginView from './views/Login';
-import StatisticsView from './views/Statistics';
-import CurrencyView from './views/Currency';
-import HomePageView from './views/HomePage';
-import ErrorView from './views/Error';
 import Loader from 'react-loader-spinner';
+
+const RegistrationView = lazy(() =>
+  import('./views/Registration' /* webpackChunkName: "registration-page" */),
+);
+const LoginView = lazy(() =>
+  import('./views/Login' /* webpackChunkName: "login-page" */),
+);
+const StatisticsView = lazy(() =>
+  import('./views/Statistics' /* webpackChunkName: "statistics-page" */),
+);
+const CurrencyView = lazy(() =>
+  import('./views/Currency' /* webpackChunkName: "currency-page" */),
+);
+const HomePageView = lazy(() =>
+  import('./views/HomePage' /* webpackChunkName: "home-page-page" */),
+);
+const ErrorView = lazy(() =>
+  import('./views/Error' /* webpackChunkName: "error-page" */),
+);
 
 function App() {
   const dispatch = useDispatch();

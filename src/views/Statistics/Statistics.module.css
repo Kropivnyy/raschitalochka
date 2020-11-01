@@ -1,47 +1,50 @@
-.Statistics__wrapper {
+/* .Statistics__wrapper {
   margin: 0 auto;
-}
+} */
 .Statistics__container {
+  /* margin: 0 auto; */
+  padding-bottom: 30px;
+}
+.Statistics__loader {
+  width: 100px;
   margin: 0 auto;
 }
 
 .Statistic__selectors_container {
   margin: 0 auto;
   margin-bottom: 22px;
-  width: 280px;
+  max-width: 280px;
   display: flex;
   justify-content: space-between;
-}
-.Statistics__loader {
-  width: 100px;
-  margin: 0 auto;
 }
 .Statistic__selector {
   font-size: 13px;
   color: var(--statistic-selector-color);
   font-weight: 700;
   border: 2px solid var(--statistic-selector-border-color);
-  border-radius: 4px;
-  background-color: var(--white);
-  width: 126px;
-  height: 31px;
+  border-radius: 5px;
+  /* background-color: var(--white); */
+  min-width: 126px;
+  min-height: 31px;
   padding: 0 12px;
 }
 
 .Statistic__btn {
   display: block;
   margin: 0 auto;
-  width: 280px;
-  height: 39px;
+  min-width: 280px;
+  min-height: 39px;
   border-radius: 5px;
   border: none;
-  filter: drop-shadow(0px 3px 1.5px rgba(84, 123, 87, 0.25));
+  cursor: pointer;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
   background-color: var(--statistic-btn-bcgr-color);
   font-size: 15px;
   color: var(--white);
   font-weight: bold;
-  font-family: 'HelveticaNeueCyr';
   outline: none;
+  position: relative;
   z-index: 1;
   letter-spacing: 1px;
 }
@@ -67,16 +70,22 @@
   opacity: 1;
 }
 
+.Statistic__asside {
+  margin-right: -10px;
+  margin-left: -10px;
+  min-width: 360px;
+}
+
 .Statistic__costs {
-  width: 320px;
+  /* width: 320px;
   margin: 0 auto;
-  height: auto;
+  height: auto; */
 }
 
 .Statistic__costs_header_container {
-  width: 100%;
-  margin: 0 auto;
-  height: 50px;
+  /* width: 100%;
+  margin: 0 auto; */
+  min-height: 50px;
   background-color: var(--statistic-costs-header-color);
 }
 
@@ -95,51 +104,41 @@
   line-height: 30px;
   color: var(--statistic-costs-descr);
   font-weight: bold;
-  font-family: 'HelveticaNeueCyr';
   line-height: 50px;
 }
 
 .Statistic__total_container {
   width: 280px;
   margin: 0 auto;
+  font-size: 15px;
+  line-height: 30px;
+  font-weight: bold;
 }
 
 .Statistic__total {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .Statistic__total_descr {
   margin: 0;
-  font-size: 15px;
   letter-spacing: 1px;
-  line-height: 30px;
   color: var(--primary-font-color);
-  font-weight: bold;
-  font-family: 'HelveticaNeueCyr';
-  align-self: center;
 }
 
 .Statistic__total_cost {
   margin: 0;
-  align-self: center;
-  font-size: 15px;
-  line-height: 30px;
   color: var(--statistic-total-cost-color);
-  font-weight: bold;
-  font-family: 'HelveticaNeueCyr';
 }
 .Statistic__total_income {
   margin: 0;
-  align-self: center;
-  font-size: 15px;
   color: var(--statistic-total-income-color);
-  font-weight: bold;
-  font-family: 'HelveticaNeueCyr';
 }
 
 .Statistc__diagram {
-  margin-bottom: 40px;
+  /* padding: ; */
+  margin-bottom: 30px;
 }
 .Statistic__title_container {
   display: none;
@@ -149,59 +148,67 @@
     display: none;
   }
 
+  .Statistic__asside {
+    margin: 0;
+  }
+
   .Statistic__total_descr {
-    font-size: 13px;
+    /* font-size: 13px; */
   }
 
   .Statistic__total_cost {
-    font-size: 13px;
+    /* font-size: 13px; */
   }
 
   .Statistic__total_income {
-    font-size: 13px;
+    /* font-size: 13px; */
   }
   .Statistic__total_container {
+    font-size: 13px;
     margin-right: 25px;
   }
   .Statistc__diagram {
-    width: 700px;
-    height: 550px;
-    margin-bottom: 35px;
-    border-radius: 0px 2px 4px 4px;
-    filter: drop-shadow(10px 17.321px 20px rgba(1, 1, 0, 0.15));
-    background-color: #ffffff;
+    padding: 30px 0;
+    /* width: 700px;
+    height: 550px; */
+    border-radius: 0px 0px 5px 5px;
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+      0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+    /* background-color: #ffffff; */
   }
   .Statistic__asside {
-    margin-bottom: 52px;
+    /* margin-bottom: 52px; */
   }
 }
 
 @media screen and (min-width: 768px) {
   .Statistics__wrapper {
-    width: 700px;
+    background-color: #ffffff;
+
+    /* width: 700px; */
   }
   .Statistics__container {
-    width: 700px;
+    /* width: 700px; */
+    padding-bottom: 40px;
   }
 
   .Statistic__selectors_container {
-    width: 360px;
+    /* width: 360px; */
   }
   .Statistic__selector {
-    width: 174px;
+    /* width: 174px; */
   }
   .Statistic__costs {
-    width: 700px;
+    /* width: 700px; */
   }
 
   .Statistic__title_container {
-    margin: 0 auto;
     display: block;
-    width: 700px;
-    width: 100%;
-    height: 90px;
+    min-height: 90px;
     background-color: var(--primary-bg-green-color);
-    border-radius: 4px 4px 0 0;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+      0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
   }
 
   .Statistic__title {
@@ -211,7 +218,6 @@
     font-size: 15px;
     color: var(--white);
     font-weight: bold;
-    font-family: 'HelveticaNeueCyr';
     text-transform: uppercase;
     letter-spacing: 1px;
   }
@@ -219,36 +225,42 @@
 
 @media screen and (min-width: 1280px) {
   .Statistics__wrapper {
-    border-radius: 4px;
-    filter: drop-shadow(10px 17.321px 20px rgba(1, 1, 0, 0.15));
-    background-color: #ffffff;
-    width: 924px;
+    border-radius: 5px;
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+      0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+
+    /* filter: drop-shadow(10px 17.321px 20px rgba(1, 1, 0, 0.15)); */
+  }
+
+  .Statistics__container {
+    /* width: 700px; */
+    padding: 40px 0;
   }
   .Statistic__title_container {
-    width: 924px;
+    /* width: 924px; */
     margin-bottom: 0;
   }
 
   .Statistc__diagram {
-    align-self: center;
+    margin-bottom: 0;
+
+    /* align-self: center; */
   }
   .Statistics__loader {
     align-self: center;
   }
   .Statistic__asside {
-    align-self: center;
+    /* align-self: center; */
   }
 
   .Statistics__container {
     display: flex;
     justify-content: space-around;
-    width: 924px;
-    height: 600px;
+    align-items: center;
+    /* width: 924px;
+    height: 600px; */
   }
   .Statistic__costs {
-    width: 360px;
-  }
-  .Statistc__diagram {
-    margin-bottom: 0;
+    /* width: 360px; */
   }
 }

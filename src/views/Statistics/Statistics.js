@@ -10,6 +10,9 @@ import StatisticsCost from '../../components/StatisticsCosts';
 export default function StatisticsView() {
   const [income, setIncome] = useState(0);
   const [cost, setCost] = useState(0);
+  const [filterMonth, setFilterMonth] = useState('');
+  const [filterYear, setFilterYear] = useState('');
+
   const dispatch = useDispatch();
 
   const financeTransaction = useSelector(financeSelectors.getFinanceOperation);
@@ -38,16 +41,75 @@ export default function StatisticsView() {
   }, [dispatch]);
 
   useEffect(() => {
-    setIncome(totalIncome(financeTransaction));
-    setCost(totalCost(financeTransaction));
-  }, [financeTransaction]);
+    const filteredData = financeTransaction.data
+      .filter(item => {
+        const d = new Date(item.date);
+        const month = d.toLocaleString('en-US', {
+          month: 'long',
+        });
+        return month === filterMonth;
+      })
+      .filter(item => {
+        const d = new Date(item.date);
+        const year = d.getFullYear();
+        return year === filterYear;
+      });
+    setIncome(totalIncome(filteredData));
+    setCost(totalCost(filteredData));
+  }, [filterMonth, filterYear, financeTransaction.data]);
 
-  const costsByCategories = NormalizedData(financeTransaction);
+  const repeatedMonths = financeTransaction.data.map(oper => {
+    const d = new Date(oper.date);
+    return d.toLocaleString('en-US', {
+      month: 'long',
+    });
+  });
+  const repeatedYears = financeTransaction.data.map(oper => {
+    const d = new Date(oper.date);
+    return d.getFullYear();
+  });
+
+  function unique(array) {
+    let result = [];
+    array.forEach(str => {
+      if (!result.includes(str)) result.push(str);
+    });
+    return result;
+  }
+  const months = unique(repeatedMonths);
+  const years = unique(repeatedYears);
+
+  useEffect(() => {
+    setFilterMonth(months[months.length - 1]);
+    setFilterYear(years[years.length - 1]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleSelectChange = event => {
+    const { name, value } = event.target;
+    switch (name) {
+      case 'month':
+        setFilterMonth(value);
+        break;
+
+      case 'year':
+        setFilterYear(value);
+        break;
+
+      default:
+        console.warn(`Тип поля ${name} не обрабатывается`);
+    }
+  };
+  const costsByCategories = NormalizedData({
+    finance: financeTransaction.data,
+    filterMonth,
+    filterYear,
+  });
 
   return (
     <div className={styles.Statistics__wrapper}>
       <div className={styles.Statistic__title_container}>
-        <p className={styles.Statistic__title}>cost diagram</p>
+        <p className={styles.Statistic__title}>Cost diagram</p>
       </div>
       <div className={styles.Statistics__container}>
         {!isLoading ? (
@@ -67,11 +129,29 @@ export default function StatisticsView() {
 
         <div className={styles.Statistic__asside}>
           <div className={styles.Statistic__selectors_container}>
-            <select className={styles.Statistic__selector}>
-              <option>Month</option>
+            <select
+              className={styles.Statistic__selector}
+              name="month"
+              value={filterMonth}
+              onChange={handleSelectChange}
+            >
+              {months.map((month, index) => (
+                <option key={index} value={month}>
+                  {month}
+                </option>
+              ))}
             </select>
-            <select className={styles.Statistic__selector}>
-              <option>Year</option>
+            <select
+              className={styles.Statistic__selector}
+              name="year"
+              value={filterYear}
+              onChange={handleSelectChange}
+            >
+              {years.map((year, index) => (
+                <option key={index} value={year}>
+                  {year}
+                </option>
+              ))}
             </select>
           </div>
 

@@ -87,7 +87,7 @@ export default function Sidebar() {
                     className={styles.link}
                     activeClassName={styles.activeLink}
                   >
-                    <HomeLogo className={styles.svgLogo} />{' '}
+                    <HomeLogo className={styles.svgLogo} />
                     <span className={styles.linkText}>Home</span>
                   </NavLink>
                   <NavLink
@@ -96,7 +96,7 @@ export default function Sidebar() {
                     className={styles.link}
                     activeClassName={styles.activeLink}
                   >
-                    <BaselineTimelineLogo className={styles.svgLogo} />{' '}
+                    <BaselineTimelineLogo className={styles.svgLogo} />
                     <span className={styles.linkText}>Diagram</span>
                   </NavLink>
                 </div>
