@@ -5,21 +5,27 @@ import useModal from '../Modal/useModal';
 import s from './ButtonsBox.module.css';
 
 const ButtonsBox = () => {
-  const { isVisibleModal, toggleModal, modalType, setModalType } = useModal();
-  const showModal = type => {
+  const {
+    isVisibleModal,
+    showModal,
+    hideModal,
+    modalType,
+    setModalType,
+  } = useModal();
+  const onClick = type => {
     setModalType(type);
-    toggleModal();
+    showModal();
   };
   return (
     <>
       <div className={s.buttonsBox}>
-        <AddTransactionBtn onClick={showModal} type="Income" />
-        <AddTransactionBtn onClick={showModal} type="Cost" />
+        <AddTransactionBtn onClick={onClick} type="Income" />
+        <AddTransactionBtn onClick={onClick} type="Cost" />
       </div>
       <Modal
         type={modalType}
         isVisibleModal={isVisibleModal}
-        onClose={toggleModal}
+        onClose={hideModal}
       />
     </>
   );

@@ -3,7 +3,15 @@ import { costCategories, incomeCategories } from '../../../categories';
 import s from './BalanceDesktopNote.module.css';
 
 const BalanceDesktopNote = ({ balanceList }) => {
-  const { date, type, category, comments, amount, balanceAfter } = balanceList;
+  const {
+    date,
+    type,
+    category,
+    comments,
+    amount,
+    balanceAfter,
+    typeBalanceAfter,
+  } = balanceList;
   const dataInCorrectFormat = new Date(date);
   const day = ('0' + dataInCorrectFormat.getDate()).slice(-2);
   const month = ('0' + (dataInCorrectFormat.getMonth() + 1)).slice(-2);
@@ -20,14 +28,19 @@ const BalanceDesktopNote = ({ balanceList }) => {
       <span className={s.Date}>{fullData}</span>
       <span className={s.Type}>{type}</span>
       <span className={s.Category}> {categoryText()} </span>
-      <span className={s.Comments}>{comments}</span>
+      <span className={s.Comments}>{comments || '-/-'}</span>
       <span
         style={{ color: type === '+' ? '#75c16e' : '#ff6c00' }}
         className={s.Amount}
       >
         {amount}
       </span>
-      <span className={s.Balance}>{balanceAfter}</span>
+      <span
+        style={{ color: typeBalanceAfter === '-' && 'red' }}
+        className={s.Balance}
+      >
+        {balanceAfter}
+      </span>
     </div>
   );
 };

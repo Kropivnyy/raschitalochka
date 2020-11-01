@@ -1,6 +1,7 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { createPortal } from 'react-dom';
+import nextId from 'react-id-generator';
 import { financeOperations } from '../../../redux/finance';
 import { costCategories, incomeCategories } from '../../../categories';
 import Media from 'react-media';
@@ -9,6 +10,7 @@ import { ReactComponent as ArrowLogo } from '../../../svg/arrow.svg';
 
 const Modal = ({ type, isVisibleModal, onClose }) => {
   const modalRootRef = document.querySelector('#modal-root');
+  const overlayId = nextId('overlay-id');
   const [amount, setAmount] = useState('');
   const [date, setDate] = useState(new Date().toISOString().substr(0, 10));
   const [category, setCategory] = useState(
@@ -30,6 +32,13 @@ const Modal = ({ type, isVisibleModal, onClose }) => {
         setAmount(value);
         break;
 
+      case 'date':
+        const curDate = new Date();
+        Date.parse(value) > curDate
+          ? setDate(curDate.toISOString().substr(0, 10))
+          : setDate(value);
+        break;
+
       case 'comments':
         setComments(value);
         break;
@@ -41,11 +50,6 @@ const Modal = ({ type, isVisibleModal, onClose }) => {
       default:
         console.warn(`Тип поля ${name} не обрабатывается`);
     }
-  };
-
-  const handleChangeDate = event => {
-    //   console.log(event.target);
-    // const { name, value } = event.target;
   };
 
   const handleSubmit = event => {
@@ -79,8 +83,7 @@ const Modal = ({ type, isVisibleModal, onClose }) => {
 
   useEffect(() => {
     const onOverlay = event => {
-      const attribute = event.target.attributes[0].value;
-      if (attribute && attribute === 'overlayId') {
+      if (event.target.id === overlayId) {
         onClose();
         event.stopPropagation();
       }
@@ -89,12 +92,12 @@ const Modal = ({ type, isVisibleModal, onClose }) => {
     return () => {
       window.removeEventListener('click', onOverlay);
     };
-  }, [onClose]);
+  }, [onClose, overlayId]);
 
   return isVisibleModal
     ? createPortal(
         <>
-          <div id="overlayId" className={styles.Overlay}>
+          <div id={overlayId} className={styles.Overlay}>
             <div className={styles.Modal}>
               <h3 className={styles.Heading}>Add {type}</h3>
               <form className={styles.Form} onSubmit={handleSubmit}>
@@ -112,12 +115,12 @@ const Modal = ({ type, isVisibleModal, onClose }) => {
                     autoComplete="off"
                   />
                   <input
-                    // type="date"
+                    type="date"
+                    max={new Date().toISOString().substr(0, 10)}
                     name="date"
                     value={date}
-                    readOnly
                     placeholder="dd/mm/yyyy"
-                    onChange={handleChangeDate}
+                    onChange={handleChangeInput}
                     className={styles.input}
                   />
                 </div>
@@ -132,6 +135,7 @@ const Modal = ({ type, isVisibleModal, onClose }) => {
                               onChange={handleChangeInput}
                               checked={category === cat.value}
                               value={cat.value}
+                              required
                               name="category"
                               type="radio"
                               className={styles.radioInputIncome}
@@ -151,6 +155,7 @@ const Modal = ({ type, isVisibleModal, onClose }) => {
                               checked={category === cat.value}
                               value={cat.value}
                               name="category"
+                              required
                               type="radio"
                               className={styles.radioInputCost}
                             />
@@ -170,6 +175,7 @@ const Modal = ({ type, isVisibleModal, onClose }) => {
                     onChange={handleChangeInput}
                     className={styles.inputTextarea}
                     autoComplete="off"
+                    rows="2"
                   />
                 </div>
                 <div className={styles.input__container}>

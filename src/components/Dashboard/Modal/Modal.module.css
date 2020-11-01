@@ -123,12 +123,13 @@
 /* Textarea */
 .inputTextarea {
   width: 100%;
-  height: 50px;
+  /* height: 50px; */
   border-style: none;
   border: 2px solid var(--form-input-ph-color);
   border-radius: 5px;
   padding: 5px 10px;
-  overflow: hidden;
+  /* overflow: hidden; */
+  resize: none;
 }
 /* Buttons */
 .submitButton {
@@ -182,7 +183,9 @@
   }
   .Modal {
     max-width: 500px;
-    height: initial;
+    height: auto;
+    max-height: 90%;
+    margin-top: 0;
     overflow-y: auto;
   }
   .Heading {

@@ -12,13 +12,17 @@ export default function StatisticsCosts({ finance }) {
             <li key={item.title} className={styles.Statistic__costs_item}>
               <div className={styles.Statistic__costs_item_container}>
                 <div className={styles.Statistic__categories}>
-                  <div className={styles.Statistic__categories_color}></div>
+                  <div
+                    style={{
+                      backgroundColor: item.color,
+                    }}
+                    className={styles.Statistic__categories_color}
+                  ></div>
                   <p className={styles.Statistic__categories_descr}>
                     {item.title}
                   </p>
                 </div>
                 <p className={styles.Statistic__categories_amount}>
-                  {' '}
                   {item.value}
                 </p>
               </div>
@@ -26,7 +30,9 @@ export default function StatisticsCosts({ finance }) {
           ))}
         </ul>
       ) : (
-        <p>We don`t have any transaction</p>
+        <p className={styles.Statistic__fallback}>
+          You don`t have any transaction
+        </p>
       )}
     </>
   );
