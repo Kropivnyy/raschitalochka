@@ -6,6 +6,7 @@ import PrivateRoute from './servises/PrivateRoute';
 import PublicRoute from './servises/PublicRoute';
 import routes from './routes';
 import Loader from 'react-loader-spinner';
+import styles from './Loader.module.css';
 
 const RegistrationView = lazy(() =>
   import('./views/Registration' /* webpackChunkName: "registration-page" */),
@@ -36,13 +37,15 @@ function App() {
     <>
       <Suspense
         fallback={
-          <Loader
-            type="Bars"
-            color="#516d57"
-            height={50}
-            width={100}
-            visible={true}
-          />
+          <div className={styles.Loader}>
+            <Loader
+              type="Bars"
+              color="#516d57"
+              height={50}
+              width={100}
+              visible={true}
+            />
+          </div>
         }
       >
         <Switch>
