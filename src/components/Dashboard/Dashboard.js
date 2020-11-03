@@ -7,16 +7,17 @@ import BalanceDesktopHead from './BalanceList/BalanceDesktopHead';
 import BalanceDesktopNote from './BalanceList/BalanceDesktopNote';
 import ButtonsBox from './Buttons/ButtonsBox';
 import s from './Dashboard.module.css';
+import authSelectors from '../../redux/auth/auth-selectors';
 
 const Dashboard = () => {
   const dispatch = useDispatch();
+  const finance = useSelector(financeSelectors.getFinanceOperation);
+  const userId = useSelector(authSelectors.getUserId);
+  const transactions = finance.data;
 
   useEffect(() => {
-    dispatch(financeOperations.getOperationsById());
-  }, [dispatch]);
-
-  const finance = useSelector(financeSelectors.getFinanceOperation);
-  const transactions = finance.data;
+    if (userId) dispatch(financeOperations.getOperationsById());
+  }, [userId, dispatch]);
 
   return (
     <Media
