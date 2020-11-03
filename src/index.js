@@ -19,7 +19,7 @@ ReactDOM.render(
         loading={
           <Loader
             type="Bars"
-            color="#3f51b5"
+            color="#516d57"
             height={50}
             width={100}
             visible={true}

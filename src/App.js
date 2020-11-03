@@ -38,7 +38,7 @@ function App() {
         fallback={
           <Loader
             type="Bars"
-            color="#00BFFF"
+            color="#516d57"
             height={50}
             width={100}
             visible={true}
