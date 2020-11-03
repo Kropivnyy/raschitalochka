@@ -12,6 +12,7 @@ const BalanceDesktopNote = ({ balanceList }) => {
     balanceAfter,
     typeBalanceAfter,
   } = balanceList;
+
   const dataInCorrectFormat = new Date(date);
   const day = ('0' + dataInCorrectFormat.getDate()).slice(-2);
   const month = ('0' + (dataInCorrectFormat.getMonth() + 1)).slice(-2);
@@ -22,7 +23,6 @@ const BalanceDesktopNote = ({ balanceList }) => {
       ? incomeCategories.find(cat => cat.value === category)?.text
       : costCategories.find(cat => cat.value === category)?.text) ||
     'Outdated category';
-
   return (
     <div className={s.BalanceDesktopNote}>
       <span className={s.Date}>{fullData}</span>

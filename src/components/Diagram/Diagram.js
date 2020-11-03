@@ -10,7 +10,7 @@ const defaultLabelStyle = {
 
 export default function Diagram({ finance }) {
   const isTransaction = finance.length !== 0;
-  console.log(finance);
+
   return (
     <div className={styles.Diagram__container}>
       {isTransaction && (

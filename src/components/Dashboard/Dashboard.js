@@ -16,7 +16,13 @@ const Dashboard = () => {
   }, [dispatch]);
 
   const finance = useSelector(financeSelectors.getFinanceOperation);
-  const transactions = finance.data;
+  let transactions = finance.data;
+  let sortTransactions = [];
+  if (transactions?.length > 0) {
+    sortTransactions = transactions
+      .slice()
+      .sort((a, b) => new Date(a.date) - new Date(b.date));
+  }
 
   return (
     <Media
@@ -32,7 +38,7 @@ const Dashboard = () => {
                 <ButtonsBox />
                 {transactions?.length > 0 ? (
                   <>
-                    {transactions.map(balanceList => {
+                    {sortTransactions.map(balanceList => {
                       return (
                         <BalanceMobileNote
                           key={balanceList._id}
@@ -55,7 +61,7 @@ const Dashboard = () => {
                 {transactions?.length > 0 ? (
                   <>
                     <BalanceDesktopHead />
-                    {transactions.map(balanceList => {
+                    {sortTransactions.map(balanceList => {
                       return (
                         <BalanceDesktopNote
                           key={balanceList._id}
