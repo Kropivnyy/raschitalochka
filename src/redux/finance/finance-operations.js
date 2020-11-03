@@ -3,46 +3,39 @@ import financeActions from './finance-actions';
 
 axios.defaults.baseURL = 'https://raschitalochka.goit.co.ua/api/';
 
-const getOperationsById = credentials => async (dispatch, getState) => {
-  const {
-    auth: {
-      user: { id },
-    },
-  } = getState();
-
-  if (!id) {
-    return;
-  }
-  dispatch(financeActions.getFinanceByIdRequest());
+const getOperationsById = () => async (dispatch, getState) => {
   try {
-    if (!credentials) {
-      const { data } = await axios.get(`/finance/${id}`);
-      dispatch(financeActions.getFinanceByIdSuccess(data.finance));
-      return;
-    }
-    const { data } = await axios.get(`/finance/${id}`, credentials);
+    const {
+      auth: {
+        user: { id },
+      },
+    } = getState();
 
-    dispatch(financeActions.getFinanceByIdSuccess(data.finance));
+    if (!id) return;
+
+    await dispatch(financeActions.getFinanceByIdRequest());
+
+    const { data } = await axios.get(`finance/${id}`);
+
+    await dispatch(financeActions.getFinanceByIdSuccess(data.finance));
   } catch (error) {
-    dispatch(financeActions.getFinanceByIdError());
+    await dispatch(financeActions.getFinanceByIdError());
   }
 };
 
 const postTransaction = formData => async (dispatch, getState) => {
-  const {
-    auth: {
-      user: { id },
-    },
-    finance: {
-      data: { totalBalance },
-    },
-  } = getState();
-
-  if (!id) {
-    return;
-  }
-
   try {
+    const {
+      auth: {
+        user: { id },
+      },
+      finance: {
+        data: { totalBalance },
+      },
+    } = getState();
+
+    if (!id) return;
+
     const isIncome = formData.type === 'Income';
     const balanceAfter = isIncome
       ? totalBalance + +formData.amount
@@ -56,12 +49,13 @@ const postTransaction = formData => async (dispatch, getState) => {
       typeBalanceAfter: balanceAfter > 0 ? '+' : '-',
     };
 
-    dispatch(financeActions.postTransactionRequest());
+    await dispatch(financeActions.postTransactionRequest());
+
     const { data } = await axios.post(`/finance/${id}`, transaction);
 
-    dispatch(financeActions.postTransactionSuccess(data.finance));
+    await dispatch(financeActions.postTransactionSuccess(data.finance));
   } catch (error) {
-    dispatch(financeActions.postTransactionError());
+    await dispatch(financeActions.postTransactionError());
   }
 };
 
