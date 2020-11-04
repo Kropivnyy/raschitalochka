@@ -202,3 +202,8 @@
     align-items: center;
   }
 }
+
+.Loader {
+  display: flex;
+  justify-content: center;
+}
