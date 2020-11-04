@@ -12,8 +12,9 @@ export default function UserMenu() {
     dispatch,
   ]);
   return (
-    <div className={styles.UserMenu}>
+    <nav className={styles.UserMenu}>
       <span className={styles.name}>{name}</span>
+      <div className={styles.divider}></div>
       <button type="button" className={styles.button} onClick={onLogOut}>
         <LogoutLogo className={styles.logoutLogo} />
         <Media
@@ -28,6 +29,6 @@ export default function UserMenu() {
           )}
         </Media>
       </button>
-    </div>
+    </nav>
   );
 }

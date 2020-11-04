@@ -123,7 +123,7 @@ export default function RegisterView() {
                   />
                 </label>
 
-                <div className={styles.progress}></div>
+                {/* <div className={styles.progress}></div> */}
 
                 <label className={`${styles.label} ${styles.labelName}`}>
                   <Field
@@ -151,4 +151,3 @@ export default function RegisterView() {
     </Formik>
   );
 }
-

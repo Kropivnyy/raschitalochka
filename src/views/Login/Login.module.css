@@ -163,7 +163,7 @@
     bottom: 6%;
     margin: 0;
     font-size: 18px;
-    color: var(--tab-slogan-color);
+    color: var(--primary-font-color);
   }
 
   .label::before {

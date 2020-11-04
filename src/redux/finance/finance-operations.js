@@ -16,6 +16,7 @@ const getOperationsById = () => async (dispatch, getState) => {
     await dispatch(financeActions.getFinanceByIdRequest());
 
     const { data } = await axios.get(`finance/${id}`);
+    data.finance.data = data?.finance?.data?.sort((a, b) => a.date - b.date);
 
     await dispatch(financeActions.getFinanceByIdSuccess(data.finance));
   } catch (error) {
@@ -52,6 +53,7 @@ const postTransaction = formData => async (dispatch, getState) => {
     await dispatch(financeActions.postTransactionRequest());
 
     const { data } = await axios.post(`/finance/${id}`, transaction);
+    data.finance.data = data?.finance?.data?.sort((a, b) => a.date - b.date);
 
     await dispatch(financeActions.postTransactionSuccess(data.finance));
   } catch (error) {

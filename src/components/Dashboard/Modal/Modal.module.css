@@ -25,7 +25,7 @@
   overflow-y: scroll;
 }
 .container {
-  width: 90%;
+  min-width: 90%;
   margin: 0 auto 20px;
 }
 .Heading {
@@ -80,9 +80,7 @@
 .inputAmount {
   -moz-appearance: textfield;
 }
-.subHeading {
-  /* margin-bottom: 10px; */
-}
+
 /* Radio button */
 .radioLabel {
   display: block;
@@ -123,7 +121,6 @@
 /* Textarea */
 .inputTextarea {
   width: 100%;
-  /* height: 50px; */
   border-style: none;
   border: 2px solid var(--form-input-ph-color);
   border-radius: 5px;
@@ -142,7 +139,7 @@
   font-weight: 700;
   color: var(--white);
   background-image: var(--reg-btn-bg-image);
-  box-shadow: var(--reg-btn-box-shadow);
+  box-shadow: var(--primary-box-shadow);
   border-radius: 6px;
   border: none;
   outline: none;

@@ -12,13 +12,7 @@ import authSelectors from '../../redux/auth/auth-selectors';
 const Dashboard = () => {
   const dispatch = useDispatch();
   const finance = useSelector(financeSelectors.getFinanceOperation);
-  let transactions = finance.data;
-  let sortTransactions = [];
-  if (transactions?.length > 0) {
-    sortTransactions = transactions
-      .slice()
-      .sort((a, b) => new Date(a.date) - new Date(b.date));
-  }
+  const transactions = finance.data;
 
   const userId = useSelector(authSelectors.getUserId);
   useEffect(() => {
@@ -39,7 +33,7 @@ const Dashboard = () => {
                 <ButtonsBox />
                 {transactions?.length > 0 ? (
                   <>
-                    {sortTransactions.map(balanceList => {
+                    {transactions.map(balanceList => {
                       return (
                         <BalanceMobileNote
                           key={balanceList._id}
@@ -62,7 +56,7 @@ const Dashboard = () => {
                 {transactions?.length > 0 ? (
                   <>
                     <BalanceDesktopHead />
-                    {sortTransactions.map(balanceList => {
+                    {transactions.map(balanceList => {
                       return (
                         <BalanceDesktopNote
                           key={balanceList._id}

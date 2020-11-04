@@ -1,26 +1,24 @@
 .UserMenu {
   display: flex;
   align-items: center;
-}
-
-.name {
   font-size: 16px;
   font-weight: 700;
   color: var(--primary-bg-green-color);
-  margin-right: 5px;
-  padding-right: 20px;
-  padding-bottom: 5px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  border-right: 1px solid var(--primary-bg-green-color);
-  cursor: default;
 }
+
+.name {
+  margin-right: 16px;
+  text-align: right;
+}
+
+.divider {
+  width: 1px;
+  background-color: var(--primary-bg-green-color);
+  align-self: normal;
+}
+
 .logout {
-  composes: name;
-  border: none;
   cursor: pointer;
-  transition: 0.2s linear;
 }
 .button {
   display: flex;
@@ -37,5 +35,5 @@
 }
 .logoutLogo {
   width: var(--svg-width);
-  padding: 0 5px 5px;
+  padding: 4px;
 }

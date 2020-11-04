@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useSelector } from 'react-redux';
 import { authSelectors } from '../../redux/auth';
-import Navigation from '../Navigation';
+import UserMenu from '../UserMenu';
 import styles from './AppBar.module.css';
 import { ReactComponent as ReactLogo } from '../../svg/logo.svg';
 import Media from 'react-media';
@@ -15,25 +15,23 @@ export default function AppBar() {
   return (
     <div className={styles.AppBar__container}>
       <div className={styles.AppBar}>
-        <div className={styles.logo__container}>
-          <NavLink to={routes.homePageView} exact className={styles.link}>
-            <ReactLogo className={styles.logoSvg} />
-            <Media
-              queries={{
-                tablet: '(min-width: 768px)',
-              }}
-            >
-              {matches => (
-                <>
-                  {matches.tablet && (
-                    <h1 className={styles.logoTitle}>Raschitalochka</h1>
-                  )}
-                </>
-              )}
-            </Media>
-          </NavLink>
-        </div>
-        {isLoggedIn && <Navigation />}
+        <NavLink to={routes.homePageView} exact className={styles.link}>
+          <ReactLogo className={styles.logoSvg} />
+          <Media
+            queries={{
+              tablet: '(min-width: 768px)',
+            }}
+          >
+            {matches => (
+              <>
+                {matches.tablet && (
+                  <h1 className={styles.logoTitle}>Raschitalochka</h1>
+                )}
+              </>
+            )}
+          </Media>
+        </NavLink>
+        {isLoggedIn && <UserMenu />}
       </div>
     </div>
   );

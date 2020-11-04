@@ -8,7 +8,7 @@
   font-weight: 700;
   color: var(--white);
   background-image: var(--reg-btn-bg-image);
-  box-shadow: var(--reg-btn-box-shadow);
+  box-shadow: var(--primary-box-shadow);
   border-radius: 6px;
   border: none;
   outline: none;

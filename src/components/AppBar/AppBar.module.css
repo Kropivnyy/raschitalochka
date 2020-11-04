@@ -11,22 +11,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
+  min-width: 90%;
+}
+
+.link {
+  max-height: 40px;
 }
 
 .logoSvg {
-  width: 60px;
+  width: 53px;
 }
 
 @media screen and (min-width: 768px) {
   .AppBar__container {
     height: var(--header-height-tablet);
     background-color: var(--white);
-    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
-      0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+    box-shadow: var(--primary-box-shadow);
   }
 
   .link {
+    max-height: unset;
     display: flex;
     align-items: center;
   }

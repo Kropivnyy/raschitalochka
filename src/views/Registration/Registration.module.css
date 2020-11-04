@@ -94,12 +94,12 @@
   color: var(--statistic-total-cost-color);
 }
 
-.progress {
+/* .progress {
   height: 6px;
   background-color: var(--progress-bg-color);
   opacity: 0.2;
   border-radius: 6px;
-}
+} */
 
 @media screen and (min-width: 768px) {
   .container {
