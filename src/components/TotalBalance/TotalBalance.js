@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import styles from './TotalBalance.module.css';
-import financeSelectors from '../../redux/finance/finance-selectors';
+import { financeSelectors } from '../../redux/finance';
 import Loader from 'react-loader-spinner';
 
 export default function TotalBalance() {

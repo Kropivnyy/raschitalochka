@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import currencyOperations from '../../redux/currency/currency-operations';
-import currencySelectors from '../../redux/currency/currency-selectors';
+import { currencyOperations, currencySelectors } from '../../redux/currency';
 import Loader from 'react-loader-spinner';
 
 import styles from './Currency.module.css';
