@@ -58,22 +58,24 @@ export default function StatisticsView() {
     setCost(totalCost(filteredData));
   }, [filterMonth, filterYear, financeTransaction.data]);
 
-  const repeatedMonths = financeTransaction.data.map(oper => {
+  const repeatedMonths = financeTransaction?.data?.map(oper => {
     const d = new Date(oper.date);
     return d.toLocaleString('en-US', {
       month: 'long',
     });
   });
-  const repeatedYears = financeTransaction.data.map(oper => {
+  const repeatedYears = financeTransaction?.data?.map(oper => {
     const d = new Date(oper.date);
     return d.getFullYear();
   });
 
   function unique(array) {
     let result = [];
-    array.forEach(str => {
-      if (!result.includes(str)) result.push(str);
-    });
+    if (array) {
+      array.forEach(str => {
+        if (!result.includes(str)) result.push(str);
+      });
+    }
     return result;
   }
   const months = unique(repeatedMonths);

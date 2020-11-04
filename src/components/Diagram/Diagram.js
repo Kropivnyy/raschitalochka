@@ -20,8 +20,7 @@ export default function Diagram({ finance }) {
           startAngle={-90}
           label={({ dataEntry }) => dataEntry.title}
           labelStyle={{ ...defaultLabelStyle }}
-          labelPosition={80}
-          segmentsShift={index => index * 0 + 0.5}
+          labelPosition={70}
           radius={49.5}
         />
       )}
