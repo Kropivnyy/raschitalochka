@@ -1,6 +1,7 @@
-/* .Statistics__wrapper {
-  margin: 0 auto;
-} */
+.Loader {
+  display: flex;
+  justify-content: center;
+}
 .Statistics__container {
   /* margin: 0 auto; */
   padding-bottom: 30px;

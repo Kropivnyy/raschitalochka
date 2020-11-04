@@ -7,10 +7,14 @@ import BalanceDesktopHead from './BalanceList/BalanceDesktopHead';
 import BalanceDesktopNote from './BalanceList/BalanceDesktopNote';
 import ButtonsBox from './Buttons/ButtonsBox';
 import s from './Dashboard.module.css';
-import authSelectors from '../../redux/auth/auth-selectors';
 
 const Dashboard = () => {
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(financeOperations.getOperationsById());
+  }, [dispatch]);
+
   const finance = useSelector(financeSelectors.getFinanceOperation);
   let transactions = finance.data;
   let sortTransactions = [];
@@ -19,11 +23,6 @@ const Dashboard = () => {
       .slice()
       .sort((a, b) => new Date(a.date) - new Date(b.date));
   }
-
-  const userId = useSelector(authSelectors.getUserId);
-  useEffect(() => {
-    if (userId) dispatch(financeOperations.getOperationsById());
-  }, [userId, dispatch]);
 
   return (
     <Media

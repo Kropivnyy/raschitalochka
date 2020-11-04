@@ -71,6 +71,7 @@ export default function StatisticsView() {
 
   function unique(array) {
     let result = [];
+
     array.forEach(str => {
       if (!result.includes(str)) result.push(str);
     });
@@ -84,7 +85,6 @@ export default function StatisticsView() {
     setFilterYear(years[years.length - 1]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
   const handleSelectChange = event => {
     const { name, value } = event.target;
     switch (name) {
@@ -113,13 +113,15 @@ export default function StatisticsView() {
       </div>
       <div className={styles.Statistics__container}>
         {!isLoading ? (
-          <Loader
-            type="Bars"
-            color="#3f5544"
-            height={50}
-            width={100}
-            visible={true}
-          />
+          <div className={styles.Loader}>
+            <Loader
+              type="Bars"
+              color="#3f5544"
+              height={50}
+              width={100}
+              visible={true}
+            />
+          </div>
         ) : (
           <div className={styles.Statistc__diagram}>
             <Diagram finance={costsByCategories} />
