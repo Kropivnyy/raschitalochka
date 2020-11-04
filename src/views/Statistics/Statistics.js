@@ -113,13 +113,15 @@ export default function StatisticsView() {
       </div>
       <div className={styles.Statistics__container}>
         {!isLoading ? (
-          <Loader
-            type="Bars"
-            color="#3f5544"
-            height={50}
-            width={100}
-            visible={true}
-          />
+          <div className={styles.Loader}>
+            <Loader
+              type="Bars"
+              color="#3f5544"
+              height={50}
+              width={100}
+              visible={true}
+            />
+          </div>
         ) : (
           <div className={styles.Statistc__diagram}>
             <Diagram finance={costsByCategories} />

@@ -18,9 +18,11 @@ export default function Diagram({ finance }) {
           data={finance}
           animate={true}
           startAngle={-90}
-          paddingAngle={0}
           label={({ dataEntry }) => dataEntry.title}
           labelStyle={{ ...defaultLabelStyle }}
+          labelPosition={80}
+          segmentsShift={index => index * 0 + 0.5}
+          radius={49.5}
         />
       )}
     </div>
