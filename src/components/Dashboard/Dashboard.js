@@ -14,7 +14,6 @@ const Dashboard = () => {
   useEffect(() => {
     dispatch(financeOperations.getOperationsById());
   }, [dispatch]);
-
   const finance = useSelector(financeSelectors.getFinanceOperation);
   let transactions = finance.data;
   let sortTransactions = [];

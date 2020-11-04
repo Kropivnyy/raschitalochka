@@ -3,7 +3,7 @@ import { PieChart } from 'react-minimal-pie-chart';
 import styles from './Diagram.module.css';
 
 const defaultLabelStyle = {
-  fontSize: '3px',
+  fontSize: '5px',
   fontFamily: 'sans-serif',
   fill: 'white',
 };
