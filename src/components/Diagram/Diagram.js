@@ -13,9 +13,19 @@ export default function Diagram({ finance }) {
 
   return (
     <div className={styles.Diagram__container}>
-      {isTransaction && (
+      {isTransaction ? (
         <PieChart
           data={finance}
+          animate={true}
+          startAngle={-90}
+          label={({ dataEntry }) => dataEntry.title}
+          labelStyle={{ ...defaultLabelStyle }}
+          labelPosition={70}
+          radius={49.5}
+        />
+      ) : (
+        <PieChart
+          data={[{ title: 'No costs yet', value: 1, color: '#E38627' }]}
           animate={true}
           startAngle={-90}
           label={({ dataEntry }) => dataEntry.title}

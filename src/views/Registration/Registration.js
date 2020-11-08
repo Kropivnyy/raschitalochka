@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { authOperations, authSelectors } from '../../redux/auth';
 import IPhoneImg from '../../images/iPhone-6.png';
@@ -7,16 +7,27 @@ import routes from '../../routes';
 import FormLink from '../../components/Registration/FormLink';
 import FormButton from '../../components/Registration/FormButton';
 import styles from './Registration.module.css';
+import PasswordStrengthBar from 'react-password-strength-bar';
 import { Field, Formik, Form, ErrorMessage } from 'formik';
 
 export default function RegisterView() {
   const dispatch = useDispatch();
   const isLoading = useSelector(authSelectors.getUserIsLoading);
+  const registerErr = useSelector(authSelectors.getUserError);
+  const [emailUnique, setEmailUnique] = useState(true);
+  const [userEmail, setUserEmail] = useState('');
 
   const onRegister = useCallback(
     values => dispatch(authOperations.registrationLogin(values)),
     [dispatch],
   );
+
+  useEffect(() => {
+    if (registerErr === 'Email already exists') {
+      setEmailUnique(false);
+      return;
+    }
+  }, [registerErr]);
 
   return (
     <Formik
@@ -24,6 +35,8 @@ export default function RegisterView() {
       validate={values => {
         const errors = {};
         if (!values.email) {
+          setEmailUnique(true);
+          setUserEmail('');
           errors.email = 'Email is required';
         } else if (
           !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
@@ -37,6 +50,8 @@ export default function RegisterView() {
           errors.passwordConf = 'Passwords must match';
         } else if (!values.name) {
           errors.name = 'Name is required';
+        } else if (values.email) {
+          setUserEmail(values.email);
         }
         return errors;
       }}
@@ -84,6 +99,11 @@ export default function RegisterView() {
                     onChange={handleChange}
                     className={styles.input}
                   />
+                  {!emailUnique && (
+                    <p
+                      className={styles.inputError}
+                    >{`${userEmail} already exists`}</p>
+                  )}
                   <ErrorMessage
                     name="email"
                     component="p"
@@ -99,6 +119,11 @@ export default function RegisterView() {
                     placeholder="Password"
                     onChange={handleChange}
                     className={styles.input}
+                  />
+                  <PasswordStrengthBar
+                    password={values.password}
+                    shortScoreWord=""
+                    scoreWords={[]}
                   />
                   <ErrorMessage
                     name="password"
