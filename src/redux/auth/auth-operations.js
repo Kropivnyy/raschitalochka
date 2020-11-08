@@ -17,10 +17,9 @@ const registration = credentials => async dispatch => {
 
   try {
     const response = await axios.post('/register', credentials);
-
     dispatch(authActions.registrationSuccess(response.data));
-  } catch ({ message }) {
-    dispatch(authActions.registrationError(message));
+  } catch ({ response }) {
+    dispatch(authActions.registrationError(response.data.message));
   }
 };
 
